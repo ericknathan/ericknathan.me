@@ -70,7 +70,20 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply flex h-full bg-background text-foreground;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    background-image: url(/images/noise.webp);
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover;
+    inset: 0;
+    opacity: 0.75;
+    z-index: 100;
+    pointer-events: none;
   }
 }
