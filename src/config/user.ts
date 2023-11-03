@@ -11,6 +11,7 @@ export type UserDataModel = {
   avatarAltDescription: string;
   description: string;
   githubUrl: string;
+  linkedinUrl: string;
   company: {
     name: string;
     url: string;
@@ -69,6 +70,7 @@ export const userData: UserDataModel = {
   description:
     "Hello, my name is Erick Nathan, I am a dedicated front-end developer, with extensive experience in technologies such as NodeJS and ReactJS, and a track record with notable clients such as Uber Chip, Correios Celular and Carrefour, specializing in robust and user-friendly solutions to the user, prioritizing scalability, accessibility and optimized performance.",
   githubUrl: socials.find((social) => social.name === "Github")?.href || "",
+  linkedinUrl: socials.find((social) => social.name === "LinkedIn")?.href || "",
   company: {
     name: "Pagtel",
     url: "https://pagtel.com.br",

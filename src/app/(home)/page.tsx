@@ -6,31 +6,13 @@ import { postsRequests } from "@/lib/api/requests";
 
 import { FadeIn } from "@/components/animation";
 import { Button, Icon } from "@/components/ui";
-import { PostCard, ProjectCard, WorkExperienceCard } from "./components";
-
-function SectionTitle({
-  title,
-  link,
-  href,
-}: {
-  title: string;
-  link: string;
-  href: string;
-}) {
-  return (
-    <header className="flex justify-between items-center">
-      <h2 className="font-semibold leading-none tracking-tight text-xl">
-        {title}
-      </h2>
-      <Button size="sm" variant="link" className="-mr-3" asChild>
-        <Link href={href}>
-          {link}
-          <Icon.chevronRight size={14} />
-        </Link>
-      </Button>
-    </header>
-  );
-}
+import {
+  PostCard,
+  ProjectCard,
+  TechStackBadges,
+  WorkExperienceCard,
+  SectionTitle
+} from "./components";
 
 export default async function Home() {
   const { payload: postsList } = await postsRequests
@@ -41,47 +23,51 @@ export default async function Home() {
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">
-      <div className="flex gap-6 items-center">
-        <FadeIn>
-          <Image
-            src={userData.avatarUrl}
-            className="h-24 w-24 rounded-lg object-contain"
-            alt={userData.avatarAltDescription}
-            width={100}
-            height={100}
-          />
-        </FadeIn>
-        <div>
-          <FadeIn
-            as="h1"
-            className="font-bold text-2xl sm:text-3xl"
-            delay={0.1}
-            duration={0.5}
-          >
-            {userData.name}
+      <div>
+        <div className="flex gap-6 items-center">
+          <FadeIn className="h-24 w-24 aspect-square rounded-lg overflow-hidden">
+            <Image
+              src={userData.avatarUrl}
+              className="w-full h-full object-cover"
+              alt={userData.avatarAltDescription}
+              width={100}
+              height={100}
+            />
           </FadeIn>
-          <FadeIn
-            as="span"
-            className="text-muted-foreground block"
-            delay={0.2}
-            duration={0.5}
-          >
-            {userData.role}{" "}
-            {userData.company ? (
-              <>
-                at{" "}
-                <Link
-                  href={userData.company.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary"
-                >
-                  @<span className="underline">{userData.company.name}</span>
-                </Link>
-              </>
-            ) : null}
-          </FadeIn>
+          <div className="flex-1">
+            <FadeIn
+              as="h1"
+              className="font-bold text-2xl sm:text-3xl"
+              delay={0.1}
+              duration={0.5}
+            >
+              {userData.name}
+            </FadeIn>
+            <FadeIn
+              as="span"
+              className="text-muted-foreground block"
+              delay={0.2}
+              duration={0.5}
+            >
+              {userData.role}{" "}
+              {userData.company ? (
+                <>
+                  @{" "}
+                  <Link
+                    href={userData.company.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary"
+                  >
+                    <span className="underline">{userData.company.name}</span>
+                  </Link>
+                </>
+              ) : null}
+            </FadeIn>
+            <TechStackBadges />
+          </div>
         </div>
+        <TechStackBadges className="flex xs:hidden justify-center" />
       </div>
       <FadeIn className="grid w-full gap-2 card" duration={0.5}>
         <SectionTitle title="📋 About me" link="Read more" href="/about" />
@@ -94,7 +80,7 @@ export default async function Home() {
           <SectionTitle
             title="💼 Experiences"
             link="Hire me"
-            href="https://linkedin.com/in/ericknathan"
+            href={userData.linkedinUrl}
           />
 
           <ol className="flex flex-col h-full gap-6">
@@ -134,7 +120,7 @@ export default async function Home() {
           to="left"
           duration={0.5}
           delay={0.1}
-          className="card flex flex-col gap-2"
+          className="card flex flex-col gap-2 min-h-[18rem]"
         >
           <SectionTitle title="📰 Latest posts" href="/blog" link="See all" />
           {postsList.length === 0 ? (
