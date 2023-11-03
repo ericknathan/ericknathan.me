@@ -123,6 +123,7 @@ export default async function Home() {
                 href="/documents/Erick Nathan - Frontend Developer.pdf"
                 download
                 target="_blank"
+                prefetch={false}
               >
                 Download CV <Icon.download size={16} className="ml-2" />
               </Link>
