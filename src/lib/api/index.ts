@@ -5,7 +5,7 @@ type ApiResponse<Payload> = {
 
 const { NEXT_PUBLIC_VERCEL_URL } = process.env;
 
-const BASE_URL = `${NEXT_PUBLIC_VERCEL_URL}/api`;
+const BASE_URL = `${NEXT_PUBLIC_VERCEL_URL || ""}/api`;
 
 export const api = {
   async get<ResponseType = any>(
