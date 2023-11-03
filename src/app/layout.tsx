@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: "light dark",
-}
+};
 
 export default function RootLayout({
   children,
@@ -51,6 +52,7 @@ export default function RootLayout({
           <main className="relative w-full mt-10 md:mt-0">{children}</main>
           <ScrollToTop />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
