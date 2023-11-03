@@ -44,7 +44,7 @@ export async function TLDRSection() {
                   src={`https://open.spotify.com/embed/track/${song.id}?utm_source=generator`}
                   allowFullScreen
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
+                  loading="eager"
                   key={song.id}
                   width={580}
                   height={80}
