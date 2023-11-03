@@ -9,6 +9,7 @@ import { keywords } from "@/config/keywords";
 import { ThemeProvider } from "@/contexts/theme.context";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import { ConsoleEasterEgg } from "@/components/app";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,7 +53,10 @@ export default function RootLayout({
           <main className="relative w-full mt-10 md:mt-0">{children}</main>
           <ScrollToTop />
         </ThemeProvider>
+
         <Analytics />
+        
+        <ConsoleEasterEgg />
       </body>
     </html>
   );

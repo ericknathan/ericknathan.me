@@ -11,6 +11,9 @@ export type NavbarSectionModel = {
   }[];
 };
 
+export const websiteSourceCode =
+  "https://github.com/ericknathan/ericknathan.me";
+
 export const navbarSections: NavbarSectionModel[] = [
   {
     buttons: [
@@ -55,5 +58,5 @@ export const navbarSections: NavbarSectionModel[] = [
       label: social.name,
       href: social.href,
     })),
-  }
+  },
 ];
