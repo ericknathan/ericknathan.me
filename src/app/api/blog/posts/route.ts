@@ -1,6 +1,6 @@
 import matter from "gray-matter";
 import { NextRequest, NextResponse } from "next/server";
-import { readdirSync } from "node:fs";
+import { readdirSync, existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 
 import { PostModel } from "@/models";
@@ -8,6 +8,10 @@ import { PostModel } from "@/models";
 const basePostsPath = "src/app/blog/posts";
 
 export async function GET(request: NextRequest) {
+  if(!existsSync(basePostsPath)) {
+    mkdirSync(basePostsPath, { recursive: true });
+  }
+
   const files = readdirSync(basePostsPath);
   const query = new URLSearchParams(request.url.search.toString());
 
