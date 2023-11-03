@@ -5,8 +5,7 @@ import { songRequests } from "@/lib/api/requests";
 import { calcAge } from "@/lib/utils";
 
 export async function TLDRSection() {
-  const favoriteSongs = await songRequests
-    .getFavoriteSongs()
+  const favoriteSongs = await songRequests.getFavoriteSongs();
 
   return (
     <section id="tl-dr">
@@ -27,6 +26,21 @@ export async function TLDRSection() {
           >
             {userData.company.name}
           </Link>
+        </li>
+        <li>
+          <strong>Main tech stack:</strong> {userData.stack.join(", ")}
+        </li>
+        <li>
+          <strong>Languages:</strong>{" "}
+          {userData.languages.map((language, index) => (
+            <span key={language.name}>
+              {language.name}{" "}
+              <small className="opacity-80">
+                ({language.proficiency} proficiency)
+              </small>{" "}
+              {index !== userData.languages.length - 1 && "· "}
+            </span>
+          ))}
         </li>
         <li>
           <strong>Interests:</strong> {userData.interests.join(", ")}

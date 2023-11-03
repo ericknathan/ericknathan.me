@@ -15,6 +15,11 @@ export type UserDataModel = {
     name: string;
     url: string;
   };
+  languages: {
+    name: string;
+    proficiency: string;
+  }[];
+  stack: string[];
 };
 
 export type UserSocialModel = {
@@ -68,4 +73,25 @@ export const userData: UserDataModel = {
     name: "Pagtel",
     url: "https://pagtel.com.br",
   },
+  languages: [
+    {
+      name: "English",
+      proficiency: "Professional working",
+    },
+    {
+      name: "Portuguese",
+      proficiency: "Native or bilingual",
+    },
+  ],
+  stack: [
+    "ReactJS",
+    "NextJS",
+    "Svelte",
+    "Sveltekit",
+    "NodeJS",
+    "TypeScript",
+    "JavaScript",
+    "HTML",
+    "CSS",
+  ],
 };
