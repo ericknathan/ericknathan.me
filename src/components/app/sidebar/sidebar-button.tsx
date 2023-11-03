@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
-import { Button, IconName } from "@/components/ui";
+import { Button, Icon, IconName } from "@/components/ui";
 
 interface SidebarButtonProps {
   data: {
@@ -23,7 +23,7 @@ export function SidebarButton({ data }: SidebarButtonProps) {
   const isActive = pathname === href;
   const isInternalLink = href.startsWith("/");
 
-  const Icon = Icon[icon];
+  const ButtonIcon = Icon[icon];
 
   return (
     <Button
@@ -40,7 +40,7 @@ export function SidebarButton({ data }: SidebarButtonProps) {
         target={isInternalLink ? "_self" : "_blank"}
         rel="noopener noreferrer"
       >
-        <Icon size={16} />
+        <ButtonIcon size={16} />
         <span className="w-full">{label}</span>
         {!isInternalLink && (
           <Icon.arrowUpRight className="opacity-75" size={16} />

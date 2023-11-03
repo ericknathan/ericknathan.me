@@ -1,14 +1,16 @@
-import { Button } from "@/components/ui";
-import { socials } from "@/config";
 import Link from "next/link";
 
+import { socials } from "@/config";
+
+import { Button, Icon } from "@/components/ui";
+
 function ContactButton(social: (typeof socials)[0]) {
-  const Icon = Icon[social.icon];
+  const ButtonIcon = Icon[social.icon];
 
   return (
     <Button asChild variant="outline" className="min-w-fit flex-1">
       <Link className="!text-inherit !no-underline" href={social.href}>
-        <Icon size={16} className="mr-2" />
+        <ButtonIcon size={16} className="mr-2" />
         {social.name}
       </Link>
     </Button>
