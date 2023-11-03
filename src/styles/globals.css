@@ -87,11 +87,31 @@
     pointer-events: none;
   }
 
+  .link {
+    @apply text-primary focus-visible:outline-offset-4 rounded focus-visible:outline-1 outline-ring;
+  }
+
   .card {
     @apply bg-card border rounded-lg p-8;
   }
 
   .transition-all, .transition-opacity {
     @apply motion-reduce:!transition-none;
+  }
+
+  #project:nth-child(even) > img {
+    transform: perspective(1000px) rotateY(-13deg) rotateX(5deg) rotate(1deg) scaleY(.9) scaleX(.95) translate(-3%) translateY(-3%);
+  }
+
+  #project:nth-child(odd) > img {
+    transform: perspective(1000px) rotateY(13deg) rotateX(5deg) rotate(1deg) scaleY(.9) scaleX(.95) translate(3%) translateY(-3%);
+  }
+
+  #project > img {
+    transition: transform 0.4s ease;
+  }
+
+  #project > img:hover {
+    transform: none;
   }
 }
