@@ -7,16 +7,15 @@ import { cn } from "@/lib/utils";
 
 import { Button, Icon, IconName } from "@/components/ui";
 
-interface SidebarButtonProps {
-  data: {
-    href: string;
-    label: string;
-    icon: IconName;
-    disabled?: boolean;
-  };
+export type SidebarButtonProps = {
+  name: string;
+  href: string;
+  label: string;
+  icon: IconName;
+  disabled?: boolean;
 }
 
-export function SidebarButton({ data }: SidebarButtonProps) {
+export function SidebarButton(data: SidebarButtonProps) {
   const { href, label, icon, disabled } = data;
 
   const pathname = usePathname();

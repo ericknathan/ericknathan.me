@@ -10,7 +10,16 @@ import { SongModel } from "@/models";
 
 import { Icon } from "@/components/ui";
 
-export function SidebarSpotifyIndicator() {
+interface SidebarSpotifyIndicatorProps {
+  messages: {
+    playing: string;
+    nothing: string;
+  };
+}
+
+export function SidebarSpotifyIndicator({
+  messages,
+}: SidebarSpotifyIndicatorProps) {
   const [songData, setSongData] = useState<SongModel | undefined>();
   const shouldReduceMotion = useReducedMotion();
 
@@ -79,8 +88,8 @@ export function SidebarSpotifyIndicator() {
       )}
       aria-label={
         songData?.is_playing
-          ? `Currently playing ${songData?.title} by ${songData?.artist}`
-          : "Nothing is playing"
+          ? messages.playing.replace("%TITLE%", songData.title).replace("%ARTIST%", songData.artist)
+          : messages.nothing
       }
       onMouseEnter={playPreview}
       onMouseLeave={stopPreview}
@@ -133,7 +142,7 @@ export function SidebarSpotifyIndicator() {
       ) : songData?.is_playing === false ? (
         <>
           <Icon.spotify size={24} />
-          <p className="text-sm font-medium">Nothing is playing</p>
+          <p className="text-sm font-medium">{messages.nothing}</p>
         </>
       ) : null}
     </motion.a>

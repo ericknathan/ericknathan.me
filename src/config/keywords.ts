@@ -9,6 +9,11 @@ const prefixes = [
   "UI/UX",
   "Front-end",
   "Full-stack",
+  "Software",
+  "Desenvolvimento web",
+  "Desenvolvimento de software",
+  "Desenvolvimento de aplicações web",
+  "Desenvolvimento de aplicações",
 ];
 
 const suffixes = [
@@ -24,7 +29,14 @@ const suffixes = [
   "architecture",
   "coding",
   "projects",
-  "portfolio"
+  "portfolio",
+  "programador",
+  "desenvolvedor",
+  "especialista",
+  "entusiasta",
+  "engenharia",
+  "projetos",
+  "portfólio",
 ];
 
 export const keywords = [

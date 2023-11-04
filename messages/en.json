@@ -1,0 +1,187 @@
+{
+  "pages": {
+    "home": {
+      "about": {
+        "title": "📋 About me",
+        "link": "Read more",
+        "userDescription": "Hello, my name is Erick Nathan, I am a dedicated front-end developer, with extensive experience in technologies such as NodeJS and ReactJS, and a track record with notable clients such as Uber Chip, Correios Celular and Carrefour, specializing in robust and user-friendly solutions to the user, prioritizing scalability, accessibility and optimized performance."
+      },
+      "experiences": {
+        "title": "💼 Experiences",
+        "link": "Hire me",
+        "downloadCv": "Download CV"
+      },
+      "latestPosts": {
+        "title": "📰 Latest posts",
+        "link": "See all",
+        "emptyMessage": "I haven't written anything yet"
+      },
+      "projects": {
+        "title": "📂 My projects",
+        "link": "See all"
+      }
+    },
+    "projects": {
+      "title": "My projects",
+      "description": "Here are some of the projects I have worked on, you can find more on my"
+    },
+    "about": {
+      "title": "About me",
+      "sections": {
+        "tldr": {
+          "topics": {
+            "location": "Location",
+            "age": "Age",
+            "occupation": "Occupation",
+            "stack": "Main tech stack",
+            "languages": "Languages",
+            "interests": "Interests",
+            "pronouns": "Pronouns",
+            "favoriteSongs": "My favorite songs in this moment"
+          }
+        },
+        "bio": {
+          "title": "Hi, nice to meet you!",
+          "content": {
+            "paragraphs": {
+              "0": "I've always been fascinated by technology and its power to shape the world around us. From a young age, I found myself drawn to the intricacies of coding and web development, spending countless hours experimenting with different programming languages and frameworks. What started as a hobby quickly evolved into a passion, leading me to pursue a career in front-end development.",
+              "1": "<p>Building on my skills and knowledge, I am currently thriving as a Front-end developer at <a target='_blank' rel='noopener noreferrer' href='https://pagtel.com.br'>Pagtel</a>, where I am actively involved in creating intuitive and user-friendly interfaces for a variety of digital products for many clients like <a target='_blank' rel='noopener noreferrer' href='https://www.uber.com/br/pt-br/'>Uber</a>, <a target='_blank' rel='noopener noreferrer' href='https://www.correioscelular.com.br/'>Correios</a>, <a target='_blank' rel='noopener noreferrer' href='https://www.bancobmg.com.br/'>BMG Bank</a>, <a target='_blank' rel='noopener noreferrer' href='https://loja.algartelecom.com.br/'>Algar</a> and <a target='_blank' rel='noopener noreferrer' href='https://www.carrefour.com.br/'>Carrefour</a>. My role allows me to combine my creative mindset with my technical expertise, enabling me to craft engaging and visually appealing experiences that resonate with users.</p>"
+            },
+            "images": {
+              "0": {
+                "src": "/images/about/code-in-the-dark.jpg",
+                "alt": "Erick Nathan, a boy with curly hair, wearing a dark blue sweatshirt, in front of a computer with programming codes and a lot of spectators around him, the photograph contains a bluish tone from the lights of the event in the dark",
+                "legend": "Me competing in <a target='_blank' rel='noopener noreferrer' href='http://codeinthedark.com.br/'>Code In The Dark Brazil</a> (jul. 2023)"
+              }
+            }
+          }
+        },
+        "academic": {
+          "title": "Academic background",
+          "content": {
+            "paragraphs": {
+              "0": "I have a technical degree in systems development at <a target='_blank' rel='noopener noreferrer' href='https://jandira.sp.senai.br/'>Senai Jandira</a>. My time at the organization allowed me to delve deeper into the theoretical aspects of programming, algorithms, and data structures, which laid a strong foundation for my career. I also had the opportunity to collaborate on exciting projects, such as my final project called Grati, a feedback management platform that allows organizations to adopt a feedback culture.",
+              "1": "<p>Continuing my studies, I am currently pursuing a degree in Analysis and Development of Systems at <a target='_blank' rel='noopener noreferrer' href='https://www.fiap.com.br'>FIAP</a>. During my first year, I collaborated on an impressive project named Easy Aluga, created for the <a href='https://www.brq.com/'>BRQ Digital Solutions</a> challenge in partnership with <a href='https://easycarros.com/'>Easy Carros</a>, focusing on vehicle rental services. This experience further enriched my practical understanding of software development and its application in real-world business scenarios.</p>"
+            },
+            "images": {
+              "0": {
+                "src": "/images/about/senai.png",
+                "alt": "Several students and teacher wearing formal clothes.",
+                "legend": "Graduating students of the systems development class at <a href='https://jandira.sp.senai.br/' target='_blank' rel='noopener noreferrer'>Senai Jandira</a> during their graduation day. (jun. 2022)"
+              },
+              "1": {
+                "src": "/images/projects/grati.png",
+                "alt": "Preview of Grati project",
+                "legend": "Grati's screenshots, a feedback management platform that allows organizations to adopt a feedback culture. (jun. 2022)"
+              },
+              "2": {
+                "src": "",
+                "alt": "",
+                "legend": ""
+              },
+              "3": {
+                "src": "",
+                "alt": "",
+                "legend": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "config": {
+    "userData": {
+      "name": "Erick Nathan",
+      "role": "Front-end developer",
+      "location": "São Paulo, Brazil",
+      "interests": "Listen Music, Travel, Play Games and Watch Live Coding",
+      "pronouns": "he/him",
+      "avatarUrl": "https://github.com/ericknathan.png",
+      "avatarAltDescription": "A boy with curly hair smiling, wearing business clothes with a cyan tie.",
+      "githubUrl": "https://github.com/ericknathan",
+      "linkedinUrl": "https://www.linkedin.com/in/ericknathan/?locale=en_US",
+      "cvUrl": "/documents/Erick Nathan - Frontend Developer.pdf",
+      "company": {
+        "name": "Pagtel",
+        "url": "https://pagtel.com.br"
+      },
+      "languages": {
+        "english": {
+          "name": "English",
+          "proficiency": "Professional working proficiency"
+        },
+        "portuguese": {
+          "name": "Portuguese",
+          "proficiency": "Native proficiency"
+        }
+      }
+    },
+    "roles": {
+      "Pagtel": "Front-end developer",
+      "Senai": "Systems development student",
+      "FIAP": "Analysis and systems development student"
+    },
+    "projects": {
+      "easy-aluga": {
+        "shortDescription": "A white-label application to rent any vehicle, developed during the BRQ Easy Carros Challenge on FIAP."
+      },
+      "stone-currency": {
+        "shortDescription": "Web application developed to facilitate the conversion of monetary values from US dollars to Brazilian reals."
+      },
+      "3d-product-preview": {
+        "shortDescription": "A simple 3D sofa product previewer made with Svelte and Threlte, a ThreeJS library for Svelte."
+      },
+      "devify": {
+        "shortDescription": "Web application to displays the song currently playing on my spotify account."
+      },
+      "codeleap-network": {
+        "shortDescription": "CodeLeap Network is a social network application developed to manage posts on an API provided by CodeLeap."
+      },
+      "igtimer": {
+        "shortDescription": "A project that allows the user to time their daily tasks, in addition to allowing them to see a history of all the tasks already carried out."
+      },
+      "four-dev": {
+        "shortDescription": "A social network application for registering questionnaires, including functionalities for synthesizing knowledge in React with Typescript and Hooks, using TDD, Clean Architecture, Design Patterns and SOLID."
+      },
+      "foodie": {
+        "shortDescription": "A landing page developed with HTML and CSS during the Marking Language classes at Senai."
+      },
+      "tic-tac-toe": {
+        "shortDescription": "A simple tic tac toe game developed with HTML, CSS and Javascript during the Web Front-End Programming classes at Senai."
+      }
+    },
+    "navbarSections": {
+      "home": {
+        "title": "",
+        "buttons": {
+          "home": "Home"
+        }
+      },
+      "me": {
+        "title": "Me",
+        "buttons": {
+          "aboutMe": "About me",
+          "blog": "Blog",
+          "projects": "Projects",
+          "setup": "Setup"
+        }
+      },
+      "socials": {
+        "title": "Socials"
+      },
+      "spotify": {
+        "playing": "Currently playing %TITLE% by %ARTIST%",
+        "nothing": "Nothing is playing"
+      }
+    }
+  },
+  "components": {
+    "projectCard": {
+      "buttons": {
+        "preview": "Visit",
+        "source": "Source-code"
+      }
+    }
+  }
+}
