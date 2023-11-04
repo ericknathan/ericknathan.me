@@ -79,7 +79,7 @@ export function SidebarController({ sections, spotifyMessages, identificationMes
 
         <ul className="border-b p-3 flex-1 overflow-x-auto">
           {sections.map(({ title, buttons }, index) => (
-            <li className="w-full" key={`${name}-${index}`}>
+            <li className="w-full" key={`${title}-${index}`}>
               {title.trim() !== "" && (
                 <p className="px-3 pt-5 pb-2 text-xs font-semibold text-muted-foreground">
                   {title}

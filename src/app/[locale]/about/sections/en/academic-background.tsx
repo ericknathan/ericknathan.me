@@ -14,7 +14,7 @@ export default function AcademicBackgroundSection() {
         >
           Senai Jandira
         </Link>
-        . My time at the organization allowed me to delve deeper into the
+        . My time at the institution allowed me to delve deeper into the
         theoretical aspects of programming, algorithms, and data structures,
         which laid a strong foundation for my career. I also had the opportunity
         to collaborate on exciting projects, such as my final project called
@@ -37,7 +37,7 @@ export default function AcademicBackgroundSection() {
                 >
                   Senai Jandira
                 </Link>{" "}
-                during their graduation day. (jun. 2022)
+                at their graduation day. (jun. 2022)
               </>
             ),
           },

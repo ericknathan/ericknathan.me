@@ -20,7 +20,9 @@ export function PicturesGrid({ pictures }: PicturesGridProps) {
             width={600}
             height={400}
           />
-          <figcaption className="text-center text-sm italic" dangerouslySetInnerHTML={{ __html: picture.legend }} />
+          <figcaption className="text-center text-sm italic">
+            {picture.legend}
+          </figcaption>
         </figure>
       ))}
     </div>

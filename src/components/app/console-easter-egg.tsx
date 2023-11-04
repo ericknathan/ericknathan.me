@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export function ConsoleEasterEgg() {
   useEffect(() => {
-    if (process.env.NODE_ENV === "development") {
+    if (process.env.NODE_ENV !== "development") {
       console.log(" ");
       console.log(
         "%c Hey, you here? 👀",

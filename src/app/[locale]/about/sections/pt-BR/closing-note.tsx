@@ -3,18 +3,18 @@ import Image from "next/image";
 export default function ClosingNoteSection() {
   return (
     <section id="closing-note">
-      <h2>Closing Note</h2>
+      <h2>Nota de conclusão</h2>
       <p>
-        Thank you for visiting my portfolio and taking the time to learn more
-        about my journey. I am thrilled about the possibilities that the future
-        holds and am eager to embark on new ventures that allow me to contribute
-        to the ever-evolving tech landscape. Don&apos;t hesitate to get in touch
-        using the provided contact information. Let&apos;s collaborate and
-        create something remarkable together!
+        Obrigado por visitar meu portfólio e dedicar tempo para saber mais sobre
+        minha jornada. Estou entusiasmado com as possibilidades que o futuro
+        reserva e ansioso para embarcar em novos empreendimentos que me permitam
+        contribuir para o cenário tecnológico em constante evolução. Não hesite
+        em entrar em contato usando as informações fornecidas. Vamos colaborar e
+        criar algo notável juntos!
       </p>
       <Image
         src="/images/gifs/see-u.gif"
-        alt="Bob Sponge gif with 'See you soon' text"
+        alt="Gif do Bob Esponja com o texto 'Vejo você em breve' em inglês"
         width={300}
         height={200}
         className="w-full md:w-1/2 h-auto mx-auto rounded border"

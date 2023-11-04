@@ -4,14 +4,14 @@ import { PicturesGrid } from "../../components";
 export default function PersonalInterestsSection() {
   return (
     <section id="personal-interests">
-      <h2>Personal Interests</h2>
+      <h2>Interesses pessoais</h2>
       <p>
-        Outside of my professional endeavors, I am an avid enthusiast of various
-        forms of art and entertainment. Music, in particular, holds a special
-        place in my heart. I find solace in the melodic rhythms and lyrical
-        depth of various genres, often using it as a source of inspiration
-        during my coding sessions, you can check out more about my musical
-        tastes on my{" "}
+        Fora dos meus empreendimentos profissionais, sou um entusiasta ávido de
+        várias formas de arte e entretenimento. A música, em particular, ocupa
+        um lugar especial no meu coração. Encontro consolo nos ritmos melódicos
+        e na profundidade lírica de diversos gêneros, muitas vezes utilizando-a
+        como fonte de inspiração durante minhas sessões de codificação. Você
+        pode conferir mais sobre meus gostos musicais no meu perfil do{" "}
         <Link
           href="https://last.fm/user/ericknathan"
           target="_blank"
@@ -19,22 +19,22 @@ export default function PersonalInterestsSection() {
         >
           Last.fm
         </Link>
-        . Tech events and meetups are another passion of mine, as they provide
-        me with the opportunity to explore new technological advancements, meet
-        diverse professionals, and broaden my perspectives. Immersing myself in
-        different tech communities fuels my creativity and encourages me to
-        approach problems from unique angles.
+        . Eventos e encontros de tecnologia são outra paixão minha, pois me
+        proporcionam a oportunidade de explorar novos avanços tecnológicos,
+        conhecer profissionais diversos e ampliar minhas perspectivas. Imerso em
+        diferentes comunidades tecnológicas, minha criatividade é estimulada, o
+        que me encoraja a abordar problemas por ângulos únicos.
       </p>
 
       <PicturesGrid
         pictures={[
           {
             src: "/images/about/adam-levine-thetown.jpg",
-            alt: "Adam Levine, lead singer of the band Maroon 5, wearing light gray pants and a denim jacket, singing at The Town 2023",
+            alt: "Adam Levine, vocalista da banda Maroon 5, usando calças cinza claro e uma jaqueta jeans, cantando no The Town 2023",
             legend: (
               <>
-                Photo taken by me of Adam Levine, lead singer of the band Maroon
-                5, during{" "}
+                Foto tirada por mim de Adam Levine, vocalista da banda Maroon 5,
+                durante o{" "}
                 <Link
                   href="https://thetown.com.br/pt/"
                   target="_blank"
@@ -42,17 +42,17 @@ export default function PersonalInterestsSection() {
                 >
                   The Town
                 </Link>{" "}
-                (sep. 2023)
+                (set. 2023)
               </>
             ),
           },
           {
             src: "/images/about/tech-events.png",
-            alt: 'Erick Nathan, a boy with curly hair, wearing a white shirt, black pants and white sneakers in front of a mirrored LED panel reading "Feel the future"',
+            alt: 'Erick Nathan, um rapaz de cabelos cacheados, usando uma camiseta branca, calças pretas e tênis brancos na frente de um painel de LED espelhado com a inscrição "Sinta o futuro" em inglês',
             legend: (
               <>
-                Me at the Next 2023 event, an innovation and technology
-                conference promoted by{" "}
+                Eu no evento Next 2023, uma conferência de inovação e tecnologia
+                promovida pela{" "}
                 <Link
                   href="https://www.fiap.com.br/"
                   target="_blank"
@@ -60,7 +60,7 @@ export default function PersonalInterestsSection() {
                 >
                   FIAP
                 </Link>
-                . (oct. 2023)
+                . (out. 2023)
               </>
             ),
           },

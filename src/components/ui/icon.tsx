@@ -1,6 +1,7 @@
 import {
   ArrowUpFromLineIcon,
   ArrowUpRightIcon,
+  ShieldAlertIcon,
   BookOpenIcon,
   ChevronRightIcon,
   DownloadIcon,
@@ -23,6 +24,7 @@ import {
 
 export const Icon = {
   arrowUpRight: ArrowUpRightIcon,
+  alert: ShieldAlertIcon,
   folderDot: FolderDotIcon,
   github: GithubIcon,
   hamburger: MenuIcon,

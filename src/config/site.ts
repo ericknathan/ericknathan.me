@@ -8,6 +8,7 @@ export type NavbarSectionModel = {
     name: string;
     href: string;
     disabled?: boolean;
+    label?: string;
   }[];
 };
 

@@ -54,7 +54,7 @@ export default function TLDRSection() {
           <strong>Pronomes:</strong> {userData("pronouns")}
         </li>
         <li>
-          <strong>Minha música favorita no momento:</strong> <SongsGrid />
+          <strong>Minhas músicas favoritas no momento:</strong> <SongsGrid />
         </li>
       </ul>
     </section>

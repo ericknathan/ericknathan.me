@@ -20,22 +20,23 @@ function ContactButton(social: (typeof socials)[0]) {
 export default function GetInTouchSection() {
   return (
     <section id="get-in-touch">
-      <h2>Get in Touch {":)"}</h2>
+      <h2>Entre em contato comigo {":)"}</h2>
 
       <p>
-        As I continue to grow both personally and professionally, I aspire to
-        contribute to the development of cutting-edge solutions that positively
-        impact the lives of people around the globe. I am driven by a relentless
-        determination to push the boundaries of what is possible, leveraging my
-        skills to create meaningful and impactful digital experiences that
-        resonate with users on a profound level.
+        À medida que continuo a crescer tanto pessoal quanto profissionalmente,
+        aspiro a contribuir para o desenvolvimento de soluções de ponta que
+        impactem positivamente a vida das pessoas ao redor do mundo. Sou
+        impulsionado por uma determinação implacável para ultrapassar os limites
+        do que é possível, aproveitando minhas habilidades para criar
+        experiências digitais significativas e impactantes que ressoem com os
+        usuários em um nível profundo.
       </p>
 
       <p>
-        Feel free to reach out to me through the contact information provided
-        below. I am always open to new opportunities, collaborations, and
-        engaging conversations about the exciting realm of technology and
-        beyond.
+        Sinta-se à vontade para entrar em contato comigo através das informações
+        de contato fornecidas abaixo. Estou sempre aberto a novas oportunidades,
+        colaborações e conversas envolventes sobre o emocionante campo da
+        tecnologia e além.
       </p>
 
       <div className="flex flex-wrap gap-4 mb-6">

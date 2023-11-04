@@ -9,8 +9,8 @@ export function Sidebar() {
   const sections = navbarSections.map((section) => ({
     title: t(`${section.name}.title` as any),
     buttons: section.buttons.map((button) => ({
-      label: t(`${section.name}.buttons.${button.name}` as any),
       ...button,
+      label: !button.label ? t(`${section.name}.buttons.${button.name}` as any) : button.label
     })),
   }));
 
