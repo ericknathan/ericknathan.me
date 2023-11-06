@@ -20,7 +20,10 @@ import {
   TwitterIcon,
   createLucideIcon,
   type LucideIcon,
-  LucideProps
+  LucideProps,
+  CheckIcon,
+  DotIcon,
+  XIcon
 } from "lucide-react";
 
 export const Icon = {
@@ -43,6 +46,9 @@ export const Icon = {
   arrowUpFromLine: ArrowUpFromLineIcon,
   download: DownloadIcon,
   bookOpen: BookOpenIcon,
+  check: CheckIcon,
+  dotFilled: DotIcon,
+  x: XIcon,
   spotify: createLucideIcon("Spotify", [
     [
       "path",
