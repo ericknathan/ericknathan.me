@@ -16,6 +16,8 @@ export interface ThemeProviderProps {
   enableColorScheme?: boolean;
   /** Key used to store theme setting in localStorage */
   themeStorageKey?: string;
+  /** Key used to store color setting in localStorage */
+  colorStorageKey?: string;
   /** Default theme name (for v0.0.12 and lower the default was light). If `enableSystem` is false, the default theme is light */
   defaultTheme: string;
   /** HTML attribute modified based on the active theme. Accepts `class` and `data-*` (meaning any data attribute, `data-mode`, `data-color`, etc.) */
@@ -32,6 +34,7 @@ export interface ThemeProviderProps {
 export const ThemeScript = memo(
   ({
     themeStorageKey,
+    colorStorageKey,
     attribute = 'class',
     enableSystem,
     enableColorScheme,
@@ -79,6 +82,10 @@ export const ThemeScript = memo(
       const resolvedName = value ? value[name] : name;
       const val = literal ? name + `|| ''` : `'${resolvedName}'`;
       let text = "";
+
+      if(colorStorageKey) {
+      text += `c.add(localStorage.getItem('${colorStorageKey}'));`;
+    }
 
       // MUCH faster to set colorScheme alongside HTML attribute/class
       // as it only incurs 1 style recalculation rather than 2

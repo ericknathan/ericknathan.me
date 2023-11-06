@@ -101,6 +101,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
         enableColorScheme
         defaultTheme="system"
         themeStorageKey={localStorageKeys.theme}
+        colorStorageKey={localStorageKeys.colorScheme}
       />
       <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </ThemeContext.Provider>
