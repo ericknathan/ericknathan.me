@@ -50,7 +50,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className="fixed top-0 flex flex-col w-full md:w-72 border-r md:h-[100dvh] z-50 border-b md:border-b-0"
+      className="fixed top-0 flex flex-col w-full md:w-72 border-r h-[100dvh] z-50 border-b md:border-b-0"
       data-sidebar-open={isMenuOpen}
     >
       <header className="flex md:hidden z-50 bg-background justify-between py-3 px-8 border-b">
@@ -95,7 +95,7 @@ export function Sidebar() {
       </div>
       <div
         className={cn(
-          "bg-background/50 w-screen h-[calc(30vh_-_4rem)] backdrop-blur-sm fixed bottom-0 z-20 transition-all duration-500 md:transition-none",
+          "bg-background/50 w-screen flex-1 backdrop-blur-sm bottom-0 z-20 transition-all duration-500 md:transition-none",
           isMenuOpen
             ? "max-md:opacity-100 max-md:pointer-events-auto"
             : "opacity-0 pointer-events-none"

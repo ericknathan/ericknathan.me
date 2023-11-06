@@ -27,11 +27,13 @@ export function SettingsToggle({ onClose }: SettingsToggleProps) {
   const t = useTranslations("components.settingsToggle");
 
   function onThemeChange(theme: Theme) {
+    console.log("onThemeChange")
     setTheme(theme);
     onClose();
   }
 
   function onColorSchemeChange(colorScheme: ColorScheme) {
+    console.log("onColorSchemeChange")
     setColorScheme(colorScheme);
     onClose();
   }
@@ -39,7 +41,7 @@ export function SettingsToggle({ onClose }: SettingsToggleProps) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <Button variant="ghost" size="sm" className="h-9 w-9 px-0">
+        <Button variant="ghost" size="sm" className="h-9 w-9 px-0 z-50">
           <Icon.settings
             size={16}
             className="rotate-0 scale-100 transition-all"
