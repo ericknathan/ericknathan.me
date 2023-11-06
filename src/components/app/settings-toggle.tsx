@@ -20,7 +20,7 @@ interface SettingsToggleProps {
 }
 
 export function SettingsToggle({ onClose }: SettingsToggleProps) {
-  const { setTheme, theme, setColorScheme } = useTheme();
+  const { setTheme, theme, setColorScheme, colorScheme } = useTheme();
 
   const pathname = usePathname();
   const t = useTranslations("components.settingsToggle");
@@ -51,7 +51,11 @@ export function SettingsToggle({ onClose }: SettingsToggleProps) {
           {t("theme.title")}
         </DropdownMenu.Label>
         {appThemes.map(({ name, icon: iconName }) => (
-          <DropdownMenu.Item key={name} onClick={() => onThemeChange(name)}>
+          <DropdownMenu.Item
+            key={name}
+            onClick={() => onThemeChange(name)}
+            checked={theme === name}
+          >
             <DynamicIcon name={iconName} className="mr-2 h-4 w-4" />
             <span>{t(`theme.buttons.${name}` as any)}</span>
           </DropdownMenu.Item>
@@ -64,6 +68,7 @@ export function SettingsToggle({ onClose }: SettingsToggleProps) {
           <DropdownMenu.Item
             key={name}
             onClick={() => onColorSchemeChange(name)}
+            checked={colorScheme === name}
           >
             <div
               className={cn(name, theme, "rounded w-4 h-4 mr-2 bg-primary")}
