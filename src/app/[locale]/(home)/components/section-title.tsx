@@ -13,9 +13,11 @@ export function SectionTitle({ title, link, href }: SectionTitleProps) {
       <h2 className="font-semibold leading-none tracking-tight text-xl">
         {title}
       </h2>
-      <Button size="sm" variant="link" className="-mr-3" asChild>
+      <Button size="sm" variant="link" className="-mr-3 w-fit text-center" asChild>
         <Link href={href}>
-          {link}
+          <span className="hidden xss:flex">
+            {link}
+          </span>
           <Icon.chevronRight size={14} />
         </Link>
       </Button>

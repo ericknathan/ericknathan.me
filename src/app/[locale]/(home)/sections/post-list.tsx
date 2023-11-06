@@ -27,7 +27,7 @@ export async function PostsList({ emptyMessage }: PostsListProps) {
           />
         </div>
 
-        <span className="text-muted-foreground">
+        <span className="text-muted-foreground text-center">
           {emptyMessage}
         </span>
       </div>
