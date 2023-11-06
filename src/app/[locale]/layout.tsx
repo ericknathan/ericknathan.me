@@ -2,14 +2,16 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 import { keywords, userName } from "@/config";
 import { cn } from "@/lib/utils";
+
 import "@/styles/globals.css";
+import "@/styles/themes.css";
 
 import { ConsoleEasterEgg, ScrollToTop, Sidebar } from "@/components/app";
 import { InternalizationProvider, ThemeProvider } from "@/contexts";
-import { unstable_setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 const locales = ["en", "pt-BR"];
@@ -57,9 +59,9 @@ export default function RootLayout({
         )}
       >
         <InternalizationProvider locale={locale}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider>
             <Sidebar />
-            <main className="relative w-full mt-10 md:mt-0">{children}</main>
+            <main className="relative w-full mt-10 md:mt-0 md:ml-72">{children}</main>
             <ScrollToTop />
           </ThemeProvider>
 

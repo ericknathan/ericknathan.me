@@ -137,6 +137,16 @@
           "dark": "Escuro"
         }
       },
+      "colorScheme": {
+        "title": "Esquema de cores",
+        "buttons": {
+          "blue": "Azul",
+          "green": "Verde",
+          "orange": "Laranja",
+          "zinc": "Zinco",
+          "rose": "Rosa"
+        }
+      },
       "language": {
         "title": "Idioma"
       }

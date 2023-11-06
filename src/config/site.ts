@@ -59,7 +59,18 @@ export const navbarSections: NavbarSectionModel[] = [
       icon: social.icon,
       name: social.name,
       href: social.href,
-      label: social.name
+      label: social.name,
     })),
   },
+];
+
+export type AppLocale = {
+  label: string;
+  name: string;
+  icon: IconName;
+};
+
+export const appLocales: AppLocale[] = [
+  { label: "English", name: "en", icon: "flagUs" },
+  { label: "Português", name: "pt-BR", icon: "flagBr" },
 ];

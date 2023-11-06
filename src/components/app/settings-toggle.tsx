@@ -1,16 +1,40 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { useLocale, useTranslations } from "next-intl";
 
-import { Button, DropdownMenu, Icon } from "@/components/ui";
+import {
+  ColorScheme,
+  Theme,
+  appColorSchemes,
+  appLocales,
+  appThemes,
+} from "@/config";
+import { useTheme } from "@/contexts";
+import { cn } from "@/lib/utils";
+
+import { Button, DropdownMenu, DynamicIcon, Icon } from "@/components/ui";
 import { Link, usePathname } from "@/navigation";
-import { useTranslations } from "next-intl";
 
-export function SettingsToggle() {
-  const { setTheme } = useTheme();
+interface SettingsToggleProps {
+  onClose: () => void;
+}
+
+export function SettingsToggle({ onClose }: SettingsToggleProps) {
+  const { setTheme, theme, setColorScheme, colorScheme } = useTheme();
+  const currentlocale = useLocale();
 
   const pathname = usePathname();
   const t = useTranslations("components.settingsToggle");
+
+  function onThemeChange(theme: Theme) {
+    setTheme(theme);
+    onClose();
+  }
+
+  function onColorSchemeChange(colorScheme: ColorScheme) {
+    setColorScheme(colorScheme);
+    onClose();
+  }
 
   return (
     <DropdownMenu.Root>
@@ -27,28 +51,44 @@ export function SettingsToggle() {
         <DropdownMenu.Label className="text-xs font-medium">
           {t("theme.title")}
         </DropdownMenu.Label>
-        <DropdownMenu.Item onClick={() => setTheme("light")}>
-          <Icon.sun className="mr-2 h-4 w-4" />
-          <span>{t("theme.buttons.light")}</span>
-        </DropdownMenu.Item>
-        <DropdownMenu.Item onClick={() => setTheme("dark")}>
-          <Icon.moon className="mr-2 h-4 w-4" />
-          <span>{t("theme.buttons.dark")}</span>
-        </DropdownMenu.Item>
+        {appThemes.map(({ name, icon: iconName }) => (
+          <DropdownMenu.Item
+            key={name}
+            onClick={() => onThemeChange(name)}
+            checked={theme === name}
+          >
+            <DynamicIcon name={iconName} className="mr-2 h-4 w-4" />
+            <span>{t(`theme.buttons.${name}` as any)}</span>
+          </DropdownMenu.Item>
+        ))}
+        <DropdownMenu.Separator />
+        <DropdownMenu.Label className="text-xs font-medium">
+          {t("colorScheme.title")}
+        </DropdownMenu.Label>
+        {appColorSchemes.map(({ name }) => (
+          <DropdownMenu.Item
+            key={name}
+            onClick={() => onColorSchemeChange(name)}
+            checked={colorScheme === name}
+          >
+            <div
+              className={cn(name, theme, "rounded w-4 h-4 mr-2 bg-primary")}
+            />
+            <span>{t(`colorScheme.buttons.${name}` as any)}</span>
+          </DropdownMenu.Item>
+        ))}
         <DropdownMenu.Separator />
         <DropdownMenu.Label className="text-xs font-medium">
           {t("language.title")}
         </DropdownMenu.Label>
-        <DropdownMenu.Item asChild>
-          <Link href={pathname} locale="en">
-            <Icon.flagUs className="rounded w-4 h-4 mr-2" /> English
-          </Link>
-        </DropdownMenu.Item>
-        <DropdownMenu.Item asChild>
-          <Link href={pathname} locale="pt-BR">
-            <Icon.flagBr className="rounded w-4 h-4 mr-2" /> Português
-          </Link>
-        </DropdownMenu.Item>
+        {appLocales.map(({ label: name, name: locale, icon: iconName }) => (
+          <DropdownMenu.Item asChild key={locale} checked={locale === currentlocale}>
+            <Link href={pathname} locale={locale}>
+              <DynamicIcon name={iconName} className="rounded mr-2 w-4 h-4" />{" "}
+              {name}
+            </Link>
+          </DropdownMenu.Item>
+        ))}
       </DropdownMenu.Content>
     </DropdownMenu.Root>
   );

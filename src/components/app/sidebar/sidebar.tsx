@@ -46,7 +46,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className="fixed md:sticky top-0 flex flex-col w-full md:w-72 border-r md:h-[100dvh] z-50 border-b"
+      className="fixed top-0 flex flex-col w-full md:w-72 border-r md:h-[100dvh] z-50 border-b md:border-b-0"
       data-sidebar-open={isMenuOpen}
     >
       <header className="flex md:hidden z-50 bg-background justify-between py-3 px-8 border-b">
@@ -86,13 +86,13 @@ export function Sidebar() {
 
         <div className="flex justify-between items-center px-3 gap-3 relative">
           <SidebarSpotifyIndicator />
-          <SettingsToggle />
+          <SettingsToggle onClose={() => setIsMenuOpen(false)} />
         </div>
       </div>
       <div
         className={cn(
-          "bg-background/50 w-screen h-screen backdrop-blur-sm fixed z-20 transition-all duration-500 md:transition-none",
-          isMenuOpen ? "max-md:opacity-100" : "opacity-0 pointer-events-none"
+          "bg-background/50 w-screen h-screen backdrop-blur-sm fixed z-20 transition-all duration-500 md:transition-none opacity-0 pointer-events-none",
+          isMenuOpen && "max-md:opacity-100 max-md:pointer-events-auto"
         )}
         onClick={handleToggleMenu}
       />

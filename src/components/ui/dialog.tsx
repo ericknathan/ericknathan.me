@@ -1,10 +1,10 @@
 "use client";
 
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Cross2Icon } from "@radix-ui/react-icons";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { Icon } from ".";
 
 export const Root = DialogPrimitive.Root;
 
@@ -52,7 +52,7 @@ export const Content = React.forwardRef<
           closeClassName
         )}
       >
-        <Cross2Icon className="h-4 w-4" />
+        <Icon.x className="h-4 w-4" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
