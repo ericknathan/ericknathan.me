@@ -10,7 +10,16 @@ import { SongModel } from "@/models";
 
 import { Icon } from "@/components/ui";
 
-export function SidebarSpotifyIndicator() {
+interface SidebarSpotifyIndicatorProps {
+  messages: {
+    playing: string;
+    nothing: string;
+  };
+}
+
+export function SidebarSpotifyIndicator({
+  messages,
+}: SidebarSpotifyIndicatorProps) {
   const [songData, setSongData] = useState<SongModel | undefined>();
   const shouldReduceMotion = useReducedMotion();
 
@@ -79,8 +88,10 @@ export function SidebarSpotifyIndicator() {
       )}
       aria-label={
         songData?.is_playing
-          ? `Currently playing ${songData?.title} by ${songData?.artist}`
-          : "Nothing is playing"
+          ? messages.playing
+              .replace("%TITLE%", songData.title)
+              .replace("%ARTIST%", songData.artist)
+          : messages.nothing
       }
       onMouseEnter={playPreview}
       onMouseLeave={stopPreview}
@@ -89,12 +100,16 @@ export function SidebarSpotifyIndicator() {
     >
       {!!songData && songData?.is_playing ? (
         <>
-          <div className="absolute w-8 h-auto rounded-sm left-0 bottom-3 md:group-hover:w-full md:group-hover:bottom-full md:group-focus-visible:w-full md:group-focus-visible:bottom-full transition-all border-0 border-transparent md:group-hover:border-muted md:group-hover:border-[0.5rem] md:group-hover:rounded-b-none md:group-focus-visible:border-muted md:group-focus-visible:border-[0.5rem] md:group-focus-visible:rounded-b-none duration-300">
+          <div className="overflow-hidden absolute w-8 h-auto rounded-sm left-0 bottom-3 md:group-hover:w-full md:group-hover:bottom-full md:group-focus-visible:w-full md:group-focus-visible:bottom-full transition-all border-0 border-transparent md:group-hover:border-muted md:group-hover:border-[0.5rem] md:group-hover:rounded-b-none md:group-focus-visible:border-muted md:group-focus-visible:border-[0.5rem] md:group-focus-visible:rounded-b-none duration-300">
             <Image
               src={songData.album_image_url}
               alt={`Album cover of ${songData.title}`}
               width={250}
               height={250}
+              className={cn(
+                songData.explicit &&
+                  "blur-sm group-hover:blur-none transition-all"
+              )}
             />
             <div
               role="progressbar"
@@ -102,14 +117,16 @@ export function SidebarSpotifyIndicator() {
               aria-valuemax={audioDuration}
               aria-label={`Song progress: ${songData.title}`}
               aria-valuenow={audioDuration}
-              className="h-1 absolute bottom-0 bg-primary transition-all w-0 ease-linear"
+              className={cn(
+                "h-1 absolute bottom-0 bg-primary transition-all w-0 ease-linear",
+                isPlayingAudio ? "w-full" : "w-0"
+              )}
               style={{
                 transitionDuration: isPlayingAudio ? `${audioDuration}s` : "0s",
-                width: isPlayingAudio ? "100%" : "0%",
               }}
             />
           </div>
-          <div className="max-w-[inherit] leading-none overflow-hidden ml-10 md:group-hover:ml-2 md:group-focus-visible:ml-2 transition-all duration-300">
+          <div className="h-full justify-center flex flex-col max-w-[inherit] leading-none overflow-hidden ml-10 md:group-hover:ml-2 md:group-focus-visible:ml-2 transition-all duration-300">
             <p
               className="text-sm font-semibold truncate w-full mr-2 transition-all duration-1000"
               title={songData.title}
@@ -121,6 +138,12 @@ export function SidebarSpotifyIndicator() {
               title={songData.artist}
             >
               {songData.artist}
+              {songData.explicit && (
+                <span className="text-red-500 px-1 inline-flex items-center justify-center border border-red-500 rounded-full text-[0.65rem] ml-1">
+                  <Icon.alert className="h-2 w-2 mr-1" />
+                  Explicit
+                </span>
+              )}
             </small>
           </div>
 
@@ -133,7 +156,7 @@ export function SidebarSpotifyIndicator() {
       ) : songData?.is_playing === false ? (
         <>
           <Icon.spotify size={24} />
-          <p className="text-sm font-medium">Nothing is playing</p>
+          <p className="text-sm font-medium">{messages.nothing}</p>
         </>
       ) : null}
     </motion.a>

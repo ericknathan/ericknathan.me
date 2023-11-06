@@ -1,0 +1,164 @@
+{
+  "pages": {
+    "home": {
+      "about": {
+        "title": "📋 Sobre mim",
+        "link": "Saber mais",
+        "userDescription": "Olá, meu nome é Erick Nathan, sou um desenvolvedor front-end dedicado, com ampla experiência em tecnologias como NodeJS e ReactJS, e um histórico com clientes notáveis como Uber Chip, Correios Celular e Carrefour, especializado em soluções robustas e amigáveis ao usuário, priorizando escalabilidade, acessibilidade e performance."
+      },
+      "experiences": {
+        "title": "💼 Experiências",
+        "link": "Me contrate",
+        "downloadCv": "Baixar meu currículo"
+      },
+      "latestPosts": {
+        "title": "📰 Últimos posts",
+        "link": "Ver todos",
+        "emptyMessage": "Eu não escrevi nenhum post ainda"
+      },
+      "projects": {
+        "title": "📂 Meus projetos",
+        "link": "Ver todos"
+      }
+    },
+    "projects": {
+      "title": "Meus projetos",
+      "description": "Aqui estão alguns de meus projetos que desenvolvi, você pode encontra mais em meu <github>Github</github>"
+    },
+    "about": {
+      "title": "Sobre mim",
+      "sections": {
+        "tldr": {
+          "topics": {
+            "location": "Localização",
+            "age": "Idade",
+            "occupation": "Ocupação",
+            "stack": "Minha stack principal",
+            "languages": "Idiomas",
+            "interests": "Interesses",
+            "pronouns": "Pronomes",
+            "favoriteSongs": "Minhas músicas favoritas no momento"
+          }
+        },
+        "bio": {
+          "title": "Olá, prazer em conhecê-lo!",
+          "content": {
+            "paragraphs": {
+              "0": "<p>Sempre fui fascinado pela tecnologia e seu poder de moldar o mundo ao nosso redor. Desde jovem, me vi atraído pelas complexidades da codificação e desenvolvimento web, passando inúmeras horas experimentando diferentes linguagens de programação e estruturas. O que começou como um hobby rapidamente se transformou em uma paixão, levando-me a seguir uma carreira no desenvolvimento front-end.</p>",
+              "1": "<p>Construindo minhas habilidades e conhecimentos, atualmente estou trabalhando como desenvolvedor front-end na <a target='_blank' rel='noopener noreferrer' href='https://pagtel.com.br'>Pagtel</a>, onde estou ativamente envolvido na criação de interfaces intuitivas e amigáveis ao usuário para uma variedade de produtos digitais para muitos clientes como <a target='_blank' rel='noopener noreferrer' href='https://www.uber.com/br/pt-br/'>Uber</a>, <a target='_blank' rel='noopener noreferrer' href='https://www.correioscelular.com.br/'>Correios</a>, <a target='_blank' rel='noopener noreferrer' href='https://www.bancobmg.com.br/'>Banco BMG</a>, <a target='_blank' rel='noopener noreferrer' href='https://loja.algartelecom.com.br/'>Algar</a> e <a target='_blank' rel='noopener noreferrer' href='https://www.carrefour.com.br/'>Carrefour</a>. Minha função me permite combinar minha mentalidade criativa com minha experiência técnica, permitindo-me criar experiências envolventes e visualmente atraentes que ressoam com os usuários.</p>"
+            },
+            "images": {
+              "0": {
+                "src": "/images/about/code-in-the-dark.jpg",
+                "alt": "Erick Nathan, um menino com cabelos cacheados, vestindo um moletom azul-escuro, na frente de um computador com códigos de programação e muitos espectadores ao seu redor, a fotografia contém um tom azulado das luzes do evento no escuro",
+                "legend": "Eu competindo no <a target='_blank' rel='noopener noreferrer' href='http://codeinthedark.com.br/'>Code In The Dark Brasil</a> (jul. 2023)"
+              }
+            }
+          }
+        },
+        "academic": {
+          "title": "Academic background",
+          "content": {
+            "paragraphs": {
+              "0": "I have a technical degree in systems development at <a target='_blank' rel='noopener noreferrer' href='https://jandira.sp.senai.br/'>Senai Jandira</a>. My time at the organization allowed me to delve deeper into the theoretical aspects of programming, algorithms, and data structures, which laid a strong foundation for my career. I also had the opportunity to collaborate on exciting projects, such as my final project called Grati, a feedback management platform that allows organizations to adopt a feedback culture."
+            }
+          }
+        }
+      }
+    }
+  },
+  "config": {
+    "userData": {
+      "name": "Erick Nathan",
+      "role": "Desenvolvedor Front-end",
+      "location": "São Paulo, Brasil",
+      "interests": "Ouvir música, Viajar, Jogar videogames e Assistir Live Coding",
+      "pronouns": "ele/dele",
+      "avatarUrl": "https://github.com/ericknathan.png",
+      "avatarAltDescription": "Um menino com cabelos cacheados sorrindo, vestindo roupa formal com uma gravata no tom ciano.",
+      "githubUrl": "https://github.com/ericknathan",
+      "linkedinUrl": "https://www.linkedin.com/in/ericknathan",
+      "cvUrl": "/documents/Erick Nathan - Desenvolvedor Frontend.pdf",
+      "company": {
+        "name": "Pagtel",
+        "url": "https://pagtel.com.br"
+      },
+      "languages": {
+        "english": {
+          "name": "Inglês",
+          "proficiency": "Proficiência profissional"
+        },
+        "portuguese": {
+          "name": "Português",
+          "proficiency": "Nativo"
+        }
+      }
+    },
+    "roles": {
+      "Pagtel": "Desenvolvedor Front-end",
+      "Senai": "Estudante em Desenvolvimento de Sistemas",
+      "FIAP": "Estudante em Análise e Desenvolvimento de Sistemas"
+    },
+    "projects": {
+      "easy-aluga": {
+        "shortDescription": "Uma aplicação white-label para alugar qualquer veículo, desenvolvida durante o Desafio BRQ Easy Carros na FIAP."
+      },
+      "stone-currency": {
+        "shortDescription": "Aplicação web desenvolvida para facilitar a conversão de valores monetários de dólares americanos para reais brasileiros."
+      },
+      "3d-product-preview": {
+        "shortDescription": "Um visualizador simples de produtos de sofá 3D feito com Svelte e Threlte, uma biblioteca ThreeJS para Svelte."
+      },
+      "devify": {
+        "shortDescription": "Aplicação web para exibir a música atualmente reproduzida em minha conta do Spotify."
+      },
+      "codeleap-network": {
+        "shortDescription": "CodeLeap Network é uma aplicação de rede social desenvolvida para gerenciar postagens em uma API fornecida pela CodeLeap."
+      },
+      "igtimer": {
+        "shortDescription": "Um projeto que permite ao usuário cronometrar suas tarefas diárias, além de permitir que ele veja um histórico de todas as tarefas já realizadas."
+      },
+      "four-dev": {
+        "shortDescription": "Uma aplicação de rede social para registrar questionários, incluindo funcionalidades para sintetizar conhecimentos em React com Typescript e Hooks, usando TDD, Arquitetura Limpa, Padrões de Projeto e SOLID."
+      },
+      "foodie": {
+        "shortDescription": "Uma página de destino desenvolvida com HTML e CSS durante as aulas de Linguagem de Marcação no Senai."
+      },
+      "tic-tac-toe": {
+        "shortDescription": "Um simples jogo da velha desenvolvido com HTML, CSS e Javascript durante as aulas de Programação Front-End da Web no Senai."
+      }
+    },
+    "navbarSections": {
+      "home": {
+        "title": "",
+        "buttons": {
+          "home": "Início"
+        }
+      },
+      "me": {
+        "title": "Eu",
+        "buttons": {
+          "aboutMe": "Sobre mim",
+          "blog": "Blog",
+          "projects": "Projetos",
+          "setup": "Meu setup"
+        }
+      },
+      "socials": {
+        "title": "Redes sociais"
+      },
+      "spotify": {
+        "playing": "Atualmente tocando %TITLE% de %ARTIST%",
+        "nothing": "Nada tocando agora"
+      }
+    }
+  },
+  "components": {
+    "projectCard": {
+      "buttons": {
+        "preview": "Visitar",
+        "source": "Código-fonte"
+      }
+    }
+  }
+}

@@ -2,12 +2,13 @@ import { IconName } from "@/components/ui/icon";
 import { socials } from "./user";
 
 export type NavbarSectionModel = {
-  title?: string;
+  name: string;
   buttons: {
     icon: IconName;
-    label: string;
+    name: string;
     href: string;
     disabled?: boolean;
+    label?: string;
   }[];
 };
 
@@ -16,47 +17,49 @@ export const websiteSourceCode =
 
 export const navbarSections: NavbarSectionModel[] = [
   {
+    name: "home",
     buttons: [
       {
         icon: "house",
-        label: "Home",
+        name: "home",
         href: "/",
       },
     ],
   },
   {
-    title: "Me",
+    name: "me",
     buttons: [
       {
         icon: "bookOpen",
-        label: "About me",
+        name: "aboutMe",
         href: "/about",
       },
       {
         icon: "newspaper",
-        label: "Blog",
+        name: "blog",
         href: "/blog",
         disabled: true,
       },
       {
         icon: "folderDot",
-        label: "Projects",
+        name: "projects",
         href: "/projects",
       },
       {
         icon: "laptop",
-        label: "Setup",
+        name: "setup",
         href: "/setup",
         disabled: true,
       },
     ],
   },
   {
-    title: "Socials",
+    name: "socials",
     buttons: socials.map((social) => ({
       icon: social.icon,
-      label: social.name,
+      name: social.name,
       href: social.href,
+      label: social.name
     })),
   },
 ];

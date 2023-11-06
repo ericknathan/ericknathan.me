@@ -1,15 +1,22 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-import { userData } from "@/config";
 import { cn } from "@/lib/utils";
 
-export function SidebarIdentification() {
-  const pathname = usePathname();
+interface SidebarIdentificationProps {
+  pathname: string;
+  messages: {
+    name: string;
+    role: string;
+    avatarUrl: string;
+    avatarAltDescription: string;
+  }
+}
 
+export function SidebarIdentification({
+  pathname,
+  messages
+}: SidebarIdentificationProps) {
   return (
     <Link
       href="/"
@@ -23,15 +30,15 @@ export function SidebarIdentification() {
     >
       <div className="flex gap-2 items-center">
         <Image
-          src={userData.avatarUrl}
-          alt={userData.avatarAltDescription}
+          src={messages.avatarUrl}
+          alt={messages.avatarAltDescription}
           className="rounded-md"
           width={36}
           height={36}
         />
         <div className="flex flex-col justify-between h-full">
-          <p className="text-sm font-medium">{userData.name}</p>
-          <p className="text-xs text-muted-foreground">{userData.role}</p>
+          <p className="text-sm font-medium">{messages.name}</p>
+          <p className="text-xs text-muted-foreground">{messages.role}</p>
         </div>
       </div>
     </Link>

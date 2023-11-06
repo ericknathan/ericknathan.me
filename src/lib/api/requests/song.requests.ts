@@ -20,6 +20,7 @@ export const songRequests = {
         .map((song: RawSongModel["item"]) =>
           parseSong({
             item: song,
+            is_playing: false,
           })
         );
 
