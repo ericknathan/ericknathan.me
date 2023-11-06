@@ -23,15 +23,15 @@ export function WorkExperienceCard({ data }: WorkExperienceCardProps) {
           className="rounded-full aspect-square opacity-90"
         />
       </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
+      <dl className="flex flex-col gap-x-2 w-full">
         <dt className="sr-only">{t("company")}</dt>
         <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
           {company}
         </dd>
         <dt className="sr-only">{t("role")}</dt>
-        <dd className="text-xs text-muted-foreground max-w-[11rem]">{role}</dd>
+        <dd className="text-xs text-accent-foreground/80">{role}</dd>
         <dt className="sr-only">{t("date")}</dt>
-        <dd className="xs:ml-auto text-xs text-muted-foreground flex">
+        <dd className="text-xs text-muted-foreground flex">
           <time className="mt-auto">
             {new Date(startDate).getFullYear()} -{" "}
             {!endDate ? t("present") : new Date(endDate).getFullYear()}
