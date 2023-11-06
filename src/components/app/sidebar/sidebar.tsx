@@ -1,18 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
 import { usePathname } from "@/navigation";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
-import { cn } from "@/lib/utils";
 import { navbarSections } from "@/config";
+import { cn } from "@/lib/utils";
 
 import { Button, Icon } from "@/components/ui";
 import { SettingsToggle } from "../settings-toggle";
 import { SidebarButton } from "./sidebar-button";
 import { SidebarIdentification } from "./sidebar-identification";
 import { SidebarSpotifyIndicator } from "./sidebar-spotify-indicator";
-
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -24,7 +23,9 @@ export function Sidebar() {
     title: t(`${section.name}.title` as any),
     buttons: section.buttons.map((button) => ({
       ...button,
-      label: !button.label ? t(`${section.name}.buttons.${button.name}` as any) : button.label
+      label: !button.label
+        ? t(`${section.name}.buttons.${button.name}` as any)
+        : button.label,
     })),
   }));
 
@@ -33,11 +34,14 @@ export function Sidebar() {
   }
 
   useEffect(() => {
-    document.addEventListener("keydown", (event) => {
+    function keyboardEvents(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setIsMenuOpen(false);
       }
-    });
+    }
+
+    document.addEventListener("keydown", keyboardEvents);
+    return () => document.removeEventListener("keydown", keyboardEvents);
   }, []);
 
   useEffect(() => {
@@ -91,8 +95,10 @@ export function Sidebar() {
       </div>
       <div
         className={cn(
-          "bg-background/50 w-screen h-screen backdrop-blur-sm fixed z-20 transition-all duration-500 md:transition-none opacity-0 pointer-events-none",
-          isMenuOpen && "max-md:opacity-100 max-md:pointer-events-auto"
+          "bg-background/50 w-screen h-[calc(30vh_-_4rem)] backdrop-blur-sm fixed bottom-0 z-20 transition-all duration-500 md:transition-none",
+          isMenuOpen
+            ? "max-md:opacity-100 max-md:pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         )}
         onClick={handleToggleMenu}
       />
