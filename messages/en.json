@@ -188,6 +188,16 @@
           "dark": "Escuro"
         }
       },
+      "colorScheme": {
+        "title": "Color Scheme",
+        "buttons": {
+          "blue": "Blue",
+          "green": "Green",
+          "orange": "Orange",
+          "zinc": "Zinc",
+          "rose": "Rosa"
+        }
+      },
       "language": {
         "title": "Idioma"
       }

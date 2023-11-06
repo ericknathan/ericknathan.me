@@ -4,3 +4,4 @@ export * from "./projects";
 export * from "./site";
 export * from "./user";
 export * from "./stack";
+export * from "./theme";
