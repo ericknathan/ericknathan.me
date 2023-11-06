@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -10,18 +11,10 @@ import { SongModel } from "@/models";
 
 import { Icon } from "@/components/ui";
 
-interface SidebarSpotifyIndicatorProps {
-  messages: {
-    playing: string;
-    nothing: string;
-  };
-}
-
-export function SidebarSpotifyIndicator({
-  messages,
-}: SidebarSpotifyIndicatorProps) {
+export function SidebarSpotifyIndicator() {
   const [songData, setSongData] = useState<SongModel | undefined>();
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("components.spotifyIndicator");
 
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -88,10 +81,10 @@ export function SidebarSpotifyIndicator({
       )}
       aria-label={
         songData?.is_playing
-          ? messages.playing
+          ? t("playing")
               .replace("%TITLE%", songData.title)
               .replace("%ARTIST%", songData.artist)
-          : messages.nothing
+          : t("nothing")
       }
       onMouseEnter={playPreview}
       onMouseLeave={stopPreview}
@@ -156,7 +149,7 @@ export function SidebarSpotifyIndicator({
       ) : songData?.is_playing === false ? (
         <>
           <Icon.spotify size={24} />
-          <p className="text-sm font-medium">{messages.nothing}</p>
+          <p className="text-sm font-medium">{t("nothing")}</p>
         </>
       ) : null}
     </motion.a>

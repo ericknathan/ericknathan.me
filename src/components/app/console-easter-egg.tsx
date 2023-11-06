@@ -1,31 +1,37 @@
 "use client";
 
 import { userData, websiteSourceCode } from "@/config";
+import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 
 export function ConsoleEasterEgg() {
+  const t = useTranslations("components.consoleEasterEgg");
+
   useEffect(() => {
-    if (process.env.NODE_ENV !== "development") {
+    if (process.env.NODE_ENV === "development") {
+      const now = new Date().getHours();
+      const time: 'day' | 'afternoon' | 'night' = now < 12 ? 'day' : now < 18 ? 'afternoon' : 'night';
+
       console.log(" ");
       console.log(
-        "%c Hey, you here? 👀",
+        `%c ${t("title")}`,
         "font-size: 2rem; font-weight: bold;"
       );
-      console.log(`💻 Check out website source code at ${websiteSourceCode}`);
+      console.log(t("source", { url: websiteSourceCode }));
       console.log(
-        "How about giving me an opportunity to work with you or at your company? 👉👈"
+        t("job")
       );
       console.log(
-        `If you're interested, please contact me at ${userData.linkedinUrl}`
+        t("contact", { url: userData.linkedinUrl })
       );
-      console.log("Have a great day! 👋😁");
+      console.log(t("thanks", { time }));
       console.log(" ");
 
       console.log = () => {};
       console.warn = () => {};
       console.error = () => {};
     }
-  }, []);
+  }, [t]);
 
   return null;
 }

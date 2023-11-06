@@ -6,10 +6,20 @@ import { projectsList } from "@/config";
 import { FadeIn } from "@/components/animation";
 import { Icon } from "@/components/ui";
 import { ProjectCard } from "./components";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { Locale } from "@/navigation";
 
-export default function ProjectsPage() {
+interface ProjectsPageProps {
+  params: {
+    locale: Locale;
+  };
+}
+
+export default function ProjectsPage({ params: { locale } }: ProjectsPageProps) {
   const userData = useTranslations("config.userData");
   const t = useTranslations("pages.projects");
+
+  unstable_setRequestLocale(locale);
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">

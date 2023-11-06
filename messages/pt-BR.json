@@ -146,10 +146,6 @@
       },
       "socials": {
         "title": "Redes sociais"
-      },
-      "spotify": {
-        "playing": "Atualmente tocando %TITLE% de %ARTIST%",
-        "nothing": "Nada tocando agora"
       }
     }
   },
@@ -159,6 +155,30 @@
         "preview": "Visitar",
         "source": "Código-fonte"
       }
+    },
+    "settingsToggle": {
+      "name": "Configurações",
+      "theme": {
+        "title": "Tema",
+        "buttons": {
+          "light": "Claro",
+          "dark": "Escuro"
+        }
+      },
+      "language": {
+        "title": "Idioma"
+      }
+    },
+    "spotifyIndicator": {
+      "playing": "Atualmente tocando %TITLE% de %ARTIST%",
+      "nothing": "Nada tocando agora"
+    },
+    "consoleEasterEgg": {
+      "title": "Ei, você por aqui? 👀",
+      "source": "💻 Você pode visualizar o código-fonte deste site em {url}",
+      "job": "Que tal me dar a oportunidade de trabalhar com você ou na sua empresa? 👉👈",
+      "contact": "Se você estiver interessado, entre em contato comigo em {url}",
+      "thanks": "Tenha {time, select, day {um bom dia} afternoon {uma boa tarde} other {uma boa noite}} ! 👋😁"
     }
   }
 }

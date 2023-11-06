@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,6 +7,7 @@ import { experiencesList, projectsList } from "@/config";
 
 import { FadeIn } from "@/components/animation";
 import { Button, Icon } from "@/components/ui";
+import { Locale } from "@/navigation";
 import {
   ProjectCard,
   SectionTitle,
@@ -14,9 +16,17 @@ import {
 } from "./components";
 import { PostsList } from "./sections/post-list";
 
-export default function Home() {
+interface HomePageProps {
+  params: {
+    locale: Locale;
+  };
+}
+
+export default function HomePage({ params: { locale } }: HomePageProps) {
   const userData = useTranslations("config.userData");
   const t = useTranslations("pages.home");
+
+  unstable_setRequestLocale(locale);
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">
@@ -114,7 +124,8 @@ export default function Home() {
                 target="_blank"
                 prefetch={false}
               >
-                {t("experiences.downloadCv")} <Icon.download size={16} className="ml-2" />
+                {t("experiences.downloadCv")}{" "}
+                <Icon.download size={16} className="ml-2" />
               </Link>
             </Button>
           </FadeIn>

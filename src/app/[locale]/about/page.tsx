@@ -1,22 +1,25 @@
 import { createTranslator, useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 import { FadeIn } from "@/components/animation";
+import { Locale, locales } from "@/navigation";
 import { Sections } from "./sections";
-import { locales } from "@/navigation";
-import { notFound } from "next/navigation";
 
 interface AboutPageProps {
   params: {
-    locale: typeof locales[number];
-  }
+    locale: Locale;
+  };
 }
 
 export default function AboutPage({ params: { locale } }: AboutPageProps) {
   const t = useTranslations("pages.about");
 
-  if(!locales.includes(locale)) {
+  if (!locales.includes(locale)) {
     return notFound();
   }
+
+  unstable_setRequestLocale(locale);
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">
@@ -28,9 +31,7 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
   );
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: AboutPageProps) {
+export async function generateMetadata({ params: { locale } }: AboutPageProps) {
   const messages = (await import(`../../../../messages/${locale}.json`))
     .default;
   const t = createTranslator({ locale, messages });

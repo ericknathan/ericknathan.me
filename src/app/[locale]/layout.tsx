@@ -8,7 +8,8 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
 import { ConsoleEasterEgg, ScrollToTop, Sidebar } from "@/components/app";
-import { ThemeProvider } from "@/contexts";
+import { InternalizationProvider, ThemeProvider } from "@/contexts";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 const locales = ["en", "pt-BR"];
@@ -45,6 +46,8 @@ export default function RootLayout({
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
 
+  unstable_setRequestLocale(locale);
+
   return (
     <html lang={locale}>
       <body
@@ -53,16 +56,22 @@ export default function RootLayout({
           "relative flex flex-col md:flex-row [&:has([data-sidebar-open=true])]:overflow-hidden"
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Sidebar />
-          <main className="relative w-full mt-10 md:mt-0">{children}</main>
-          <ScrollToTop />
-        </ThemeProvider>
+        <InternalizationProvider locale={locale}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Sidebar />
+            <main className="relative w-full mt-10 md:mt-0">{children}</main>
+            <ScrollToTop />
+          </ThemeProvider>
 
-        <Analytics />
+          <Analytics />
 
-        <ConsoleEasterEgg />
+          <ConsoleEasterEgg />
+        </InternalizationProvider>
       </body>
     </html>
   );
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
 }
