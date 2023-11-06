@@ -86,7 +86,7 @@ export function Sidebar() {
 
         <div className="flex justify-between items-center px-3 gap-3 relative">
           <SidebarSpotifyIndicator />
-          <SettingsToggle onClose={handleToggleMenu} />
+          <SettingsToggle onClose={() => setIsMenuOpen(false)} />
         </div>
       </div>
       <div
