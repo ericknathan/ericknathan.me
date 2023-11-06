@@ -66,7 +66,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       const resolved = getSystemTheme(e);
       handleChangeTheme(resolved, colorScheme);
     },
-    [theme, colorScheme]
+    [colorScheme]
   );
 
   useEffect(() => {
@@ -80,12 +80,13 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   useEffect(() => {
     const handleStorage = (e: StorageEvent) => {
-      if (e.key !== localStorageKeys.theme || e.key !== localStorageKeys.colorScheme) {
-        return;
+      if(e.key === localStorageKeys.theme) {
+        const theme = e.newValue || getSystemTheme();
+        setTheme(theme);
+      } else if(e.key === localStorageKeys.colorScheme) {
+        const colorScheme = e.newValue || "blue";
+        setColorScheme(colorScheme);
       }
-
-      const theme = e.newValue || getSystemTheme();
-      setTheme(theme);
     };
 
     window.addEventListener("storage", handleStorage);
