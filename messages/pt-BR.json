@@ -26,45 +26,17 @@
       "description": "Aqui estão alguns de meus projetos que desenvolvi, você pode encontra mais em meu <github>Github</github>"
     },
     "about": {
-      "title": "Sobre mim",
-      "sections": {
-        "tldr": {
-          "topics": {
-            "location": "Localização",
-            "age": "Idade",
-            "occupation": "Ocupação",
-            "stack": "Minha stack principal",
-            "languages": "Idiomas",
-            "interests": "Interesses",
-            "pronouns": "Pronomes",
-            "favoriteSongs": "Minhas músicas favoritas no momento"
-          }
-        },
-        "bio": {
-          "title": "Olá, prazer em conhecê-lo!",
-          "content": {
-            "paragraphs": {
-              "0": "<p>Sempre fui fascinado pela tecnologia e seu poder de moldar o mundo ao nosso redor. Desde jovem, me vi atraído pelas complexidades da codificação e desenvolvimento web, passando inúmeras horas experimentando diferentes linguagens de programação e estruturas. O que começou como um hobby rapidamente se transformou em uma paixão, levando-me a seguir uma carreira no desenvolvimento front-end.</p>",
-              "1": "<p>Construindo minhas habilidades e conhecimentos, atualmente estou trabalhando como desenvolvedor front-end na <a target='_blank' rel='noopener noreferrer' href='https://pagtel.com.br'>Pagtel</a>, onde estou ativamente envolvido na criação de interfaces intuitivas e amigáveis ao usuário para uma variedade de produtos digitais para muitos clientes como <a target='_blank' rel='noopener noreferrer' href='https://www.uber.com/br/pt-br/'>Uber</a>, <a target='_blank' rel='noopener noreferrer' href='https://www.correioscelular.com.br/'>Correios</a>, <a target='_blank' rel='noopener noreferrer' href='https://www.bancobmg.com.br/'>Banco BMG</a>, <a target='_blank' rel='noopener noreferrer' href='https://loja.algartelecom.com.br/'>Algar</a> e <a target='_blank' rel='noopener noreferrer' href='https://www.carrefour.com.br/'>Carrefour</a>. Minha função me permite combinar minha mentalidade criativa com minha experiência técnica, permitindo-me criar experiências envolventes e visualmente atraentes que ressoam com os usuários.</p>"
-            },
-            "images": {
-              "0": {
-                "src": "/images/about/code-in-the-dark.jpg",
-                "alt": "Erick Nathan, um menino com cabelos cacheados, vestindo um moletom azul-escuro, na frente de um computador com códigos de programação e muitos espectadores ao seu redor, a fotografia contém um tom azulado das luzes do evento no escuro",
-                "legend": "Eu competindo no <a target='_blank' rel='noopener noreferrer' href='http://codeinthedark.com.br/'>Code In The Dark Brasil</a> (jul. 2023)"
-              }
-            }
-          }
-        },
-        "academic": {
-          "title": "Academic background",
-          "content": {
-            "paragraphs": {
-              "0": "I have a technical degree in systems development at <a target='_blank' rel='noopener noreferrer' href='https://jandira.sp.senai.br/'>Senai Jandira</a>. My time at the organization allowed me to delve deeper into the theoretical aspects of programming, algorithms, and data structures, which laid a strong foundation for my career. I also had the opportunity to collaborate on exciting projects, such as my final project called Grati, a feedback management platform that allows organizations to adopt a feedback culture."
-            }
-          }
-        }
-      }
+      "title": "Sobre mim"
+    },
+    "404": {
+      "image": "/images/gifs/mario-dance.gif",
+      "alt": "Mario Bros, um personagem de macacão azul, boné vermelho e um bigode característico, dançando.",
+      "message": "Ops! Parece que você está perdido."
+    },
+    "503": {
+      "image": "/images/gifs/steve-building.gif",
+      "alt": "Steve, um personagem humano de aparência quadrada, consistente com a estética e o estilo artístico do Minecraft, veste uma camisa azul clara com jeans, tem olhos azuis claros e cabelos castanhos escuros, construindo uma casa.",
+      "message": "Esta página está temporariamente indisponível."
     }
   },
   "config": {

@@ -26,68 +26,17 @@
       "description": "Here are some of the projects I have worked on, you can find more on my"
     },
     "about": {
-      "title": "About me",
-      "sections": {
-        "tldr": {
-          "topics": {
-            "location": "Location",
-            "age": "Age",
-            "occupation": "Occupation",
-            "stack": "Main tech stack",
-            "languages": "Languages",
-            "interests": "Interests",
-            "pronouns": "Pronouns",
-            "favoriteSongs": "My favorite songs in this moment"
-          }
-        },
-        "bio": {
-          "title": "Hi, nice to meet you!",
-          "content": {
-            "paragraphs": {
-              "0": "I've always been fascinated by technology and its power to shape the world around us. From a young age, I found myself drawn to the intricacies of coding and web development, spending countless hours experimenting with different programming languages and frameworks. What started as a hobby quickly evolved into a passion, leading me to pursue a career in front-end development.",
-              "1": "<p>Building on my skills and knowledge, I am currently thriving as a Front-end developer at <a target='_blank' rel='noopener noreferrer' href='https://pagtel.com.br'>Pagtel</a>, where I am actively involved in creating intuitive and user-friendly interfaces for a variety of digital products for many clients like <a target='_blank' rel='noopener noreferrer' href='https://www.uber.com/br/pt-br/'>Uber</a>, <a target='_blank' rel='noopener noreferrer' href='https://www.correioscelular.com.br/'>Correios</a>, <a target='_blank' rel='noopener noreferrer' href='https://www.bancobmg.com.br/'>BMG Bank</a>, <a target='_blank' rel='noopener noreferrer' href='https://loja.algartelecom.com.br/'>Algar</a> and <a target='_blank' rel='noopener noreferrer' href='https://www.carrefour.com.br/'>Carrefour</a>. My role allows me to combine my creative mindset with my technical expertise, enabling me to craft engaging and visually appealing experiences that resonate with users.</p>"
-            },
-            "images": {
-              "0": {
-                "src": "/images/about/code-in-the-dark.jpg",
-                "alt": "Erick Nathan, a boy with curly hair, wearing a dark blue sweatshirt, in front of a computer with programming codes and a lot of spectators around him, the photograph contains a bluish tone from the lights of the event in the dark",
-                "legend": "Me competing in <a target='_blank' rel='noopener noreferrer' href='http://codeinthedark.com.br/'>Code In The Dark Brazil</a> (jul. 2023)"
-              }
-            }
-          }
-        },
-        "academic": {
-          "title": "Academic background",
-          "content": {
-            "paragraphs": {
-              "0": "I have a technical degree in systems development at <a target='_blank' rel='noopener noreferrer' href='https://jandira.sp.senai.br/'>Senai Jandira</a>. My time at the organization allowed me to delve deeper into the theoretical aspects of programming, algorithms, and data structures, which laid a strong foundation for my career. I also had the opportunity to collaborate on exciting projects, such as my final project called Grati, a feedback management platform that allows organizations to adopt a feedback culture.",
-              "1": "<p>Continuing my studies, I am currently pursuing a degree in Analysis and Development of Systems at <a target='_blank' rel='noopener noreferrer' href='https://www.fiap.com.br'>FIAP</a>. During my first year, I collaborated on an impressive project named Easy Aluga, created for the <a href='https://www.brq.com/'>BRQ Digital Solutions</a> challenge in partnership with <a href='https://easycarros.com/'>Easy Carros</a>, focusing on vehicle rental services. This experience further enriched my practical understanding of software development and its application in real-world business scenarios.</p>"
-            },
-            "images": {
-              "0": {
-                "src": "/images/about/senai.png",
-                "alt": "Several students and teacher wearing formal clothes.",
-                "legend": "Graduating students of the systems development class at <a href='https://jandira.sp.senai.br/' target='_blank' rel='noopener noreferrer'>Senai Jandira</a> during their graduation day. (jun. 2022)"
-              },
-              "1": {
-                "src": "/images/projects/grati.png",
-                "alt": "Preview of Grati project",
-                "legend": "Grati's screenshots, a feedback management platform that allows organizations to adopt a feedback culture. (jun. 2022)"
-              },
-              "2": {
-                "src": "",
-                "alt": "",
-                "legend": ""
-              },
-              "3": {
-                "src": "",
-                "alt": "",
-                "legend": ""
-              }
-            }
-          }
-        }
-      }
+      "title": "About me"
+    },
+    "404": {
+      "image": "/images/gifs/mario-dance.gif",
+      "alt": "Mario Bros, a character with his blue overalls, red cap, and trademark moustache, dancing.",
+      "message": "This was probably a mistake."
+    },
+    "503": {
+      "image": "/images/gifs/steve-building.gif",
+      "alt": "Steve, a human character with a blocky appearance, which is consistent with the aesthetic and art style of Minecraft, wears a light blue shirt with blue jeans, and has light blue eyes, and dark brown hair, building a house.",
+      "message": "This page is temporarily unavailable."
     }
   },
   "config": {
