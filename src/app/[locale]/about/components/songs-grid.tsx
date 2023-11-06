@@ -11,7 +11,7 @@ export async function SongsGrid() {
           src={`https://open.spotify.com/embed/track/${song.id}?utm_source=generator`}
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="eager"
+          loading="lazy"
           key={song.id}
           width={580}
           height={80}

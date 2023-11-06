@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -10,7 +9,7 @@ import { SettingsToggle } from "../settings-toggle";
 import { SidebarButton, SidebarButtonProps } from "./sidebar-button";
 import { SidebarIdentification } from "./sidebar-identification";
 import { SidebarSpotifyIndicator } from "./sidebar-spotify-indicator";
-import { SongModel } from "@/models";
+import { usePathname } from "@/navigation";
 
 interface SidebarControllerProps {
   sections: {

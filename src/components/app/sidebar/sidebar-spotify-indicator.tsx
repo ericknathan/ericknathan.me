@@ -64,8 +64,6 @@ export function SidebarSpotifyIndicator({
     setIsPlayingAudio(false);
   }
 
-  console.log({ songData });
-
   return (
     <motion.a
       href={songData?.song_url}

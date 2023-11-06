@@ -1,4 +1,9 @@
 import { FadeIn } from "@/components/animation";
+import { locales } from "@/navigation";
+import { readdirSync } from "fs";
+import { useLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import path from "path";
 
 const sectionNames = [
   "tl-dr",
@@ -12,8 +17,12 @@ const sectionNames = [
 export async function Sections({ locale }: { locale: string }) {
   const sections = await Promise.all(
     sectionNames.map((name) => {
-      console.log(name)
-      return require(`./${locale}/${name}.tsx`)
+      try {
+        return require(`./${locale}/${name}.tsx`)
+      } catch(error) {
+        console.error(error);
+        return { default: () => null };
+      }
     })
   );
 
