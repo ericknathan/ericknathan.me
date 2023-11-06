@@ -1,7 +1,7 @@
 "use client";
 
 import { MotionConfig } from "framer-motion";
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 import { disableAnimation, getSystemTheme } from "@/lib/utils";
 import { ColorScheme, Theme } from "@/config";
