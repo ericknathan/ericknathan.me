@@ -30,10 +30,12 @@ export function disableAnimation() {
 export function getSystemTheme(e?: MediaQueryList | MediaQueryListEvent) {
   const isServer = typeof window === "undefined";
 
-  if(isServer) return 'light';
+  if(isServer) return 'dark';
 
   if (!e) e = window.matchMedia("(prefers-color-scheme: dark)");
   const isDark = e.matches;
   const systemTheme = isDark ? "dark" : "light";
   return systemTheme;
 }
+
+export const MEDIA = "(prefers-color-scheme: dark)";

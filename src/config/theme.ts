@@ -1,6 +1,6 @@
 import { IconName } from "@/components/ui";
 
-export const themes = ["dark", "lighht"];
+export const themes = ["dark", "light"];
 export const colors = ["blue", "green", "orange", "zinc", "rose"];
 
 export type Theme = (typeof themes)[number];
