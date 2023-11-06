@@ -189,6 +189,12 @@
       "job": "Que tal me dar a oportunidade de trabalhar com você ou na sua empresa? 👉👈",
       "contact": "Se você estiver interessado, entre em contato comigo em {url}",
       "thanks": "Tenha {time, select, day {um bom dia} afternoon {uma boa tarde} other {uma boa noite}} ! 👋😁"
+    },
+    "experienceCard": {
+      "company": "Empresa",
+      "role": "Cargo",
+      "date": "Data",
+      "present": "Atualmente"
     }
   }
 }

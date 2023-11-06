@@ -10,6 +10,7 @@ interface WorkExperienceCardProps {
 export function WorkExperienceCard({ data }: WorkExperienceCardProps) {
   const { company, startDate, endDate, image } = data;
   const role = useTranslations("config")(`roles.${company}` as any);
+  const t = useTranslations("components.experienceCard")
 
   return (
     <div className="flex gap-4">
@@ -23,17 +24,17 @@ export function WorkExperienceCard({ data }: WorkExperienceCardProps) {
         />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
+        <dt className="sr-only">{t("company")}</dt>
         <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
           {company}
         </dd>
-        <dt className="sr-only">Role</dt>
+        <dt className="sr-only">{t("role")}</dt>
         <dd className="text-xs text-muted-foreground max-w-[11rem]">{role}</dd>
-        <dt className="sr-only">Date</dt>
+        <dt className="sr-only">{t("date")}</dt>
         <dd className="xs:ml-auto text-xs text-muted-foreground flex">
           <time className="mt-auto">
             {new Date(startDate).getFullYear()} -{" "}
-            {!endDate ? "Present" : new Date(endDate).getFullYear()}
+            {!endDate ? t("present") : new Date(endDate).getFullYear()}
           </time>
         </dd>
       </dl>
