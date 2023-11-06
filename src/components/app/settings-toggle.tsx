@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import {
   ColorScheme,
@@ -21,6 +21,7 @@ interface SettingsToggleProps {
 
 export function SettingsToggle({ onClose }: SettingsToggleProps) {
   const { setTheme, theme, setColorScheme, colorScheme } = useTheme();
+  const currentlocale = useLocale();
 
   const pathname = usePathname();
   const t = useTranslations("components.settingsToggle");
@@ -81,7 +82,7 @@ export function SettingsToggle({ onClose }: SettingsToggleProps) {
           {t("language.title")}
         </DropdownMenu.Label>
         {appLocales.map(({ label: name, name: locale, icon: iconName }) => (
-          <DropdownMenu.Item asChild key={locale}>
+          <DropdownMenu.Item asChild key={locale} checked={locale === currentlocale}>
             <Link href={pathname} locale={locale}>
               <DynamicIcon name={iconName} className="rounded mr-2 w-4 h-4" />{" "}
               {name}
