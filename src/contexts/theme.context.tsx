@@ -1,16 +1,10 @@
 "use client";
 
 import { MotionConfig } from "framer-motion";
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-import { ColorScheme, Theme } from "@/config";
-import { MEDIA, disableAnimation, getSystemTheme } from "@/lib/utils";
+import { ColorScheme, Theme, colors, themes } from "@/config";
+import { disableAnimation, getSystemTheme } from "@/lib/utils";
 import { ThemeScript } from "../lib/scripts/theme.script";
 
 interface ThemeContextProps {
@@ -49,49 +43,16 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       "blue"
   );
 
-  function handleChangeTheme(theme: Theme, colorScheme: ColorScheme) {
+  useEffect(() => {
     localStorage.setItem(localStorageKeys.theme, theme);
     localStorage.setItem(localStorageKeys.colorScheme, colorScheme);
 
-    document.documentElement.className = `${theme} ${colorScheme}`;
+    const attrs = [...themes, ...colors];
+    document.documentElement.classList.remove(...attrs);
+    document.documentElement.classList.add(theme, colorScheme);
+
     return disableAnimation();
-  }
-
-  useEffect(() => {
-    return handleChangeTheme(theme, colorScheme);
   }, [theme, colorScheme]);
-
-  const handleMediaQuery = useCallback(
-    (e: MediaQueryListEvent | MediaQueryList) => {
-      const resolved = getSystemTheme(e);
-      handleChangeTheme(resolved, colorScheme);
-    },
-    [colorScheme]
-  );
-
-  useEffect(() => {
-    const media = window.matchMedia(MEDIA);
-
-    media.addListener(handleMediaQuery);
-    handleMediaQuery(media);
-
-    return () => media.removeListener(handleMediaQuery);
-  }, [handleMediaQuery]);
-
-  useEffect(() => {
-    const handleStorage = (e: StorageEvent) => {
-      if(e.key === localStorageKeys.theme) {
-        const theme = e.newValue || getSystemTheme();
-        setTheme(theme);
-      } else if(e.key === localStorageKeys.colorScheme) {
-        const colorScheme = e.newValue || "blue";
-        setColorScheme(colorScheme);
-      }
-    };
-
-    window.addEventListener("storage", handleStorage);
-    return () => window.removeEventListener("storage", handleStorage);
-  }, [setTheme]);
 
   return (
     <ThemeContext.Provider

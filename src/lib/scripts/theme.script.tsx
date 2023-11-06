@@ -2,8 +2,8 @@
 
 import { memo } from "react";
 
+import { colors, themes } from "@/config";
 import { MEDIA } from "../utils";
-import { themes } from "@/config";
 
 interface ValueObject {
   [themeName: string]: string;
@@ -43,7 +43,7 @@ export const ThemeScript = memo(
     nonce,
   }: ThemeProviderProps) => {
     const defaultSystem = defaultTheme === "system";
-    const attrs = !value ? themes : Object.values(value);
+    const attrs = !value ? [...themes, ...colors] : Object.values(value);
 
     // Code-golfing the amount of characters in the script
     const optimization = (() => {
@@ -84,8 +84,8 @@ export const ThemeScript = memo(
       let text = "";
 
       if(colorStorageKey) {
-      text += `c.add(localStorage.getItem('${colorStorageKey}'));`;
-    }
+        text += `c.add(localStorage.getItem('${colorStorageKey}'));`;
+      }
 
       // MUCH faster to set colorScheme alongside HTML attribute/class
       // as it only incurs 1 style recalculation rather than 2
