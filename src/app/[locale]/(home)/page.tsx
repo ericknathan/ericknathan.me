@@ -30,7 +30,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">
-      <div>
+      {/* <div>
         <div className="flex gap-6 items-center">
           <FadeIn className="h-24 w-24 aspect-square rounded-lg overflow-hidden">
             <Image
@@ -77,7 +77,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
           </div>
         </div>
         <TechStackBadges className="flex xs:hidden justify-center" />
-      </div>
+      </div> */}
       <FadeIn className="grid w-full gap-2 card" duration={0.5}>
         <SectionTitle
           title={t("about.title")}

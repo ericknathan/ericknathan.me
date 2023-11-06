@@ -1,7 +1,10 @@
 import { FadeIn } from "@/components/animation";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export function UnderConstructionPage() {
+  const t = useTranslations("pages.503");
+
   return (
     <FadeIn
       to="top"
@@ -9,15 +12,15 @@ export function UnderConstructionPage() {
       className="h-[calc(100dvh_-_4rem)] md:h-[100dvh] flex flex-col text-center sm:text-start sm:flex-row items-center justify-center flex-1 gap-4 px-4"
     >
       <Image
-        src="/images/gifs/steve-building.gif"
+        src={t("image")}
         height={100}
         width={100}
-        alt="Steve, a human character with a blocky appearance, which is consistent with the aesthetic and art style of Minecraft, wears a light blue shirt with blue jeans, and has light blue eyes, and dark brown hair, building a house."
+        alt={t("alt")}
         className="bg-muted rounded-lg p-1 w-28 h-28 object-cover"
       />
       <div className="grid gap-1">
         <h1 className="text-6xl font-bold">503</h1>
-        <p className="text-2xl">This page is temporarily unavailable.</p>
+        <p className="text-2xl">{t("message")}</p>
       </div>
     </FadeIn>
   );
