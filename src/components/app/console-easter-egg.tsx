@@ -8,7 +8,7 @@ export function ConsoleEasterEgg() {
   const t = useTranslations("components.consoleEasterEgg");
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "development") {
+    if (process.env.NODE_ENV !== "development") {
       const now = new Date().getHours();
       const time: 'day' | 'afternoon' | 'night' = now < 12 ? 'day' : now < 18 ? 'afternoon' : 'night';
 
