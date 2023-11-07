@@ -14,7 +14,7 @@ export const songRequests = {
       const favoriteSongs: SongModel[] = song.items
         .filter(
           (song: RawSongModel["item"]) =>
-            !wordBlocklist.some((word) => song.name.includes(word))
+            !song.explicit && !wordBlocklist.some((word) => song.name.includes(word))
         )
         .slice(0, 3)
         .map((song: RawSongModel["item"]) =>
