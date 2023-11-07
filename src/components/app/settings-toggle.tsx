@@ -47,7 +47,7 @@ export function SettingsToggle({ onClose }: SettingsToggleProps) {
           <span className="sr-only">{t("name")}</span>
         </Button>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content align="end">
+      <DropdownMenu.Content className="data-[state=closed]:!animate-none" align="end">
         <DropdownMenu.Label className="text-xs font-medium">
           {t("theme.title")}
         </DropdownMenu.Label>
