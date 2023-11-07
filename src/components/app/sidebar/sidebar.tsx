@@ -12,10 +12,12 @@ import { SettingsToggle } from "../settings-toggle";
 import { SidebarButton } from "./sidebar-button";
 import { SidebarIdentification } from "./sidebar-identification";
 import { SidebarSpotifyIndicator } from "./sidebar-spotify-indicator";
+import { useMediaQuery } from "@/hooks";
 
 export function Sidebar() {
   const pathname = usePathname();
   const t = useTranslations("config.navbarSections");
+  const matches = useMediaQuery('(max-width: 768px)');
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -47,6 +49,10 @@ export function Sidebar() {
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [matches]);
 
   return (
     <aside
