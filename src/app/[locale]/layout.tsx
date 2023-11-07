@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/themes.css";
 
-import { ConsoleEasterEgg, ScrollToTop, Sidebar } from "@/components/app";
+import { EasterEggs, ScrollToTop, Sidebar } from "@/components/app";
 import { InternalizationProvider, ThemeProvider } from "@/contexts";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -55,7 +55,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          "relative flex flex-col md:flex-row [&:has([data-sidebar-open=true])]:overflow-hidden"
+          "relative flex flex-col md:flex-row [&:has([data-sidebar-open=true])]:overflow-hidden overflow-x-hidden"
         )}
       >
         <InternalizationProvider locale={locale}>
@@ -67,7 +67,7 @@ export default function RootLayout({
 
           <Analytics />
 
-          <ConsoleEasterEgg />
+          <EasterEggs />
         </InternalizationProvider>
       </body>
     </html>
