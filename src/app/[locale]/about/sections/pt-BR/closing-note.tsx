@@ -7,10 +7,10 @@ export default function ClosingNoteSection() {
       <p>
         Obrigado por visitar meu portfólio e dedicar tempo para saber mais sobre
         minha jornada. Estou entusiasmado com as possibilidades que o futuro
-        reserva e ansioso para embarcar em novos empreendimentos que me permitam
+        reserva e ansioso para embarcar em novos desafios que me permitam
         contribuir para o cenário tecnológico em constante evolução. Não hesite
-        em entrar em contato usando as informações fornecidas. Vamos colaborar e
-        criar algo notável juntos!
+        em entrar em contato comigo, vamos colaborar e criar algo notável
+        juntos!
       </p>
       <Image
         src="/images/gifs/see-u.gif"

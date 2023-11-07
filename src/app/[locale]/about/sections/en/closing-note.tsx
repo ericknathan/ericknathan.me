@@ -8,9 +8,8 @@ export default function ClosingNoteSection() {
         Thank you for visiting my portfolio and taking the time to learn more
         about my journey. I am thrilled about the possibilities that the future
         holds and am eager to embark on new ventures that allow me to contribute
-        to the ever-evolving tech landscape. Don&apos;t hesitate to get in touch
-        using the provided contact information. Let&apos;s collaborate and
-        create something remarkable together!
+        to the ever-evolving tech landscape. Don&apos;t hesitate to get in
+        touch, Let&apos;s collaborate and create something remarkable together!
       </p>
       <Image
         src="/images/gifs/see-u.gif"
