@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { userData } from "@/config";
+import { useTranslations } from "next-intl";
 
 export default function BioSection() {
+  const userData = useTranslations("config.userData");
+
   return (
     <section id="bio">
       <h2>Hi, nice to meet you!</h2>
@@ -40,13 +43,13 @@ export default function BioSection() {
 
       <p>
         Building on my skills and knowledge, I am currently working as a{" "}
-        {userData.role} at{" "}
+        {userData("role")} at{" "}
         <Link
-          href={userData.company.url}
+          href={userData("company.url")}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {userData.company.name}
+          {userData("company.name")}
         </Link>
         , where I am actively involved in creating intuitive and user-friendly
         interfaces for a variety of digital products for many clients like{" "}

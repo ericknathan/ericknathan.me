@@ -2,7 +2,6 @@ import { IconName } from "@/components/ui";
 
 export type UserDataModel = {
   name: string;
-  role: string;
   linkedinUrl: string;
   company: {
     name: string;
@@ -46,7 +45,6 @@ export const socials: UserSocialModel[] = [
 
 export const userData: UserDataModel = {
   name: "Erick Nathan",
-  role: "Front-end developer",
   linkedinUrl: socials.find((social) => social.name === "LinkedIn")?.href || "",
   company: {
     name: "Pagtel",

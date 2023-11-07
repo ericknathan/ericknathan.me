@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { userData } from "@/config";
+import { useTranslations } from "next-intl";
 
 export default function BioSection() {
+  const userData = useTranslations("config.userData")
+
   return (
     <section id="bio">
       <h2>Olá, prazer em prazer em conhecê-lo</h2>
@@ -40,13 +42,13 @@ export default function BioSection() {
 
       <p>
         Construindo minhas habilidades e conhecimentos, atualmente estou
-        trabalhando como {userData.role} na{" "}
+        trabalhando como {userData("role")} na{" "}
         <Link
-          href={userData.company.url}
+          href={userData("company.url")}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {userData.company.name}
+          {userData("company.name")}
         </Link>
         , onde estou ativamente envolvido na criação de interfaces intuitivas e
         amigáveis ao usuário para uma variedade de produtos digitais para muitos
@@ -82,7 +84,7 @@ export default function BioSection() {
         >
           Algar
         </Link>
-        {" and "}
+        {" e "}
         <Link
           href="https://www.carrefour.com.br/"
           target="_blank"

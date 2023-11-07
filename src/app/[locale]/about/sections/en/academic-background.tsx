@@ -60,7 +60,7 @@ export default function AcademicBackgroundSection() {
         >
           FIAP
         </Link>
-        . During my first year, I collaborated on an impressive project named
+        . During my first year, I collaborated on an interesting project named
         Easy Aluga, created for the{" "}
         <Link href="https://www.brq.com/">BRQ Digital Solutions</Link> challenge
         in partnership with{" "}

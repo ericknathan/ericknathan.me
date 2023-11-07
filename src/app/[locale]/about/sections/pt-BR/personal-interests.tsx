@@ -6,12 +6,12 @@ export default function PersonalInterestsSection() {
     <section id="personal-interests">
       <h2>Interesses pessoais</h2>
       <p>
-        Fora dos meus empreendimentos profissionais, sou um entusiasta ávido de
+        Fora do âmbito profissional, sou um entusiasta de
         várias formas de arte e entretenimento. A música, em particular, ocupa
         um lugar especial no meu coração. Encontro consolo nos ritmos melódicos
         e na profundidade lírica de diversos gêneros, muitas vezes utilizando-a
-        como fonte de inspiração durante minhas sessões de codificação. Você
-        pode conferir mais sobre meus gostos musicais no meu perfil do{" "}
+        como fonte de inspiração durante minhas sessões de programação. Você
+        pode conferir mais sobre meu gosto musical no meu perfil do{" "}
         <Link
           href="https://last.fm/user/ericknathan"
           target="_blank"
@@ -19,7 +19,7 @@ export default function PersonalInterestsSection() {
         >
           Last.fm
         </Link>
-        . Eventos e encontros de tecnologia são outra paixão minha, pois me
+        . Eventos e encontros de tecnologia são outra paixão, pois me
         proporcionam a oportunidade de explorar novos avanços tecnológicos,
         conhecer profissionais diversos e ampliar minhas perspectivas. Imerso em
         diferentes comunidades tecnológicas, minha criatividade é estimulada, o

@@ -60,7 +60,7 @@ export default function AcademicBackgroundSection() {
         >
           FIAP
         </Link>
-        . Durante meu primeiro ano, colaborei em um projeto impressionante
+        . Durante meu primeiro ano, colaborei em um projeto interessante
         chamado Easy Aluga, criado para o desafio da{" "}
         <Link href="https://www.brq.com/">BRQ Digital Solutions</Link> em
         parceria com a <Link href="https://easycarros.com/">Easy Carros</Link>,

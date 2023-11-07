@@ -6,7 +6,7 @@ export default function PersonalInterestsSection() {
     <section id="personal-interests">
       <h2>Personal Interests</h2>
       <p>
-        Outside of my professional endeavors, I am an avid enthusiast of various
+        Outside of my professional scope, I am an enthusiast of various
         forms of art and entertainment. Music, in particular, holds a special
         place in my heart. I find solace in the melodic rhythms and lyrical
         depth of various genres, often using it as a source of inspiration
