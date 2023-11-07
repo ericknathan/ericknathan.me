@@ -38,10 +38,10 @@ export function SidebarButton(data: SidebarButtonProps) {
         target={isInternalLink ? "_self" : "_blank"}
         rel="noopener noreferrer"
       >
-        <ButtonIcon size={16} />
+        <ButtonIcon size={16} className={cn("group-hover:text-primary transition-colors", isActive && 'text-primary')} />
         <span className="w-full">{label}</span>
         {!isInternalLink && (
-          <Icon.arrowUpRight className="opacity-75" size={16} />
+          <Icon.arrowUpRight className="text-primary" size={16} />
         )}
       </Link>
     </Button>
