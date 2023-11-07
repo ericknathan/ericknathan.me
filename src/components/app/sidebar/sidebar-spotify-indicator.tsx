@@ -40,6 +40,8 @@ export function SidebarSpotifyIndicator() {
   }, []);
 
   function playPreview() {
+    if(songData?.explicit) return;
+    
     const audio = audioRef.current;
     if (!audio) return;
 
