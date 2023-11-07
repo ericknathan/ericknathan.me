@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -12,6 +11,7 @@ import "@/styles/themes.css";
 
 import { EasterEggs, ScrollToTop, Sidebar } from "@/components/app";
 import { InternalizationProvider, ThemeProvider } from "@/contexts";
+import { Analytics } from "@/lib/scripts/analytics.script";
 
 const inter = Inter({ subsets: ["latin"] });
 const locales = ["en", "pt-BR"];
@@ -61,14 +61,15 @@ export default function RootLayout({
         <InternalizationProvider locale={locale}>
           <ThemeProvider>
             <Sidebar />
-            <main className="relative w-full mt-10 md:mt-0 md:ml-72">{children}</main>
+            <main className="relative w-full mt-10 md:mt-0 md:ml-72">
+              {children}
+            </main>
             <ScrollToTop />
           </ThemeProvider>
-
-          <Analytics />
-
           <EasterEggs />
         </InternalizationProvider>
+
+        <Analytics />
       </body>
     </html>
   );
