@@ -21,19 +21,17 @@ interface SettingsToggleProps {
 
 export function SettingsToggle({ onClose }: SettingsToggleProps) {
   const { setTheme, theme, setColorScheme, colorScheme } = useTheme();
-  const currentlocale = useLocale();
+  const currentLocale = useLocale();
 
   const pathname = usePathname();
   const t = useTranslations("components.settingsToggle");
 
   function onThemeChange(theme: Theme) {
-    console.log("onThemeChange")
     setTheme(theme);
     onClose();
   }
 
   function onColorSchemeChange(colorScheme: ColorScheme) {
-    console.log("onColorSchemeChange")
     setColorScheme(colorScheme);
     onClose();
   }
@@ -84,7 +82,11 @@ export function SettingsToggle({ onClose }: SettingsToggleProps) {
           {t("language.title")}
         </DropdownMenu.Label>
         {appLocales.map(({ label: name, name: locale, icon: iconName }) => (
-          <DropdownMenu.Item asChild key={locale} checked={locale === currentlocale}>
+          <DropdownMenu.Item
+            asChild
+            key={locale}
+            checked={locale === currentLocale}
+          >
             <Link href={pathname} locale={locale}>
               <DynamicIcon name={iconName} className="rounded mr-2 w-4 h-4" />{" "}
               {name}
