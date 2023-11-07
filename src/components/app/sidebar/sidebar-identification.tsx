@@ -1,11 +1,11 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
 import { Link, usePathname } from "@/navigation";
+import { Avatar } from "../avatar";
 
 export function SidebarIdentification() {
   const pathname = usePathname();
@@ -23,13 +23,7 @@ export function SidebarIdentification() {
       tabIndex={pathname === "/" ? -1 : 0}
     >
       <div className="flex gap-2 items-center">
-        <Image
-          src={userData("avatarUrl")}
-          alt={userData("avatarAltDescription")}
-          className="rounded-md"
-          width={36}
-          height={36}
-        />
+        <Avatar className="rounded-md" size={36} />
         <div className="flex flex-col justify-between h-full">
           <p className="text-sm font-medium">{userData("name")}</p>
           <p className="text-xs text-muted-foreground">{userData("role")}</p>

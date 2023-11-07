@@ -1,11 +1,11 @@
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
-import Image from "next/image";
 import Link from "next/link";
 
 import { experiencesList, projectsList } from "@/config";
 
 import { FadeIn } from "@/components/animation";
+import { Avatar } from "@/components/app";
 import { Button, Icon } from "@/components/ui";
 import { Locale } from "@/navigation";
 import {
@@ -33,13 +33,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
       <div>
         <div className="flex gap-6 items-center">
           <FadeIn className="h-24 w-24 aspect-square rounded-lg overflow-hidden">
-            <Image
-              src={userData("avatarUrl")}
-              className="w-full h-full object-cover"
-              alt={userData("avatarAltDescription")}
-              width={100}
-              height={100}
-            />
+            <Avatar className="w-full h-full object-cover" size={100} />
           </FadeIn>
           <div className="flex-1">
             <FadeIn
