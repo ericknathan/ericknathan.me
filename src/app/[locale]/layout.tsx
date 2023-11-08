@@ -72,10 +72,12 @@ export async function generateMetadata({
     languages[loc] = new URL(`${websiteUrl}/${loc}`);
   });
 
+  const title = `${userData.name} - ${t('config.userData.role')}`
+
   return {
     title: {
       template: "%s",
-      default: userData.name,
+      default: title,
     },
     description: t("config.metadata.description"),
     authors: [
@@ -93,7 +95,7 @@ export async function generateMetadata({
       languages,
     },
     twitter: {
-      title: userData.name,
+      title: title,
       description: t("config.metadata.description"),
       siteId: userData.twitter.id,
       creator: userData.twitter.username,
@@ -102,7 +104,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      title: userData.name,
+      title: title,
       description: t("config.metadata.description"),
     },
   };
