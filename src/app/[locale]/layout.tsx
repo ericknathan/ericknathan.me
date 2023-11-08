@@ -32,7 +32,7 @@ export default function RootLayout({
   unstable_setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={cn(
           inter.className,
