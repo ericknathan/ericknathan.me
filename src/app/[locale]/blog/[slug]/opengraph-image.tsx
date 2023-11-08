@@ -23,7 +23,7 @@ export default async function Image({
     const {
       payload: { title, imageUrl },
     } = await postsRequests.getPost({ slug: params.slug });
-    const { interRegular, interBold, avatarUrl, noiseUrl, description } =
+    const { interBold, avatarUrl, noiseUrl, description } =
       await getOpenGraphData({
         locale: params.locale,
         path: `/blog/${params.slug}`,
@@ -41,12 +41,6 @@ export default async function Image({
       {
         ...size,
         fonts: [
-          {
-            name: "Inter",
-            data: await interRegular,
-            style: "normal",
-            weight: 400,
-          },
           {
             name: "Inter",
             data: await interBold,

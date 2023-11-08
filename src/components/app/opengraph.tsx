@@ -78,7 +78,7 @@ export function CreateOpenGraph({
           >
             {title}
           </h1>
-          <p style={{ fontSize: 36, margin: 0, padding: 0, color: "#94A3B8" }}>
+          <p style={{ fontSize: 36, fontWeight: 400, margin: 0, padding: 0, color: "#94A3B8" }}>
             {description}
           </p>
         </div>
@@ -107,10 +107,6 @@ export async function getOpenGraphData({
   const messages = (await import(`../../../messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 
-  const interRegular = fetch(
-    new URL("../../assets/opengraph/Inter-Regular.ttf", import.meta.url)
-  ).then((res) => res.arrayBuffer());
-
   const interBold = fetch(
     new URL("../../assets/opengraph/Inter-Bold.ttf", import.meta.url)
   ).then((res) => res.arrayBuffer());
@@ -124,7 +120,6 @@ export async function getOpenGraphData({
   ).then((res) => res.arrayBuffer());
 
   return {
-    interRegular,
     interBold,
     avatarUrl,
     noiseUrl,
