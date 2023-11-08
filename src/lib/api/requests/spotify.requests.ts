@@ -38,11 +38,11 @@ const getNowPlaying = async () => {
   });
 };
 
-const getFavoriteSongs = async () => {
+const getFavoriteSongs = async ({ limit = 8 } = {}) => {
   const { access_token } = await getAccessToken();
 
   return fetch(
-    "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=8&offset=0",
+    `https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=${limit}&offset=0`,
     {
       headers: {
         Authorization: `Bearer ${access_token}`,

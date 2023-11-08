@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
 import { spotifyRequests } from "@/lib/api/requests";
-import { parseSong, wordBlocklist } from '@/lib/utils'
+import { parseSong, wordBlocklist } from "@/lib/utils";
+import { RawSongModel } from "@/models";
 
 const notPlayingBody = {
   message: "No song is currently playing.",
@@ -17,14 +18,19 @@ export async function GET() {
     return NextResponse.json(notPlayingBody);
   }
 
-  const song = await response.json().catch(() => null);
+  const song: RawSongModel | null = await response.json().catch(() => null);
 
   if (!song || song.item === null) {
     return NextResponse.json(notPlayingBody);
   }
 
   const title = song.item.name;
-  const isBadSong = wordBlocklist.some((word) => title.includes(word));
+  const artists = song.item.artists.map((artist) => artist.name);
+  const isBadSong =
+    wordBlocklist.some((word) => title.includes(word)) ||
+    wordBlocklist.some((word) =>
+      artists.some((artist) => artist.includes(word))
+    );
 
   if (isBadSong) return NextResponse.json(notPlayingBody);
 
