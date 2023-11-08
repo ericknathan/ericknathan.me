@@ -108,7 +108,7 @@ export async function getOpenGraphData({
   const t = createTranslator({ locale, messages });
 
   const interBold = fetch(
-    new URL("../../assets/opengraph/Inter-Bold.ttf", import.meta.url)
+    new URL("../../assets/opengraph/Inter-Bold.woff", import.meta.url)
   ).then((res) => res.arrayBuffer());
 
   const avatarUrl = await fetch(
