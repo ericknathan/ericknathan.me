@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/og";
 
 import { CreateOpenGraph, getOpenGraphData } from "@/components/app/opengraph";
-import { userData } from "@/config";
-import { postsRequests } from "@/lib/api/requests";
-import { notFound } from "next/navigation";
+import { userData } from "@/config/user";
+import { postsRequests } from "@/lib/api/requests/posts.requests";
 
 export const runtime = "edge";
 
@@ -19,38 +18,40 @@ export default async function Image({
 }: {
   params: { locale: string; slug: string };
 }) {
-  try {
-    const {
-      payload: { title, imageUrl },
-    } = await postsRequests.getPost({ slug: params.slug });
-    const { interBold, avatarUrl, noiseUrl, description } =
-      await getOpenGraphData({
-        locale: params.locale,
-        path: `/blog/${params.slug}`,
-      });
+  const { payload } = await postsRequests
+    .getPost({ slug: params.slug })
+    .catch(() => ({
+      payload: null,
+    }));
 
-    return new ImageResponse(
-      CreateOpenGraph({
-        avatarUrl,
-        noiseUrl,
-        title,
-        description,
-        coverUrl: imageUrl,
-        size
-      }),
-      {
-        ...size,
-        fonts: [
-          {
-            name: "Inter",
-            data: await interBold,
-            style: "normal",
-            weight: 700,
-          },
-        ],
-      }
-    );
-  } catch (error) {
-    return notFound();
-  }
+  if (!payload) return;
+
+  const { title, imageUrl } = payload;
+  const { interBold, avatarUrl, noiseUrl, description } =
+    await getOpenGraphData({
+      locale: params.locale,
+      path: `/blog/${params.slug}`,
+    });
+
+  return new ImageResponse(
+    CreateOpenGraph({
+      avatarUrl,
+      noiseUrl,
+      title,
+      description,
+      coverUrl: imageUrl,
+      size,
+    }),
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Inter",
+          data: await interBold,
+          style: "normal",
+          weight: 700,
+        },
+      ],
+    }
+  );
 }
