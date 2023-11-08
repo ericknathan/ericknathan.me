@@ -6,7 +6,7 @@ export function Analytics() {
   return (
     <>
       {CLARITY_ID ? (
-        <Script id="clarity">
+        <Script id="clarity-script">
           {`
           (function (c, l, a, r, i, t, y) {
             c[a] =
