@@ -106,6 +106,7 @@ export async function generateMetadata({
       type: "website",
       title: title,
       description: t("config.metadata.description"),
+      url: "/opengraph-image"
     },
   };
 }
