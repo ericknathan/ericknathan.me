@@ -1,9 +1,11 @@
 import Link from "next/link";
 
-import { stack, userBirthDate, userLanguages } from "@/config";
+import { stack, userData as userConfig } from "@/config";
 import { calcAge } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { SongsGrid } from "../../components";
+
+const { birthDate, languages } = userConfig;
 
 export default function TLDRSection() {
   const userData = useTranslations("config.userData");
@@ -16,10 +18,10 @@ export default function TLDRSection() {
           <strong>Localização:</strong> {userData("location")}
         </li>
         <li>
-          <strong>Idade:</strong> {calcAge(new Date(userBirthDate))}
+          <strong>Idade:</strong> {calcAge(birthDate)}
         </li>
         <li>
-          <strong>Ocupação:</strong> {userData("role")} @{" "}
+          <strong>Cargo:</strong> {userData("role")} @{" "}
           <Link
             href={userData("company.url")}
             target="_blank"
@@ -33,7 +35,7 @@ export default function TLDRSection() {
         </li>
         <li>
           <strong>Idiomas:</strong>{" "}
-          {userLanguages.map((language, index) => {
+          {languages.map((language, index) => {
             const name = userData(`languages.${language}.name` as any);
             const proficiency = userData(
               `languages.${language}.proficiency` as any
@@ -42,7 +44,7 @@ export default function TLDRSection() {
             return (
               <span key={name}>
                 {name} <small className="opacity-80">({proficiency})</small>{" "}
-                {index !== userLanguages.length - 1 && "· "}
+                {index !== languages.length - 1 && "· "}
               </span>
             );
           })}

@@ -119,6 +119,12 @@
       "socials": {
         "title": "Redes sociais"
       }
+    },
+    "metadata": {
+      "description": "Desenvolvedor front-end apaixonado por criar experiências digitais incríveis. Explore meu portfólio e descubra como minhas habilidades em programação podem impulsionar seu projeto. Descubra meu trabalho e entre em contato para colaborações ou oportunidades profissionais.",
+      "opengraph": {
+        "title": "Meu website pessoal"
+      }
     }
   },
   "components": {

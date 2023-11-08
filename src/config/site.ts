@@ -15,6 +15,10 @@ export type NavbarSectionModel = {
 export const websiteSourceCode =
   "https://github.com/ericknathan/ericknathan.me";
 
+export const websiteUrl = "https://ericknathan.me";
+
+export const openGraphDefaultCover = `${websiteUrl}/images/about/code-in-the-dark.jpg`;
+
 export const navbarSections: NavbarSectionModel[] = [
   {
     name: "home",

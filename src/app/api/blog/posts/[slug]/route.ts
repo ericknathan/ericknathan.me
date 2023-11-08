@@ -1,6 +1,5 @@
 import matter from "gray-matter";
 import { NextRequest, NextResponse } from "next/server";
-import { readFileSync } from "node:fs";
 import path from "node:path";
 
 interface GetPostProps {

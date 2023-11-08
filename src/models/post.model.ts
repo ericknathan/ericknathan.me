@@ -5,4 +5,5 @@ export type PostModel = {
   tags: string[];
   icon: string;
   date: Date;
+  imageUrl?: string;
 };

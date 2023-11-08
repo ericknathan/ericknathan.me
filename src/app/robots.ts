@@ -1,3 +1,4 @@
+import { websiteUrl } from '@/config'
 import { MetadataRoute } from 'next'
  
 export default function robots(): MetadataRoute.Robots {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://ericknathan.me/sitemap.xml',
+    sitemap: `${websiteUrl}/sitemap.xml`,
   }
 }

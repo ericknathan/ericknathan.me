@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { createTranslator } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
-import { unstable_setRequestLocale } from "next-intl/server";
 
-import { keywords, userName } from "@/config";
+import { appLocales, keywords, userData, websiteUrl } from "@/config";
 import { cn } from "@/lib/utils";
 
 import "@/styles/globals.css";
@@ -14,37 +15,17 @@ import { InternalizationProvider, ThemeProvider } from "@/contexts";
 import { Analytics } from "@/lib/scripts/analytics.script";
 
 const inter = Inter({ subsets: ["latin"] });
-const locales = ["en", "pt-BR"];
+const locales = appLocales.map((locale) => locale.name);
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s",
-    default: userName,
-  },
-  description: `${userName}: Front-end developer passionate about creating incredible digital experiences. Explore my portfolio and discover how my programming skills can boost your project. Discover my work and get in touch for collaborations or professional opportunities.`,
-  authors: [
-    {
-      name: userName,
-      url: "https://ericknathan.me",
-    },
-  ],
-  metadataBase: new URL("https://ericknathan.me"),
-  keywords: keywords,
-  creator: userName,
-  publisher: userName,
-};
-
-export const viewport: Viewport = {
-  colorScheme: "light dark",
-};
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params: { locale: string };
+}
 
 export default function RootLayout({
   children,
   params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
+}: RootLayoutProps) {
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
 
@@ -78,3 +59,56 @@ export default function RootLayout({
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export async function generateMetadata({
+  params: { locale },
+}: RootLayoutProps): Promise<Metadata> {
+  const messages = (await import(`../../../messages/${locale}.json`)).default;
+  const t = createTranslator({ locale, messages });
+
+  let languages: Record<string, URL> = {};
+
+  locales.map((loc) => {
+    languages[loc] = new URL(`${websiteUrl}/${loc}`);
+  });
+
+  return {
+    title: {
+      template: "%s",
+      default: userData.name,
+    },
+    description: t("config.metadata.description"),
+    authors: [
+      {
+        name: userData.name,
+        url: websiteUrl,
+      },
+    ],
+    metadataBase: new URL(websiteUrl),
+    keywords: keywords,
+    creator: userData.name,
+    publisher: userData.name,
+    alternates: {
+      canonical: websiteUrl,
+      languages,
+    },
+    twitter: {
+      title: userData.name,
+      description: t("config.metadata.description"),
+      siteId: userData.twitter.id,
+      creator: userData.twitter.username,
+      creatorId: userData.twitter.id,
+      card: "summary_large_image",
+    },
+    openGraph: {
+      type: "website",
+      title: userData.name,
+      description: t("config.metadata.description"),
+    },
+  };
+}
+
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: "#020817",
+};

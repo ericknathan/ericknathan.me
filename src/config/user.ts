@@ -1,14 +1,5 @@
 import { IconName } from "@/components/ui";
 
-export type UserDataModel = {
-  name: string;
-  linkedinUrl: string;
-  company: {
-    name: string;
-    url: string;
-  };
-};
-
 export type UserSocialModel = {
   icon: IconName;
   name: string;
@@ -43,15 +34,17 @@ export const socials: UserSocialModel[] = [
   },
 ];
 
-export const userData: UserDataModel = {
+export const userData = {
   name: "Erick Nathan",
   linkedinUrl: socials.find((social) => social.name === "LinkedIn")?.href || "",
+  twitter: {
+    id: '1367639862325706758',
+    username: '@onathannsz',
+  },
   company: {
     name: "Pagtel",
     url: "https://pagtel.com.br",
   },
+  birthDate: new Date("2005-08-14"),
+  languages: ["english", "portuguese"],
 };
-
-export const userName = "Erick Nathan";
-export const userBirthDate = new Date("2005-08-14");
-export const userLanguages = ["english", "portuguese"];
