@@ -56,7 +56,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className="fixed top-0 flex flex-col w-full md:w-72 border-r h-[100dvh] z-50 border-b md:border-b-0"
+      className="fixed top-0 flex flex-col w-full md:w-72 border-r data-[sidebar-open='true']:h-[100dvh] md:h-[100dvh] z-50 border-b md:border-b-0"
       data-sidebar-open={isMenuOpen}
     >
       <header className="flex md:hidden z-50 bg-background justify-between py-3 px-8 border-b">
@@ -104,7 +104,7 @@ export function Sidebar() {
           "bg-background/50 w-screen flex-1 backdrop-blur-sm bottom-0 z-20 transition-all duration-500 md:transition-none",
           isMenuOpen
             ? "max-md:opacity-100 max-md:pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+            : "opacity-0 pointer-events-none h-0"
         )}
         onClick={handleToggleMenu}
       />
