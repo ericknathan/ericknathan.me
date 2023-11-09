@@ -81,6 +81,9 @@
       "3d-product-preview": {
         "shortDescription": "Um visualizador simples de produtos de sofá 3D feito com Svelte e Threlte, uma biblioteca ThreeJS para Svelte."
       },
+      "podcastr": {
+        "shortDescription": "Uma aplicação fácil de usar, projetado para reproduzir e gerenciar episódios de áudio do seu podcast favorito."
+      },
       "devify": {
         "shortDescription": "Aplicação web para exibir a música atualmente reproduzida em minha conta do Spotify."
       },
@@ -98,6 +101,18 @@
       },
       "tic-tac-toe": {
         "shortDescription": "Um simples jogo da velha desenvolvido com HTML, CSS e Javascript durante as aulas de Programação Front-End da Web no Senai."
+      },
+      "happy": {
+        "shortDescription": "Aplicação que conecta a comunidade a lares de acolhimento, permitindo a adição de abrigos, agendamento de visitantes e informações essenciais, como horários, público-alvo, localização e instruções de visita."
+      },
+      "e-survey": {
+        "shortDescription": "Uma API modular com arquitetura sólida e teste orientado a desenvolvimento (TDD), seguindo os princípios do SOLID e Clean Architecture, implementando Padrões de Projeto para escalabilidade e eficiência."
+      },
+      "rentx": {
+        "shortDescription": "API de locação de carros eficiente e confiável, utilizando Express, Typescript, TypeORM e Swagger, com uma arquitetura modular e documentação clara."
+      },
+      "nest-rabbitmq": {
+        "shortDescription": "Arquitetura de microserviços robusta e escalável, utilizando NestJS para facilitar a manutenção, com integração do RabbitMQ para comunicação assíncrona eficaz e distribuição inteligente de tarefas."
       }
     },
     "navbarSections": {

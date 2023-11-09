@@ -1,13 +1,13 @@
 import { createTranslator, useTranslations } from "next-intl";
 import Link from "next/link";
 
-import { projectsList } from "@/config";
+import { projectsCategories, projectsList } from "@/config";
 
 import { FadeIn } from "@/components/animation";
 import { Icon } from "@/components/ui";
-import { ProjectCard } from "./components";
-import { unstable_setRequestLocale } from "next-intl/server";
 import { Locale } from "@/navigation";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { ProjectCard } from "./components";
 
 interface ProjectsPageProps {
   params: {
@@ -15,7 +15,9 @@ interface ProjectsPageProps {
   };
 }
 
-export default function ProjectsPage({ params: { locale } }: ProjectsPageProps) {
+export default function ProjectsPage({
+  params: { locale },
+}: ProjectsPageProps) {
   const userData = useTranslations("config.userData");
   const t = useTranslations("pages.projects");
 
@@ -48,11 +50,30 @@ export default function ProjectsPage({ params: { locale } }: ProjectsPageProps) 
           </span>{" "}
         </FadeIn>
       </div>
-      <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 justify-items-center md:grid-cols-1 lg:grid-cols-2">
-        {projectsList.map((project, index) => (
-          <ProjectCard key={project.name} project={project} index={index} />
-        ))}
-      </div>
+      {Object.entries(projectsCategories).map(([category, categoryLabel]) => (
+        <div key={category} className="mb-4 flex flex-col gap-4">
+          <FadeIn
+            as="h2"
+            className="font-bold text-xl sm:text-2xl"
+            delay={0.1}
+            duration={0.5}
+            startOnScrollIntersect
+          >
+            {categoryLabel}
+          </FadeIn>
+          <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 justify-items-center md:grid-cols-1 lg:grid-cols-2">
+            {projectsList
+              .filter((project) => project.category === category)
+              .map((project, index) => (
+                <ProjectCard
+                  key={project.name}
+                  project={project}
+                  index={index}
+                />
+              ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

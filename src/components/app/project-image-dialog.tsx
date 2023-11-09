@@ -16,11 +16,11 @@ export function ProjectImageDialog({
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
-      <Dialog.Content className="p-0 !w-[90vw] max-w-7xl border-transparent overflow-hidden" closeClassName="mix-blend-difference">
+      <Dialog.Content className="p-0 !w-[90vw] max-w-7xl max-h-[90vh] border-transparent overflow-hidden" closeClassName="mix-blend-difference">
         <Image
           src={imageUrl}
           alt={`Preview of ${projectName} project`}
-          className="w-full"
+          className="w-full h-full"
           width={1280}
           height={720}
         />

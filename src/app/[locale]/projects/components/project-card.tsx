@@ -42,9 +42,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </button>
       </ProjectImageDialog>
       <div>
-        <h2 className="font-semibold leading-none tracking-tight text-xl">
+        <h3 className="font-semibold leading-none tracking-tight text-xl">
           {name}
-        </h2>
+        </h3>
         <p className="text-base text-muted-foreground mt-1">
           {shortDescription}
         </p>
