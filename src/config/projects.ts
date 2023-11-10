@@ -35,7 +35,7 @@ export const projectsList: ProjectModel[] = [
   {
     id: "3d-product-preview",
     name: "3D Product Preview",
-    projectUrl: "https://the-3d-product-preview.vercel.app",
+    projectUrl: "https://3d-product-preview.vercel.app",
     sourceUrl: "https://github.com/ericknathan/3d-product-preview",
     imagePreviewUrl: "/images/projects/3d-product-preview.png",
     category: "frontend",
@@ -76,7 +76,7 @@ export const projectsList: ProjectModel[] = [
   {
     id: "four-dev",
     name: "4Dev",
-    projectUrl: "https://fourdev.vercel.app/signin",
+    projectUrl: "https://fourdev.vercel.app",
     sourceUrl: "https://github.com/ericknathan/react-clean-architecture",
     imagePreviewUrl: "/images/projects/four-dev.png",
     category: "frontend",
