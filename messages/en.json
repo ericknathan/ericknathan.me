@@ -23,7 +23,7 @@
     },
     "projects": {
       "title": "My projects",
-      "description": "Here are some of the projects I have worked on, you can find more on my"
+      "description": "Here are some of the projects I have worked on, you can find more on my <github>Github</github>"
     },
     "about": {
       "title": "About me"
