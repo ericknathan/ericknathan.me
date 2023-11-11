@@ -150,7 +150,7 @@ export function SidebarSpotifyIndicator() {
         </>
       ) : songData?.is_playing === false ? (
         <>
-          <Icon.spotify size={24} />
+          <Icon.spotify className="h-6 w-6" />
           <p className="text-sm font-medium">{t("nothing")}</p>
         </>
       ) : null}
