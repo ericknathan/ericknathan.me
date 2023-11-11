@@ -27,6 +27,10 @@
   .transition-opacity {
     @apply motion-reduce:!transition-none;
   }
+
+  ::selection {
+    @apply bg-primary/80 text-primary-foreground;
+  }
 }
 
 @layer components {
