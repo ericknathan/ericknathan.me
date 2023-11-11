@@ -26,13 +26,15 @@ export async function GET() {
 
   const title = song.item.name;
   const artists = song.item.artists.map((artist) => artist.name);
-  const isBadSong = wordBlocklist.some(
-    (word) =>
-      title.toLowerCase().includes(word) ||
+
+  const isBadSong = wordBlocklist.some((word) => {
+    return (
+      title.toLowerCase().includes(word.toLowerCase()) ||
       artists.some((artist) =>
         artist.toLowerCase().includes(word.toLowerCase())
       )
-  );
+    );
+  });
 
   if (isBadSong) return NextResponse.json(notPlayingBody);
 

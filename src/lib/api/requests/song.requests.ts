@@ -15,13 +15,14 @@ export const songRequests = {
         .filter(
           (song: RawSongModel["item"]) =>
             !song.explicit &&
-            !wordBlocklist.some(
-              (word) =>
+            !wordBlocklist.some((word) => {
+              return (
                 song.name.toLowerCase().includes(word.toLowerCase()) ||
                 song.artists.some((artist) =>
                   artist.name.toLowerCase().includes(word.toLowerCase())
                 )
-            )
+              );
+            })
         )
         .slice(0, 3)
         .map((song: RawSongModel["item"]) =>
