@@ -182,7 +182,17 @@
       "source": "💻 Check out website source code at {url}",
       "job": "How about giving me an opportunity to work with you or at your company? 👉👈",
       "contact": "If you're interested, please contact me at {url}",
-      "thanks": "Have a {time, select, day {great day} afternoon {great afternoon} other {good night}} ! 👋😁"
+      "thanks": "Have a {time, select, day {great day} afternoon {great afternoon} other {good night}} ! 👋😁",
+      "notification": {
+        "title": "🧑‍💻 Are you curious?",
+        "description": "A new easter egg has been found! Open the console to see more."
+      }
+    },
+    "konamiCodeEasterEgg": {
+      "notification": {
+        "title": "🕹️ Konami Code",
+        "description": "This is just one of the easter eggs on my site. Can you find the others? 🤫"
+      }
     },
     "themeEasterEgg": {
       "notification": {

@@ -182,7 +182,17 @@
       "source": "💻 Você pode visualizar o código-fonte deste site em {url}",
       "job": "Que tal me dar a oportunidade de trabalhar com você ou na sua empresa? 👉👈",
       "contact": "Se você estiver interessado, entre em contato comigo em {url}",
-      "thanks": "Tenha {time, select, day {um bom dia} afternoon {uma boa tarde} other {uma boa noite}} ! 👋😁"
+      "thanks": "Tenha {time, select, day {um bom dia} afternoon {uma boa tarde} other {uma boa noite}} ! 👋😁",
+      "notification": {
+        "title": "🧑‍💻 Você está curioso?",
+        "description": "Um novo easter egg foi encontrado! Abra o console para ver mais."
+      }
+    },
+    "konamiCodeEasterEgg": {
+      "notification": {
+        "title": "🕹️ Código Konami",
+        "description": "Esse é apenas um dos easter eggs de meu site, será que você consegue encontrar os outros? 🤫"
+      }
     },
     "themeEasterEgg": {
       "notification": {
