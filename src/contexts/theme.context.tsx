@@ -101,7 +101,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
         setTheme("dark");
       }
     }
-  }, []);
+  }, [unlockColorScheme]);
 
   useEffect(() => {
     localStorage.setItem(storageKeys.theme, theme);
