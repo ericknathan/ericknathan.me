@@ -17,7 +17,7 @@ import { useMediaQuery } from "@/hooks";
 export function Sidebar() {
   const pathname = usePathname();
   const t = useTranslations("config.navbarSections");
-  const matches = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -52,7 +52,7 @@ export function Sidebar() {
 
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [matches]);
+  }, [isMobile]);
 
   return (
     <aside
@@ -61,6 +61,7 @@ export function Sidebar() {
     >
       <header className="flex md:hidden z-50 bg-background justify-between py-3 px-8 border-b">
         <SidebarIdentification />
+        <SettingsToggle onClose={() => setIsMenuOpen(false)} className="border mr-2" />
         <Button variant="outline" size="icon" onClick={handleToggleMenu}>
           <Icon.hamburger size={16} />
         </Button>
@@ -96,7 +97,9 @@ export function Sidebar() {
 
         <div className="flex justify-between items-center px-3 gap-3 relative">
           <SidebarSpotifyIndicator />
-          <SettingsToggle onClose={() => setIsMenuOpen(false)} />
+          <div className="hidden md:flex w-fit h-fit">
+            <SettingsToggle onClose={() => setIsMenuOpen(false)} />
+          </div>
         </div>
       </div>
       <div

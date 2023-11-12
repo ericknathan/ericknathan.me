@@ -1,17 +1,41 @@
 "use client";
 
 import { MotionConfig } from "framer-motion";
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-import { ColorScheme, Theme, colors, themes } from "@/config";
-import { disableAnimation, getSystemTheme } from "@/lib/utils";
-import { ThemeScript } from "../lib/scripts/theme.script";
+import {
+  AppColorScheme,
+  ColorScheme,
+  Theme,
+  appColorSchemesWithoutLocked,
+  colors,
+  storageKeys,
+  themes,
+} from "@/config";
+import { toast } from "@/hooks";
+import { ThemeScript } from "@/lib/scripts";
+import {
+  disableAnimation,
+  getLocalStorageItem,
+  getSystemTheme,
+} from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface ThemeContextProps {
   theme: Theme;
   setTheme: (theme: Theme) => void;
+
   colorScheme: ColorScheme;
   setColorScheme: (colorScheme: ColorScheme) => void;
+
+  unlockedColorSchemes: AppColorScheme[];
+  unlockColorScheme: (colorScheme: ColorScheme) => void;
 }
 
 export const ThemeContext = createContext({} as ThemeContextProps);
@@ -21,49 +45,94 @@ interface ThemeProviderProps {
   children: React.ReactNode;
 }
 
-const localStorageKeys = {
-  theme: "@ericknathan.me/theme",
-  colorScheme: "@ericknathan.me/colorScheme",
-};
-
-function getLocalStorageTheme(key: string) {
-  const isServer = typeof window === "undefined";
-
-  if (isServer) return undefined;
-
-  return localStorage.getItem(key);
-}
-
 export function ThemeProvider({ children }: ThemeProviderProps) {
+  const t = useTranslations("components.themeEasterEgg");
+
   const [theme, setTheme] = useState<Theme>(
-    (getLocalStorageTheme(localStorageKeys.theme) as Theme) || getSystemTheme()
+    (getLocalStorageItem(storageKeys.theme) as Theme) || getSystemTheme()
   );
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
-    (getLocalStorageTheme(localStorageKeys.colorScheme) as ColorScheme) ||
-      "blue"
+    (getLocalStorageItem(storageKeys.colorScheme) as ColorScheme) || "blue"
   );
+  const [unlockedColorSchemes, setUnlockedColorSchemes] = useState<
+    ColorScheme[]
+  >(JSON.parse(getLocalStorageItem(storageKeys.unlockedColorSchemes) || "[]"));
+
+  const unlockColorScheme = useCallback((colorScheme: ColorScheme, extraDescription?: string) => {
+    const unlockedColorSchemes: ColorScheme[] = JSON.parse(
+      localStorage.getItem(storageKeys.unlockedColorSchemes) || "[]"
+    );
+
+    if (!unlockedColorSchemes.includes(colorScheme)) {
+      const newUnlockedColorSchemes = [...unlockedColorSchemes, colorScheme];
+      setUnlockedColorSchemes(newUnlockedColorSchemes);
+      localStorage.setItem(
+        storageKeys.unlockedColorSchemes,
+        JSON.stringify(newUnlockedColorSchemes)
+      );
+      toast({
+        title: t("notification.title"),
+        description:
+          t("notification.description", { colorScheme }) + extraDescription,
+        duration: 10000,
+      });
+    }
+  }, [t]);
+
+  const registerUsedColorScheme = useCallback((newColorScheme: ColorScheme) => {
+    const colorSchemesAlreadyUsed = JSON.parse(
+      localStorage.getItem(storageKeys.colorSchemesAlreadyUsed) || "[]"
+    );
+    if (!colorSchemesAlreadyUsed.includes(newColorScheme)) {
+      const newColorSchemesAlreadyUsed = [
+        ...colorSchemesAlreadyUsed,
+        newColorScheme,
+      ];
+      localStorage.setItem(
+        storageKeys.colorSchemesAlreadyUsed,
+        JSON.stringify(newColorSchemesAlreadyUsed)
+      );
+
+      if (
+        newColorSchemesAlreadyUsed.length ===
+        appColorSchemesWithoutLocked.length
+      ) {
+        unlockColorScheme("dracula", "🦇🦇🦇");
+        setTheme("dark");
+      }
+    }
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem(localStorageKeys.theme, theme);
-    localStorage.setItem(localStorageKeys.colorScheme, colorScheme);
+    localStorage.setItem(storageKeys.theme, theme);
+    localStorage.setItem(storageKeys.colorScheme, colorScheme);
 
     const attrs = [...themes, ...colors];
     document.documentElement.classList.remove(...attrs);
     document.documentElement.classList.add(theme, colorScheme);
 
+    registerUsedColorScheme(colorScheme);
+
     return disableAnimation();
-  }, [theme, colorScheme]);
+  }, [theme, colorScheme, registerUsedColorScheme]);
 
   return (
     <ThemeContext.Provider
-      value={{ theme, setTheme, colorScheme, setColorScheme }}
+      value={{
+        theme,
+        setTheme,
+        colorScheme,
+        setColorScheme,
+        unlockedColorSchemes: unlockedColorSchemes.map((name) => ({ name })),
+        unlockColorScheme,
+      }}
     >
       <ThemeScript
         enableSystem
         enableColorScheme
         defaultTheme="system"
-        themeStorageKey={localStorageKeys.theme}
-        colorStorageKey={localStorageKeys.colorScheme}
+        themeStorageKey={storageKeys.theme}
+        colorStorageKey={storageKeys.colorScheme}
       />
       <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </ThemeContext.Provider>

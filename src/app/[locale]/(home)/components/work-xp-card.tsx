@@ -14,7 +14,7 @@ export function WorkExperienceCard({ data }: WorkExperienceCardProps) {
 
   return (
     <div className="flex gap-4">
-      <div className="rounded-full h-10 w-10 aspect-square flex justify-center items-center ring-1 bg-muted ring-muted-foreground/40 p-1">
+      <div className="rounded-full h-10 w-10 aspect-square flex justify-center items-center ring-1 bg-muted/50 ring-muted-foreground/40 p-1">
         <Image
           src={image}
           width={40}
@@ -25,13 +25,13 @@ export function WorkExperienceCard({ data }: WorkExperienceCardProps) {
       </div>
       <dl className="flex flex-col gap-x-2 w-full">
         <dt className="sr-only">{t("company")}</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+        <dd className="w-full flex-none text-sm font-medium">
           {company}
         </dd>
         <dt className="sr-only">{t("role")}</dt>
-        <dd className="text-xs text-accent-foreground/80">{role}</dd>
+        <dd className="text-xs text-muted-foreground">{role}</dd>
         <dt className="sr-only">{t("date")}</dt>
-        <dd className="text-xs text-muted-foreground flex">
+        <dd className="text-xs text-muted-foreground/80 flex">
           <time className="mt-auto">
             {new Date(startDate).getFullYear()} -{" "}
             {!endDate ? t("present") : new Date(endDate).getFullYear()}

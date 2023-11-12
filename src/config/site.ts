@@ -78,3 +78,11 @@ export const appLocales: AppLocale[] = [
   { label: "English", name: "en", icon: "flagUs" },
   { label: "Português", name: "pt-BR", icon: "flagBr" },
 ];
+
+export const storageKeys = {
+  theme: "@ericknathan.me/theme",
+  colorScheme: "@ericknathan.me/colorScheme",
+  colorSchemesAlreadyUsed: "@ericknathan.me/colorSchemesAlreadyUsed",
+  unlockedColorSchemes: "@ericknathan.me/unlockedColorSchemes",
+  unlockedConsoleEasterEgg: "@ericknathan.me/unlockedConsoleEasterEgg",
+};

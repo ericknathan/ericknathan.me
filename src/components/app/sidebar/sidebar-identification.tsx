@@ -15,7 +15,7 @@ export function SidebarIdentification() {
     <Link
       href="/"
       className={cn(
-        "w-full md:border-b md:px-3 overflow-hidden transition-all flex items-center duration-500",
+        "flex-1 md:border-b md:px-3 overflow-hidden transition-all flex items-center duration-500",
         pathname === "/"
           ? "h-0 border-transparent opacity-0 pointer-events-none"
           : "md:h-[4.875rem]"

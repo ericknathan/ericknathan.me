@@ -11,7 +11,11 @@ import "@/styles/globals.css";
 import "@/styles/themes.css";
 
 import { EasterEggs, ScrollToTop, Sidebar } from "@/components/app";
-import { InternalizationProvider, ThemeProvider } from "@/contexts";
+import {
+  InternalizationProvider,
+  ThemeProvider,
+  ToasterProvider,
+} from "@/contexts";
 import { Analytics } from "@/lib/scripts/analytics.script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -46,6 +50,7 @@ export default function RootLayout({
               {children}
             </main>
             <ScrollToTop />
+            <ToasterProvider />
           </ThemeProvider>
           <EasterEggs />
         </InternalizationProvider>
@@ -72,7 +77,7 @@ export async function generateMetadata({
     languages[loc] = new URL(`${websiteUrl}/${loc}`);
   });
 
-  const title = `${userData.name} - ${t('config.userData.role')}`
+  const title = `${userData.name} - ${t("config.userData.role")}`;
 
   return {
     title: {
@@ -106,7 +111,7 @@ export async function generateMetadata({
       type: "website",
       title: title,
       description: t("config.metadata.description"),
-      url: "/opengraph-image"
+      url: "/opengraph-image",
     },
   };
 }

@@ -1,7 +1,8 @@
 import { IconName } from "@/components/ui";
 
 export const themes = ["dark", "light"];
-export const colors = ["blue", "green", "orange", "zinc", "rose"];
+export const colors = ["blue", "green", "orange", "zinc", "rose", "dracula"];
+export const lockedColors = ["dracula"];
 
 export type Theme = (typeof themes)[number];
 export type ColorScheme = (typeof colors)[number];
@@ -23,3 +24,7 @@ export type AppColorScheme = {
 export const appColorSchemes: AppColorScheme[] = colors.map((color) => ({
   name: color,
 }));
+
+export const appColorSchemesWithoutLocked = appColorSchemes.filter(
+  ({ name }) => !lockedColors.includes(name)
+);

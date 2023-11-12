@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { SongModel } from "@/models";
 
 import { Icon } from "@/components/ui";
+import { useMediaQuery } from "@/hooks";
 
 export function SidebarSpotifyIndicator() {
   const [songData, setSongData] = useState<SongModel | undefined>();
@@ -19,6 +20,7 @@ export function SidebarSpotifyIndicator() {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioDuration = audioRef.current?.duration;
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
     async function getSongData() {
@@ -40,7 +42,7 @@ export function SidebarSpotifyIndicator() {
   }, []);
 
   function playPreview() {
-    if(songData?.explicit) return;
+    if(songData?.explicit || isMobile) return;
     
     const audio = audioRef.current;
     if (!audio) return;
@@ -76,7 +78,7 @@ export function SidebarSpotifyIndicator() {
       }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className={cn(
-        "flex gap-2 items-center h-14 w-[13rem] group transition-colors",
+        "flex gap-2 items-center h-14 flex-1 md:w-[13rem] group transition-colors",
         songData?.is_playing
           ? "md:hover:bg-muted md:focus-visible:bg-muted"
           : "pointer-events-none"

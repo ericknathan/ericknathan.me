@@ -298,3 +298,43 @@
     --input: 240 3.7% 15.9%;
     --ring: 346.8 77.2% 49.8%;
   }
+
+  .dracula {
+    --background: 233 13% 13%;
+    --foreground: 60 30% 96%;
+
+    --card: 231 15% 18%;
+    --card-foreground: 60 30% 96%;
+
+    --popover: 231 15% 18%;
+    --popover-foreground: 60 30% 96%;
+
+    --primary: 250 100% 75%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 230 15% 30%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 13% 9%;
+    --muted-foreground: 219 6% 57%;
+
+    --accent: 220 13% 9%;
+    --accent-foreground: 219 6% 57%;
+
+    --destructive: 10 100% 75%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 230 15% 30%;
+    --input: 230 15% 30%;
+    --ring: 250 100% 75%;
+  }
+
+  .dracula.light .prose {
+    color: #D1D5DB !important;
+  }
+  .dracula.light .prose strong {
+    color: #FFFFFF !important;
+  }
+  .dracula.light .prose figcaption {
+    color: #9ca3af !important;
+  }

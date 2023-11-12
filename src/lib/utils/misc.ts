@@ -21,3 +21,11 @@ export function parseSong(song: Pick<RawSongModel, 'item' | 'is_playing'>): Song
     explicit: song?.item.explicit,
   };
 }
+
+export function getLocalStorageItem(key: string) {
+  const isServer = typeof window === "undefined";
+
+  if (isServer) return undefined;
+
+  return localStorage.getItem(key);
+}

@@ -165,7 +165,8 @@
           "green": "Verde",
           "orange": "Laranja",
           "zinc": "Zinco",
-          "rose": "Rosa"
+          "rose": "Rosa",
+          "dracula": "Dracula"
         }
       },
       "language": {
@@ -182,6 +183,12 @@
       "job": "Que tal me dar a oportunidade de trabalhar com você ou na sua empresa? 👉👈",
       "contact": "Se você estiver interessado, entre em contato comigo em {url}",
       "thanks": "Tenha {time, select, day {um bom dia} afternoon {uma boa tarde} other {uma boa noite}} ! 👋😁"
+    },
+    "themeEasterEgg": {
+      "notification": {
+        "title": "🎨 Novo esquema de cores desbloqueado!",
+        "description": "Você desbloqueou o esquema de cores {colorScheme}!"
+      }
     },
     "experienceCard": {
       "company": "Empresa",
