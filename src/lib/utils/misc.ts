@@ -29,3 +29,11 @@ export function getLocalStorageItem(key: string) {
 
   return localStorage.getItem(key);
 }
+
+export function getSessionStorageItem(key: string) {
+  const isServer = typeof window === "undefined";
+
+  if (isServer) return undefined;
+
+  return sessionStorage.getItem(key);
+}

@@ -200,6 +200,11 @@
         "description": "You've unlocked the {colorScheme} color scheme!"
       }
     },
+    "companyThanks": {
+      "title": "Welcome, {companyName}! 👋",
+      "message": "Hello {companyName} recruiter,<br></br><br></br>Thank you for visiting my portfolio! 😀 I'm excited to share more about my journey and experiences. Feel free to explore my work, and if you have any questions or interests, I'm happy to talk.<br></br><br></br>Sincerely, Erick",
+      "close": "Close"
+    },
     "experienceCard": {
       "company": "Company",
       "role": "Role",

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 import { storageKeys, userData, websiteSourceCode } from "@/config";
 import { toast } from "@/hooks";
+import { getSessionStorageItem } from "@/lib/utils";
 
 export function ConsoleEasterEgg() {
   const t = useTranslations("components.consoleEasterEgg");
@@ -29,11 +30,11 @@ export function ConsoleEasterEgg() {
     console.error = () => {};
 
     function showEasterEggUnlockedAlert() {
-      if (sessionStorage.getItem(storageKeys.unlockedConsoleEasterEgg)) return;
+      if (getSessionStorageItem(storageKeys.unlockedConsoleEasterEgg)) return;
 
       toast({
-        title: t('notification.title'),
-        description: t('notification.description'),
+        title: t("notification.title"),
+        description: t("notification.description"),
         duration: 10000,
         playSound: true,
       });

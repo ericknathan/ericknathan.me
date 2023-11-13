@@ -86,4 +86,5 @@ export const storageKeys = {
   colorSchemesAlreadyUsed: "@ericknathan.me/colorSchemesAlreadyUsed",
   unlockedColorSchemes: "@ericknathan.me/unlockedColorSchemes",
   unlockedConsoleEasterEgg: "@ericknathan.me/unlockedConsoleEasterEgg",
+  isCompanyThanksDialogAlreadyOpen: "@ericknathan.me/companyDialogOpen",
 };

@@ -56,10 +56,10 @@ export function Sidebar() {
 
   return (
     <aside
-      className="fixed top-0 flex flex-col w-full md:w-72 border-r data-[sidebar-open='true']:h-[100dvh] md:h-[100dvh] z-50 border-b md:border-b-0"
+      className="fixed top-0 flex flex-col w-full md:w-72 border-r data-[sidebar-open='true']:h-[100dvh] md:h-[100dvh] z-40 border-b md:border-b-0"
       data-sidebar-open={isMenuOpen}
     >
-      <header className="flex md:hidden z-50 bg-background justify-between py-3 px-8 border-b">
+      <header className="flex md:hidden z-40 bg-background justify-between py-3 px-8 border-b">
         <SidebarIdentification />
         <SettingsToggle onClose={() => setIsMenuOpen(false)} className="border mr-2" />
         <Button variant="outline" size="icon" onClick={handleToggleMenu}>
@@ -68,7 +68,7 @@ export function Sidebar() {
       </header>
       <div
         className={cn(
-          "h-full flex flex-col w-full bg-background rounded-b-md z-50 transition-all overflow-hidden duration-500",
+          "h-full flex flex-col w-full bg-background rounded-b-md z-40 transition-all overflow-hidden duration-500",
           isMenuOpen
             ? "max-md:h-[70vh] max-md:border-b"
             : "max-md:h-0 max-md:-mb-1"

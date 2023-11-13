@@ -201,6 +201,11 @@
         "description": "¡Has desbloqueado el esquema de colores {colorScheme}!"
       }
     },
+    "companyThanks": {
+      "title": "Bienvenido, {companyName}! 👋",
+      "message": "Hola reclutador de la empresa {companyName},<br></br><br></br>¡Gracias por visitar mi portafolio! 😀 Estoy emocionado de compartir más sobre mi viaje y mis experiencias. Siéntete libre de explorar mi trabajo y, si tienes alguna pregunta o interés, estaré encantado de hablar.<br></br><br></br>Atentamente, Erick",
+      "close": "Cerrar"
+    },
     "experienceCard": {
       "company": "Empresa",
       "role": "Cargo",
