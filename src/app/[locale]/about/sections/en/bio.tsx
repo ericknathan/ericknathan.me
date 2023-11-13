@@ -1,8 +1,8 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-import { userData } from "@/config";
-import { useTranslations } from "next-intl";
+import { ClientsList } from "../../components";
 
 export default function BioSection() {
   const userData = useTranslations("config.userData");
@@ -53,48 +53,9 @@ export default function BioSection() {
         </Link>
         , where I am actively involved in creating intuitive and user-friendly
         interfaces for a variety of digital products for many clients like{" "}
-        <Link
-          href="https://www.uber.com/br/pt-br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Uber
-        </Link>
-        {", "}
-        <Link
-          href="https://www.correioscelular.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Correios
-        </Link>
-        {", "}
-        <Link
-          href="https://www.bancobmg.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          BMG Bank
-        </Link>
-        {", "}
-        <Link
-          href="https://loja.algartelecom.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Algar
-        </Link>
-        {" and "}
-        <Link
-          href="https://www.carrefour.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Carrefour
-        </Link>
-        . My role allows me to combine my creative mindset with my technical
-        expertise, enabling me to craft engaging and visually appealing
-        experiences that resonate with users.
+        <ClientsList andJoiner="and" />. My role allows me to combine my
+        creative mindset with my technical expertise, enabling me to craft
+        engaging and visually appealing experiences that resonate with users.
       </p>
     </section>
   );

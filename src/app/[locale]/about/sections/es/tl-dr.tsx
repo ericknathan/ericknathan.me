@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { useTranslations } from "next-intl";
 
 import { stack, userData as userConfig } from "@/config";
 import { calcAge } from "@/lib/utils";
-
+import { useTranslations } from "next-intl";
 import { SongsGrid } from "../../components";
 
 const { birthDate, languages } = userConfig;
@@ -16,10 +15,10 @@ export default function TLDRSection() {
       <h2>TL;DR</h2>
       <ul>
         <li>
-          <strong>Localização:</strong> {userData("location")}
+          <strong>Ubicación:</strong> {userData("location")}
         </li>
         <li>
-          <strong>Idade:</strong> {calcAge(birthDate)}
+          <strong>Edad:</strong> {calcAge(birthDate)}
         </li>
         <li>
           <strong>Cargo:</strong> {userData("role")} @{" "}
@@ -32,7 +31,7 @@ export default function TLDRSection() {
           </Link>
         </li>
         <li>
-          <strong>Minha stack principal:</strong> {stack.join(", ")}
+          <strong>Principal tecnología:</strong> {stack.join(", ")}
         </li>
         <li>
           <strong>Idiomas:</strong>{" "}
@@ -54,10 +53,10 @@ export default function TLDRSection() {
           <strong>Intereses:</strong> {userData("interests")}
         </li>
         <li>
-          <strong>Pronomes:</strong> {userData("pronouns")}
+          <strong>Pronombres:</strong> {userData("pronouns")}
         </li>
         <li>
-          <strong>Minhas músicas favoritas no momento:</strong> <SongsGrid />
+          <strong>Mis canciones favoritas en este momento:</strong> <SongsGrid />
         </li>
       </ul>
     </section>

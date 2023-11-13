@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import { stack, userData as userConfig } from "@/config";
 import { calcAge } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+
 import { SongsGrid } from "../../components";
 
 const { birthDate, languages } = userConfig;

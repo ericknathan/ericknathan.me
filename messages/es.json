@@ -1,0 +1,211 @@
+{
+  "pages": {
+    "home": {
+      "about": {
+        "title": "📋 Acerca de mí",
+        "link": "Más información",
+        "userDescription": "Hola, mi nombre es Erick Nathan, soy un desarrollador front-end dedicado, con amplia experiencia en tecnologías como NodeJS y ReactJS, y un historial con clientes destacados como Uber Chip, Correios Celular y Carrefour, especializado en soluciones robustas y amigables para el usuario, priorizando la escalabilidad, accesibilidad y rendimiento."
+      },
+      "experiences": {
+        "title": "💼 Experiencias",
+        "link": "Contrátame",
+        "downloadCv": "Descargar mi currículum"
+      },
+      "latestPosts": {
+        "title": "📰 Últimas publicaciones",
+        "link": "Ver todas",
+        "emptyMessage": "No he escrito ninguna publicación aún"
+      },
+      "projects": {
+        "title": "📂 Mis proyectos",
+        "link": "Ver todos"
+      }
+    },
+    "projects": {
+      "title": "Mis proyectos",
+      "description": "Aquí tienes algunos de mis proyectos que he desarrollado; puedes encontrar más en mi <github>Github</github>"
+    },
+    "about": {
+      "title": "Acerca de mí"
+    },
+    "404": {
+      "image": "/images/gifs/mario-dance.gif",
+      "alt": "Mario Bros, un personaje con mono azul, gorro rojo y un distintivo bigote, bailando.",
+      "message": "¡Ops! Parece que te has perdido."
+    },
+    "503": {
+      "image": "/images/gifs/steve-building.gif",
+      "alt": "Steve, un personaje humano de apariencia cuadrada, consistente con la estética y el estilo artístico de Minecraft, viste una camisa azul claro con jeans, tiene ojos azules claros y cabello castaño oscuro, construyendo una casa.",
+      "message": "Esta página está temporalmente no disponible."
+    }
+  },
+  "config": {
+    "userData": {
+      "name": "Erick Nathan",
+      "role": "Desarrollador Front-end",
+      "location": "São Paulo, Brasil",
+      "interests": "Escuchar música, Viajar, Jugar videojuegos y Ver Live Coding",
+      "pronouns": "él/de él",
+      "avatarUrl": "/images/avatar/{colorScheme}.png",
+      "avatarAltDescription": "Un chico con cabello rizado sonriendo, vistiendo ropa formal con una corbata de moño.",
+      "githubUrl": "https://github.com/ericknathan",
+      "linkedinUrl": "https://www.linkedin.com/in/ericknathan",
+      "cvUrl": "/documents/Erick Nathan - Desarrollador Frontend.pdf",
+      "company": {
+        "name": "Pagtel",
+        "url": "https://pagtel.com.br"
+      },
+      "languages": {
+        "english": {
+          "name": "Inglés",
+          "proficiency": "Competencia  profesional"
+        },
+        "portuguese": {
+          "name": "Portugués",
+          "proficiency": "Nativo"
+        }
+      }
+    },
+    "roles": {
+      "Pagtel": "Desarrollador Front-end",
+      "Senai": "Estudiante en Desarrollo de Sistemas",
+      "FIAP": "Estudiante en Análisis y Desarrollo de Sistemas"
+    },
+    "projects": {
+      "easy-aluga": {
+        "shortDescription": "Una aplicación white-label para alquilar cualquier vehículo, desarrollada durante el Desafío BRQ Easy Carros en la FIAP."
+      },
+      "stone-currency": {
+        "shortDescription": "Aplicación web desarrollada para facilitar la conversión de valores monetarios de dólares estadounidenses a reales brasileños."
+      },
+      "3d-product-preview": {
+        "shortDescription": "Un visor simple de productos de sofá 3D hecho con Svelte y Threlte, una biblioteca ThreeJS para Svelte."
+      },
+      "podcastr": {
+        "shortDescription": "Una aplicación fácil de usar, diseñada para reproducir y gestionar episodios de audio de tu podcast favorito."
+      },
+      "devify": {
+        "shortDescription": "Aplicación web para mostrar la música actualmente reproducida en mi cuenta de Spotify."
+      },
+      "codeleap-network": {
+        "shortDescription": "CodeLeap Network es una aplicación de red social desarrollada para gestionar publicaciones en una API proporcionada por CodeLeap."
+      },
+      "igtimer": {
+        "shortDescription": "Un proyecto que permite al usuario cronometrar sus tareas diarias, además de permitirle ver un historial de todas las tareas ya realizadas."
+      },
+      "four-dev": {
+        "shortDescription": "Una aplicación de red social para registrar cuestionarios, con funciones para sintetizar conocimientos en React con Typescript y Hooks, utilizando TDD, Arquitectura Limpia, Patrones de Design y SOLID."
+      },
+      "foodie": {
+        "shortDescription": "Una página de destino desarrollada con HTML y CSS durante las clases de Marcado de Lenguaje en el Senai."
+      },
+      "tic-tac-toe": {
+        "shortDescription": "Un simple juego de tres en raya desarrollado con HTML, CSS y Javascript durante las clases de Programación Front-end de la Web en el Senai."
+      },
+      "happy": {
+        "shortDescription": "Aplicación que conecta a la comunidad con hogares de acogida, permitiendo la adición de refugios, programación de visitantes e información esencial, como horarios, público objetivo, ubicación e instrucciones de visita."
+      },
+      "e-survey": {
+        "shortDescription": "Una API modular con una arquitectura sólida y desarrollo orientado a pruebas (TDD), siguiendo los principios de SOLID y Arquitectura Limpia, implementando Patrones de Design para escalabilidad y eficiencia."
+      },
+      "rentx": {
+        "shortDescription": "API de alquiler de autos eficiente y confiable, utilizando Express, Typescript, TypeORM y Swagger, con una arquitectura modular y documentación clara."
+      },
+      "nest-rabbitmq": {
+        "shortDescription": "Arquitectura de microservicios robusta y escalable, utilizando NestJS para facilitar el mantenimiento, con integración de RabbitMQ para comunicación asincrónica efectiva y distribución inteligente de tareas."
+      }
+    },
+    "navbarSections": {
+      "home": {
+        "title": "",
+        "buttons": {
+          "home": "Inicio"
+        }
+      },
+
+      "me": {
+        "title": "Yo",
+        "buttons": {
+          "aboutMe": "Sobre mí",
+          "blog": "Blog",
+          "projects": "Proyectos",
+          "setup": "Mi configuración"
+        }
+      },
+      "socials": {
+        "title": "Redes sociales"
+      }
+    },
+    "metadata": {
+      "description": "Desarrollador front-end apasionado por crear experiencias digitales increíbles. Explora mi portafolio y descubre cómo mis habilidades de programación pueden impulsar tu proyecto. Descubre mi trabajo y ponte en contacto para colaboraciones u oportunidades profesionales.",
+      "opengraph": {
+        "title": "Erick Nathan"
+      }
+    }
+  },
+  "components": {
+    "projectCard": {
+      "buttons": {
+        "preview": "Visitar",
+        "source": "Código fuente"
+      }
+    },
+    "settingsToggle": {
+      "name": "Configuración",
+      "theme": {
+        "title": "Tema",
+        "buttons": {
+          "light": "Claro",
+          "dark": "Oscuro"
+        }
+      },
+      "colorScheme": {
+        "title": "Esquema de colores",
+        "buttons": {
+          "blue": "Azul",
+          "green": "Verde",
+          "orange": "Naranja",
+          "zinc": "Zinc",
+          "rose": "Rosa",
+          "dracula": "Drácula"
+        }
+      },
+      "language": {
+        "title": "Idioma"
+      }
+    },
+    "spotifyIndicator": {
+      "playing": "Actualmente reproduciendo %TITLE% de %ARTIST%",
+      "nothing": "Nada reproduciéndose"
+    },
+    "consoleEasterEgg": {
+      "title": "¡Hola, ¿estás por aquí? 👀",
+      "source": "💻 Puedes ver el código fuente de este sitio en {url}",
+      "job": "¿Qué tal darme la oportunidad de trabajar contigo o en tu empresa? 👉👈",
+      "contact": "Si estás interesado, ponte en contacto conmigo en {url}",
+      "thanks": "¡Ten {time, select, day {un buen día} afternoon {una buena tarde} other {una buena noche}}! 👋😁",
+      "notification": {
+        "title": "🧑‍💻 ¿Tienes curiosidad?",
+        "description": "¡Se ha encontrado un nuevo huevo de pascua! Abre la consola para ver más."
+      }
+    },
+    "konamiCodeEasterEgg": {
+      "notification": {
+        "title": "🕹️ Código Konami",
+        "description": "Este es solo uno de los huevos de pascua de mi sitio, ¿puedes encontrar los demás? 🤫"
+      }
+    },
+    "themeEasterEgg": {
+      "notification": {
+        "title": "🎨 ¡Nuevo esquema de colores desbloqueado!",
+        "description": "¡Has desbloqueado el esquema de colores {colorScheme}!"
+      }
+    },
+    "experienceCard": {
+      "company": "Empresa",
+      "role": "Cargo",
+      "date": "Fecha",
+      "present": "Actualmente"
+    }
+  }
+}

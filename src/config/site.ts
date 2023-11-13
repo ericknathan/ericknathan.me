@@ -77,6 +77,7 @@ export type AppLocale = {
 export const appLocales: AppLocale[] = [
   { label: "English", name: "en", icon: "flagUs" },
   { label: "Português", name: "pt-BR", icon: "flagBr" },
+  { label: "Español", name: "es", icon: "flagEs" },
 ];
 
 export const storageKeys = {

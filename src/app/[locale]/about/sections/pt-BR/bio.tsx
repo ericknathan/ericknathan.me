@@ -1,10 +1,11 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-import { useTranslations } from "next-intl";
+import { ClientsList } from "../../components";
 
 export default function BioSection() {
-  const userData = useTranslations("config.userData")
+  const userData = useTranslations("config.userData");
 
   return (
     <section id="bio">
@@ -52,49 +53,10 @@ export default function BioSection() {
         </Link>
         , onde estou ativamente envolvido na criação de interfaces intuitivas e
         amigáveis ao usuário para uma variedade de produtos digitais para muitos
-        clientes como{" "}
-        <Link
-          href="https://www.uber.com/br/pt-br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Uber
-        </Link>
-        {", "}
-        <Link
-          href="https://www.correioscelular.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Correios
-        </Link>
-        {", "}
-        <Link
-          href="https://www.bancobmg.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          BMG Bank
-        </Link>
-        {", "}
-        <Link
-          href="https://loja.algartelecom.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Algar
-        </Link>
-        {" e "}
-        <Link
-          href="https://www.carrefour.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Carrefour
-        </Link>
-        . Minha função me permite combinar minha mentalidade criativa com minha
-        experiência técnica, permitindo-me criar experiências envolventes e
-        visualmente atraentes que ressoam com os usuários.
+        clientes como <ClientsList andJoiner="and" />. Minha função me permite
+        combinar minha mentalidade criativa com minha experiência técnica,
+        permitindo-me criar experiências envolventes e visualmente atraentes que
+        ressoam com os usuários.
       </p>
     </section>
   );
