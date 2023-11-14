@@ -227,7 +227,8 @@
       "company": "Empresa",
       "role": "Cargo",
       "date": "Fecha",
-      "present": "Actualmente"
+      "present": "Actualmente",
+      "duration": "{years, plural, =0 {} =1 {# año} other {# años}} {months, plural, =0 {} =1 {# mes} other {# meses}}"
     }
   }
 }
