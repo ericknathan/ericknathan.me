@@ -209,7 +209,8 @@
       "company": "Empresa",
       "role": "Cargo",
       "date": "Data",
-      "present": "Atualmente"
+      "present": "Atualmente",
+      "duration": "{years, plural, =0 {} =1 {# ano} other {# anos}} {months, plural, =0 {} =1 {# mês} other {# meses}}"
     }
   }
 }

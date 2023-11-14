@@ -209,7 +209,8 @@
       "company": "Company",
       "role": "Role",
       "date": "Date",
-      "present": "Present"
+      "present": "Present",
+      "duration": "{years, plural, =0 {} =1 {# yr} other {# yrs}} {months, plural, =0 {# mo} =1 {# mo} other {# mos}}"
     }
   }
 }

@@ -1,16 +1,22 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
-import { ExperienceModel } from '@/config'
+import { ExperienceModel } from "@/config";
+import { calcDuration } from "@/lib/utils";
 
 interface WorkExperienceCardProps {
   data: ExperienceModel;
 }
 
 export function WorkExperienceCard({ data }: WorkExperienceCardProps) {
-  const { company, startDate, endDate, image } = data;
+  const { company, startDate: rawStartDate, endDate: rawEndDate, image } = data;
+  
+  const startDate = new Date(rawStartDate);
+  const endDate = rawEndDate ? new Date(rawEndDate) : undefined;
+  const duration = calcDuration(startDate, endDate);
+
   const role = useTranslations("config")(`roles.${company}` as any);
-  const t = useTranslations("components.experienceCard")
+  const t = useTranslations("components.experienceCard");
 
   return (
     <div className="flex gap-4">
@@ -25,16 +31,15 @@ export function WorkExperienceCard({ data }: WorkExperienceCardProps) {
       </div>
       <dl className="flex flex-col gap-x-2 w-full">
         <dt className="sr-only">{t("company")}</dt>
-        <dd className="w-full flex-none text-sm font-medium">
-          {company}
-        </dd>
+        <dd className="w-full flex-none text-sm font-medium">{company}</dd>
         <dt className="sr-only">{t("role")}</dt>
         <dd className="text-xs text-muted-foreground">{role}</dd>
         <dt className="sr-only">{t("date")}</dt>
         <dd className="text-xs text-muted-foreground/80 flex">
           <time className="mt-auto">
-            {new Date(startDate).getFullYear()} -{" "}
-            {!endDate ? t("present") : new Date(endDate).getFullYear()}
+            {startDate.getFullYear()} –{" "}
+            {!endDate ? t("present") : endDate.getFullYear()}
+            {` • ${t("duration", duration)}`}
           </time>
         </dd>
       </dl>
