@@ -28,6 +28,23 @@
     "about": {
       "title": "About me"
     },
+    "uses": {
+      "title": "Stack and uses",
+      "description": "Explore the technologies and tools that power my development journey. I carefully choose and leverage these tools to create robust, efficient, and user-centric solutions.",
+      "categories": {
+        "frontend": "Front-end",
+        "testing": "Testing",
+        "design": "Design",
+        "documentation": "Documentation",
+        "observability-analytics": "Observability and analytics",
+        "backend": "Back-end",
+        "database": "Database",
+        "infrastructure": "Infrastructure",
+        "version-control": "Version control",
+        "extensions": "Extensions, plugins and themes",
+        "apps": "Apps"
+      }
+    },
     "404": {
       "image": "/images/gifs/mario-dance.gif",
       "alt": "Mario Bros, a character with his blue overalls, red cap, and trademark moustache, dancing.",
@@ -128,7 +145,7 @@
           "aboutMe": "About me",
           "blog": "Blog",
           "projects": "Projects",
-          "setup": "Setup"
+          "uses": "Stack and uses"
         }
       },
       "socials": {

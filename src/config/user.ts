@@ -38,8 +38,8 @@ export const userData = {
   name: "Erick Nathan",
   linkedinUrl: socials.find((social) => social.name === "LinkedIn")?.href || "",
   twitter: {
-    id: '1367639862325706758',
-    username: '@onathannsz',
+    id: "1367639862325706758",
+    username: "@onathannsz",
   },
   company: {
     name: "Pagtel",
@@ -48,3 +48,15 @@ export const userData = {
   birthDate: new Date("2005-08-14"),
   languages: ["english", "portuguese"],
 };
+
+export const stack = [
+  "ReactJS",
+  "NextJS",
+  "Svelte",
+  "Sveltekit",
+  "NodeJS",
+  "TypeScript",
+  "JavaScript",
+  "HTML",
+  "CSS",
+];

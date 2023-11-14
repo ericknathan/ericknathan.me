@@ -51,9 +51,8 @@ export const navbarSections: NavbarSectionModel[] = [
       },
       {
         icon: "laptop",
-        name: "setup",
-        href: "/setup",
-        disabled: true,
+        name: "uses",
+        href: "/uses",
       },
     ],
   },

@@ -28,6 +28,23 @@
     "about": {
       "title": "Sobre mim"
     },
+    "uses": {
+      "title": "Tecnologias e Ferramentas",
+      "description": "Explore as tecnologias e ferramentas que impulsionam a minha experiência em desenvolvimento. Eu seleciono e uso meticulosamente essas ferramentas para criar soluções robustas e eficientes, priorizando sempre a experiência do usuário.",
+      "categories": {
+        "frontend": "Front-end",
+        "testing": "Testes",
+        "design": "Design",
+        "documentation": "Documentação",
+        "observability-analytics": "Observabilidade e analytics",
+        "backend": "Back-end",
+        "database": "Banco de dados",
+        "infrastructure": "Infraestrutura",
+        "version-control": "Controle de versões",
+        "extensions": "Extensões, plugins e temas",
+        "apps": "Aplicativos"
+      }
+    },
     "404": {
       "image": "/images/gifs/mario-dance.gif",
       "alt": "Mario Bros, um personagem de macacão azul, boné vermelho e um bigode característico, dançando.",
@@ -128,7 +145,7 @@
           "aboutMe": "Sobre mim",
           "blog": "Blog",
           "projects": "Projetos",
-          "setup": "Meu setup"
+          "uses": "Tecnologias e Ferramentas"
         }
       },
       "socials": {
