@@ -8,8 +8,13 @@ export const uses = [
         link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       },
       {
+        name: "Framer Motion",
+        icon: "/images/techs/framer-motion.svg",
+        link: "https://www.framer.com/motion",
+      },
+      {
         name: "HTML",
-        icon: "/images/techs/gitlab.svg",
+        icon: "/images/techs/html.svg",
         link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
       },
       {
@@ -361,6 +366,11 @@ export const uses = [
   {
     title: "apps",
     items: [
+      {
+        name: "Beekeeper",
+        icon: "/images/techs/beekeeper.svg",
+        link: "https://www.beekeeperstudio.io",
+      },
       {
         name: "Discord",
         icon: "/images/techs/discord.svg",
