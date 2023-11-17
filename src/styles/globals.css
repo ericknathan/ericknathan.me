@@ -7,11 +7,6 @@
     @apply border-border;
   }
 
-  html,
-  body {
-    @apply h-full;
-  }
-
   body {
     @apply flex bg-background text-foreground;
   }
