@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 
 import { CompanyThanksDialog } from "./company-thanks-dialog";
 import { ConsoleEasterEgg } from "./console-easter-egg";
@@ -9,7 +9,9 @@ export function EasterEggs() {
     <Fragment>
       <ConsoleEasterEgg />
       <KonamiCodeEasterEgg />
-      <CompanyThanksDialog />
+      <Suspense>
+        <CompanyThanksDialog />
+      </Suspense>
     </Fragment>
   );
 }
