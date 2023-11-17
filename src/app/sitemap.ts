@@ -1,8 +1,9 @@
 import { websiteUrl } from "@/config";
+import { locales } from "@/navigation";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const pagesWithLocations = locales.map((locale) => [
     {
       url: websiteUrl,
       lastModified: new Date(),
@@ -10,28 +11,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${websiteUrl}/about`,
+      url: `${websiteUrl}/${locale}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${websiteUrl}/projects`,
+      url: `${websiteUrl}/${locale}/projects`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${websiteUrl}/blog`,
+      url: `${websiteUrl}/${locale}/blog`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "daily",
       priority: 0.7,
     },
     {
-      url: `${websiteUrl}/setup`,
+      url: `${websiteUrl}/${locale}/uses`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 0.6,
     },
-  ];
+    {
+      url: `${websiteUrl}/${locale}/guestbook`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+  ]);
+
+  return pagesWithLocations.flat() as MetadataRoute.Sitemap;
 }

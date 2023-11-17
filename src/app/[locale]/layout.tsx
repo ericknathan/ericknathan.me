@@ -113,6 +113,7 @@ export async function generateMetadata({
       description: t("config.metadata.description"),
       url: "/opengraph-image",
     },
+    applicationName: title,
   };
 }
 
