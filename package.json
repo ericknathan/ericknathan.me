@@ -17,6 +17,7 @@
     "@vercel/analytics": "^1.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "firebase": "^10.6.0",
     "framer-motion": "^10.16.4",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.292.0",

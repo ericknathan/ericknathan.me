@@ -28,6 +28,34 @@
     "about": {
       "title": "Sobre mim"
     },
+    "guestbook": {
+      "title": "Livro de Visitas",
+      "description": "Bem-vindo ao meu livro de visitas! Que tal deixar sua mensagem aqui? Seja um simples oi, uma mensagem motivacional ou uma piada, me surpreenda 😁",
+      "placeholder": "Deixe sua mensagem aqui...",
+      "messages": {
+        "empty": "Ainda não há mensagens, seja o primeiro a deixar uma!",
+        "error": "🚨 Ocorreu um erro ao carregar as mensagens, por favor, tente novamente mais tarde.",
+        "success": "🗨️ Mensagem enviada com sucesso!",
+        "cooldown": "🕒 Você deve esperar {minutes} minutos e {seconds} segundos para enviar outra mensagem."
+      },
+      "buttons": {
+        "signIn": "Faça login para deixar uma mensagem",
+        "signOut": "Sair",
+        "send": "Enviar"
+      },
+      "deleteDialog": {
+        "title": "🧹 Excluir mensagem",
+        "content": "Tem certeza de que deseja excluir esta mensagem?",
+        "buttons": {
+          "cancel": "Cancelar",
+          "delete": "Sim, excluir"
+        },
+        "toast": {
+          "success": "🧹 Mensagem excluída com sucesso!",
+          "error": "🚨 Ocorreu um erro ao excluir a mensagem, por favor, tente novamente mais tarde."
+        }
+      }
+    },
     "uses": {
       "title": "Tecnologias e Ferramentas",
       "description": "Explore as tecnologias e ferramentas que impulsionam a minha experiência em desenvolvimento. Eu seleciono e uso meticulosamente essas ferramentas para criar soluções robustas e eficientes, priorizando sempre a experiência do usuário.",
@@ -143,9 +171,15 @@
         "title": "Eu",
         "buttons": {
           "aboutMe": "Sobre mim",
-          "blog": "Blog",
           "projects": "Projetos",
           "uses": "Tecnologias e Ferramentas"
+        }
+      },
+      "journal": {
+        "title": "Diário",
+        "buttons": {
+          "blog": "Blog",
+          "guestbook": "Livro de Visitas"
         }
       },
       "socials": {

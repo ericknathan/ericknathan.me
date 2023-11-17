@@ -28,6 +28,34 @@
     "about": {
       "title": "Acerca de mí"
     },
+    "guestbook": {
+      "title": "Libro de Visitas",
+      "description": "¡Bienvenido a mi libro de visitas! ¿Por qué no dejas tu mensaje aquí? Ya sea un simple hola, un mensaje motivacional o un chiste, sorpréndeme 😁",
+      "placeholder": "Escribe tu mensaje aquí...",
+      "messages": {
+        "empty": "Aún no hay mensajes, ¡sé el primero en dejar uno!",
+        "error": "🚨 Se produjo un error al cargar los mensajes, por favor, inténtalo de nuevo más tarde.",
+        "success": "🗨️ Mensaje enviado con éxito, ¡gracias!",
+        "cooldown": "🕒 Debes esperar {minutes} minutos y {seconds} segundos para enviar otro mensaje."
+      },
+      "buttons": {
+        "signIn": "Inicia sesión para dejar un mensaje",
+        "signOut": "Cerrar sesión",
+        "send": "Enviar"
+      },
+      "deleteDialog": {
+        "title": "🧹 Eliminar mensaje",
+        "content": "¿Estás seguro de que quieres eliminar este mensaje?",
+        "buttons": {
+          "cancel": "Cancelar",
+          "delete": "Sí, eliminar"
+        },
+        "toast": {
+          "success": "🧹 ¡Mensaje eliminado con éxito!",
+          "error": "🚨 Se produjo un error al eliminar el mensaje, por favor inténtalo de nuevo más tarde."
+        }
+      }
+    },
     "uses": {
       "title": "Tecnologías y herramientas",
       "description": "Descubre las tecnologías y herramientas que impulsan mi experiencia en desarrollo. Selecciono y utilizo cuidadosamente estas herramientas para crear soluciones robustas y eficientes, priorizando siempre la experiencia del usuario.",
@@ -139,7 +167,6 @@
           "home": "Inicio"
         }
       },
-
       "me": {
         "title": "Yo",
         "buttons": {
@@ -147,6 +174,13 @@
           "blog": "Blog",
           "projects": "Proyectos",
           "uses": "Tecnologías y herramientas"
+        }
+      },
+      "journal": {
+        "title": "Diario",
+        "buttons": {
+          "blog": "Blog",
+          "guestbook": "Libro de Visitas"
         }
       },
       "socials": {

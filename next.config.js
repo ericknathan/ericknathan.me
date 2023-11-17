@@ -10,6 +10,9 @@ const nextConfig = {
       {
         hostname: "i.scdn.co",
       },
+      {
+        hostname: "avatars.githubusercontent.com",
+      },
     ],
   },
 };

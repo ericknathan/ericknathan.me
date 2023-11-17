@@ -39,12 +39,6 @@ export const navbarSections: NavbarSectionModel[] = [
         href: "/about",
       },
       {
-        icon: "newspaper",
-        name: "blog",
-        href: "/blog",
-        disabled: true,
-      },
-      {
         icon: "folderDot",
         name: "projects",
         href: "/projects",
@@ -55,6 +49,22 @@ export const navbarSections: NavbarSectionModel[] = [
         href: "/uses",
       },
     ],
+  },
+  {
+    name: "journal",
+    buttons: [
+      {
+        icon: "newspaper",
+        name: "blog",
+        href: "/blog",
+        disabled: true,
+      },
+      {
+        icon: "messageSquare",
+        name: "guestbook",
+        href: "/guestbook",
+      },
+    ]
   },
   {
     name: "socials",
@@ -86,4 +96,5 @@ export const storageKeys = {
   unlockedColorSchemes: "@ericknathan.me/unlockedColorSchemes",
   unlockedConsoleEasterEgg: "@ericknathan.me/unlockedConsoleEasterEgg",
   isCompanyThanksDialogAlreadyOpen: "@ericknathan.me/companyDialogOpen",
+  auth: "@ericknathan.me/auth",
 };
