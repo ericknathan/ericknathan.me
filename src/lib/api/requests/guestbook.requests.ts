@@ -91,6 +91,10 @@ export async function sendMessage(
     };
   }
 
+  const githubData = await fetch(`https://api.github.com/user/${user.providerData[0].uid}`).then(
+    (res) => res.json()
+  );
+
   await set(query, {
     id,
     message,
@@ -98,6 +102,7 @@ export async function sendMessage(
     user: {
       name: user.displayName,
       avatar: user.photoURL,
+      profileUrl: githubData.html_url
     },
   });
 

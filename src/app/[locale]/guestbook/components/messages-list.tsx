@@ -1,15 +1,15 @@
 "use client";
 
-import { onValue, ref } from "firebase/database";
 import { useFormatter, useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { FadeIn } from "@/components/animation";
 import { useAuth } from "@/contexts";
-import { listenMessages, updateMessages } from "@/lib/api/requests";
-import { database } from "@/lib/firebase/database";
+import { listenMessages } from "@/lib/api/requests";
 import { GuestbookMessageModel } from "@/models";
+
+import { FadeIn } from "@/components/animation";
 import { DeleteMessageButton } from "./delete-message-button";
 import { MessagesListFallback } from "./messages-list-fallback";
 
@@ -35,6 +35,8 @@ export function MessagesList() {
     );
   }, []);
 
+  console.log({ messages });
+
   if (status === "error")
     return <MessagesListFallback message={t("messages.error")} />;
   if (messages.length === 0 && status !== "loading")
@@ -56,7 +58,12 @@ export function MessagesList() {
             )}
           </div>
           <footer className="flex items-center justify-between text-sm font-medium">
-            <div className="flex items-center gap-2">
+            <Link
+              href={message.user.profileUrl}
+              className="flex items-center gap-2 group outline-offset-2 outline-ring outline-2 focus-visible:outline rounded-sm pr-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 width={36}
                 height={36}
@@ -64,8 +71,10 @@ export function MessagesList() {
                 alt={message.user.name}
                 className="w-8 h-8 rounded-full bg-muted-foreground/50"
               />
-              <span className="opacity-80">{message.user.name}</span>
-            </div>
+              <span className="opacity-80 group-hover:underline group-hover:text-primary">
+                {message.user.name}
+              </span>
+            </Link>
             <span className="text-sm text-muted-foreground">
               {format.relativeTime(new Date(message.createdAt), new Date())}
             </span>

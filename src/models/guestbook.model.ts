@@ -5,5 +5,6 @@ export type GuestbookMessageModel = {
   user: {
     name: string;
     avatar: string;
+    profileUrl: string;
   };
 };
