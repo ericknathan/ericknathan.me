@@ -61,8 +61,10 @@ export function SidebarSpotifyIndicator() {
     setIsPlayingAudio(false);
   }
 
+  const Element = songData?.is_playing ? motion.a : motion.div;
+
   return (
-    <motion.a
+    <Element
       href={songData?.song_url}
       target="_blank"
       rel="noopener noreferrer"
@@ -156,7 +158,7 @@ export function SidebarSpotifyIndicator() {
           <p className="text-sm font-medium">{t("nothing")}</p>
         </>
       ) : null}
-    </motion.a>
+    </Element>
   );
 }
 
