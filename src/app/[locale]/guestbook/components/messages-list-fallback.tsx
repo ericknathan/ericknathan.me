@@ -35,7 +35,7 @@ export function MessagesListFallback({ message }: MessagesListFallbackProps) {
         <circle cx="38.5" cy="46.5" r="3.5" fill="#FEFEFE" className="animate-float" />
         <circle cx="51.5" cy="46.5" r="3.5" fill="#FEFEFE" className="animate-float" />
       </svg>{" "}
-      <p className="text-muted-foreground">{message}</p>
+      <p className="text-muted-foreground text-center">{message}</p>
     </FadeIn>
   );
 }

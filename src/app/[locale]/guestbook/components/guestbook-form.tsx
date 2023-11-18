@@ -71,7 +71,7 @@ export function GuestbookForm() {
       <footer className="flex flex-row-reverse items-center gap-2">
         {user ? (
           <>
-            <Button className="ml-auto" disabled={formIsInvalid}>
+            <Button className="ml-auto text-center" disabled={formIsInvalid}>
               {t("buttons.send")}
             </Button>
             <span className="flex flex-col items-start text-sm font-medium">
@@ -98,7 +98,7 @@ export function GuestbookForm() {
               onClick={signIn}
               variant="outline"
               disabled={formIsInvalid || status === "loading"}
-              className="ml-auto"
+              className="ml-auto h-fit text-center"
             >
               <Icon.github className="w-4 h-4 mr-2" /> {t("buttons.signIn")}
             </Button>
