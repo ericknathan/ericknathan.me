@@ -35,8 +35,6 @@ export function MessagesList() {
     );
   }, []);
 
-  console.log({ messages });
-
   if (status === "error")
     return <MessagesListFallback message={t("messages.error")} />;
   if (messages.length === 0 && status !== "loading")
