@@ -172,7 +172,6 @@
         "title": "Me",
         "buttons": {
           "aboutMe": "About me",
-          "blog": "Blog",
           "projects": "Projects",
           "uses": "Stack and uses"
         }
