@@ -107,10 +107,6 @@ export async function getOpenGraphData({
   const messages = (await import(`../../../messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 
-  const interBold = fetch(
-    new URL("../../assets/opengraph/Inter-Bold.woff", import.meta.url)
-  ).then((res) => res.arrayBuffer());
-
   const avatarUrl = await fetch(
     new URL("../../assets/opengraph/avatar.png", import.meta.url)
   ).then((res) => res.arrayBuffer());
@@ -120,7 +116,6 @@ export async function getOpenGraphData({
   ).then((res) => res.arrayBuffer());
 
   return {
-    interBold,
     avatarUrl,
     noiseUrl,
     title: t("config.metadata.opengraph.title"),

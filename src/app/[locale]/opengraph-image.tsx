@@ -17,7 +17,7 @@ export default async function Image({
 }: {
   params: { locale: string };
 }) {
-  const { interBold, avatarUrl, noiseUrl, title, description } =
+  const { avatarUrl, noiseUrl, title, description } =
     await getOpenGraphData({ locale: params.locale });
 
   return new ImageResponse(
@@ -26,18 +26,10 @@ export default async function Image({
       noiseUrl,
       title,
       description,
-      size
+      size,
     }),
     {
       ...size,
-      fonts: [
-        {
-          name: "Inter",
-          data: await interBold,
-          style: "normal",
-          weight: 700,
-        },
-      ],
     }
   );
 }
