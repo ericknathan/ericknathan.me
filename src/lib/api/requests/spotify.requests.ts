@@ -2,6 +2,7 @@ const {
   SPOTIFY_CLIENT_ID: client_id,
   SPOTIFY_CLIENT_SECRET: client_secret,
   SPOTIFY_REFRESH_TOKEN: refresh_token,
+  SPOTIFY_FAVORITE_SONGS_LIMIT
 } = process.env;
 
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
@@ -38,7 +39,7 @@ const getNowPlaying = async () => {
   });
 };
 
-const getFavoriteSongs = async ({ limit = 8 } = {}) => {
+const getFavoriteSongs = async ({ limit = SPOTIFY_FAVORITE_SONGS_LIMIT } = {}) => {
   const { access_token } = await getAccessToken();
 
   return fetch(
