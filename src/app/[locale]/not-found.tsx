@@ -1,8 +1,8 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-export default function NotFoundPage() {
-  const t = useTranslations("pages.404");
+export default async function NotFoundPage() {
+  const t = await getTranslations("pages.404");
 
   return (
     <div className="h-full flex items-center justify-center flex-1 gap-4">

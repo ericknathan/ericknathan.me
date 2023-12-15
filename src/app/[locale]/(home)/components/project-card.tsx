@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,17 +6,18 @@ import { ProjectModel } from "@/config";
 import { FadeIn } from "@/components/animation";
 import { ProjectImageDialog } from "@/components/app";
 import { Button, Icon } from "@/components/ui";
+import { getTranslations } from "next-intl/server";
 
 interface ProjectCardProps {
   project: ProjectModel;
   index: number;
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export async function ProjectCard({ project, index }: ProjectCardProps) {
   const { id, imagePreviewUrl, name, sourceUrl, projectUrl } = project;
 
-  const buttons = useTranslations("components.projectCard.buttons");
-  const shortDescription = useTranslations("config.projects")(
+  const buttons = await getTranslations("components.projectCard.buttons");
+  const shortDescription = (await getTranslations("config.projects"))(
     `${id}.shortDescription` as any
   );
 

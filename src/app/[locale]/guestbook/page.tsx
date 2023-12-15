@@ -1,7 +1,10 @@
-import { FadeIn } from "@/components/animation";
+import { createTranslator } from "next-intl";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+
 import { AuthContextProvider } from "@/contexts";
 import { Locale } from "@/navigation";
-import { createTranslator, useTranslations } from "next-intl";
+
+import { FadeIn } from "@/components/animation";
 import { GuestbookForm } from "./components/guestbook-form";
 import { MessagesList } from "./components/messages-list";
 
@@ -11,8 +14,12 @@ interface GuestbookPageProps {
   };
 }
 
-export default function GestbookPage() {
-  const t = useTranslations("pages.guestbook");
+export default async function GestbookPage({
+  params: { locale },
+}: GuestbookPageProps) {
+  unstable_setRequestLocale(locale);
+
+  const t = await getTranslations("pages.guestbook");
 
   return (
     <AuthContextProvider>

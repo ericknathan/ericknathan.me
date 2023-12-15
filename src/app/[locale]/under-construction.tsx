@@ -1,9 +1,10 @@
-import { FadeIn } from "@/components/animation";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-export function UnderConstructionPage() {
-  const t = useTranslations("pages.503");
+import { FadeIn } from "@/components/animation";
+
+export async function UnderConstructionPage() {
+  const t = await getTranslations("pages.503");
 
   return (
     <FadeIn

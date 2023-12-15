@@ -1,5 +1,5 @@
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
 
 import { stack, userData as userConfig } from "@/config";
 import { calcAge } from "@/lib/utils";
@@ -8,8 +8,8 @@ import { SongsGrid } from "../../components";
 
 const { birthDate, languages } = userConfig;
 
-export default function TLDRSection() {
-  const userData = useTranslations("config.userData");
+export default async function TLDRSection() {
+  const userData = await getTranslations("config.userData");
 
   return (
     <section id="tl-dr">

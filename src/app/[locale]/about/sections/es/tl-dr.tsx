@@ -1,14 +1,14 @@
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
 import { stack, userData as userConfig } from "@/config";
 import { calcAge } from "@/lib/utils";
-import { useTranslations } from "next-intl";
 import { SongsGrid } from "../../components";
 
 const { birthDate, languages } = userConfig;
 
-export default function TLDRSection() {
-  const userData = useTranslations("config.userData");
+export default async function TLDRSection() {
+  const userData = await getTranslations("config.userData");
 
   return (
     <section id="tl-dr">
@@ -56,7 +56,8 @@ export default function TLDRSection() {
           <strong>Pronombres:</strong> {userData("pronouns")}
         </li>
         <li>
-          <strong>Mis canciones favoritas en este momento:</strong> <SongsGrid />
+          <strong>Mis canciones favoritas en este momento:</strong>{" "}
+          <SongsGrid />
         </li>
       </ul>
     </section>

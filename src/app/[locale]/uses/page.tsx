@@ -2,8 +2,8 @@ import { FadeIn } from "@/components/animation";
 import { uses } from "@/config";
 import { cn } from "@/lib/utils";
 import { Locale } from "@/navigation";
-import { createTranslator, useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { createTranslator } from "next-intl";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,10 +13,10 @@ interface UsesPageProps {
   };
 }
 
-export default function UsesPage({ params: { locale } }: UsesPageProps) {
-  const t = useTranslations("pages.uses");
-
+export default async function UsesPage({ params: { locale } }: UsesPageProps) {
   unstable_setRequestLocale(locale);
+
+  const t = await getTranslations("pages.uses");
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">

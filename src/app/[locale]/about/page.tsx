@@ -1,5 +1,5 @@
-import { createTranslator, useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { createTranslator } from "next-intl";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { FadeIn } from "@/components/animation";
@@ -12,14 +12,16 @@ interface AboutPageProps {
   };
 }
 
-export default function AboutPage({ params: { locale } }: AboutPageProps) {
-  const t = useTranslations("pages.about");
+export default async function AboutPage({
+  params: { locale },
+}: AboutPageProps) {
+  unstable_setRequestLocale(locale);
 
   if (!locales.includes(locale)) {
     return notFound();
   }
 
-  unstable_setRequestLocale(locale);
+  const t = await getTranslations("pages.about");
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">

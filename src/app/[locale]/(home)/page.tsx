@@ -1,5 +1,4 @@
-import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 
 import { experiencesList, projectsList } from "@/config";
@@ -22,11 +21,13 @@ interface HomePageProps {
   };
 }
 
-export default function HomePage({ params: { locale } }: HomePageProps) {
-  const userData = useTranslations("config.userData");
-  const t = useTranslations("pages.home");
-
+export default async function HomePage({ params: { locale } }: HomePageProps) {
   unstable_setRequestLocale(locale);
+  
+  const [userData, t] = await Promise.all([
+    getTranslations("config.userData"),
+    getTranslations("pages.home"),
+  ]);
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">

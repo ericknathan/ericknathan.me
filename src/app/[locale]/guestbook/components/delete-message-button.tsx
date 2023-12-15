@@ -5,14 +5,16 @@ import { toast } from "@/hooks";
 
 import { Button, Dialog, Icon } from "@/components/ui";
 import { deleteMessage } from "@/lib/api/requests";
-import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 interface DeleteMessageButtonProps {
   messageId: string;
 }
 
-export function DeleteMessageButton({ messageId }: DeleteMessageButtonProps) {
+export async function DeleteMessageButton({
+  messageId,
+}: DeleteMessageButtonProps) {
   const t = useTranslations("pages.guestbook.deleteDialog");
   const { user, status } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,11 +29,11 @@ export function DeleteMessageButton({ messageId }: DeleteMessageButtonProps) {
 
       setIsModalOpen(false);
       toast({
-        title: t("toast.success")
+        title: t("toast.success"),
       });
     } catch (error) {
       toast({
-        title: t("toast.error")
+        title: t("toast.error"),
       });
     }
   }
@@ -46,9 +48,7 @@ export function DeleteMessageButton({ messageId }: DeleteMessageButtonProps) {
       <Dialog.Content>
         <Dialog.Header>
           <Dialog.Title>{t("title")}</Dialog.Title>
-          <Dialog.Description>
-            {t("content")}
-          </Dialog.Description>
+          <Dialog.Description>{t("content")}</Dialog.Description>
         </Dialog.Header>
         <Dialog.Footer>
           <Dialog.Close asChild>

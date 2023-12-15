@@ -1,11 +1,11 @@
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 import { ClientsList } from "../../components";
+import { getTranslations } from "next-intl/server";
 
-export default function BioSection() {
-  const userData = useTranslations("config.userData");
+export default async function BioSection() {
+  const userData = await getTranslations("config.userData");
 
   return (
     <section id="bio">

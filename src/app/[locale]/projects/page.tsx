@@ -1,4 +1,4 @@
-import { createTranslator, useTranslations } from "next-intl";
+import { createTranslator } from "next-intl";
 import Link from "next/link";
 
 import { projectsCategories, projectsList } from "@/config";
@@ -6,7 +6,7 @@ import { projectsCategories, projectsList } from "@/config";
 import { FadeIn } from "@/components/animation";
 import { Icon } from "@/components/ui";
 import { Locale } from "@/navigation";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { ProjectCard } from "./components";
 
 interface ProjectsPageProps {
@@ -15,13 +15,15 @@ interface ProjectsPageProps {
   };
 }
 
-export default function ProjectsPage({
+export default async function ProjectsPage({
   params: { locale },
 }: ProjectsPageProps) {
-  const userData = useTranslations("config.userData");
-  const t = useTranslations("pages.projects");
-
   unstable_setRequestLocale(locale);
+
+  const [userData, t] = await Promise.all([
+    getTranslations("config.userData"),
+    getTranslations("pages.projects"),
+  ]);
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">
