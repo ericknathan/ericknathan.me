@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const { GA_MEASUREMENT_ID, CLARITY_ID } = process.env;
 
@@ -39,6 +40,8 @@ export function Analytics() {
           </Script>
         </>
       ) : null}
+
+      <SpeedInsights />
     </>
   );
 }
