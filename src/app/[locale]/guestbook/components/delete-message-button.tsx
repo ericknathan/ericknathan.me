@@ -12,7 +12,7 @@ interface DeleteMessageButtonProps {
   messageId: string;
 }
 
-export async function DeleteMessageButton({
+export function DeleteMessageButton({
   messageId,
 }: DeleteMessageButtonProps) {
   const t = useTranslations("pages.guestbook.deleteDialog");
