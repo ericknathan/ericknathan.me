@@ -3,7 +3,7 @@
 import { useFormatter, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import { useAuth } from "@/contexts";
 import { listenMessages } from "@/lib/api/requests";
@@ -50,7 +50,14 @@ export function MessagesList() {
           startOnScrollIntersect
         >
           <div className="flex">
-            <p className="leading-relaxed flex-1">{message.message}</p>
+            <p className="leading-relaxed flex-1">
+              {message.message.split("\n").map((content, index) => (
+                <Fragment key={index}>
+                  {content}
+                  <br />
+                </Fragment>
+              ))}
+            </p>
             {message.user.name === user?.displayName && (
               <DeleteMessageButton messageId={message.id} />
             )}
