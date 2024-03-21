@@ -16,7 +16,7 @@ export function listenMessages(
   onSuccess: (messages: GuestbookMessageModel[]) => void,
   onFailure: (error: Error) => void
 ) {
-  if (!database) return { state: "error" };
+  if (!database) throw new Error("Database not initialized");
 
   const query = ref(database, "guestbook/messages");
   return onValue(
@@ -56,7 +56,7 @@ export async function sendMessage(
   state: "cooldown" | "error" | "success";
   params?: any;
 }> {
-  if (!database) return { state: "error" };
+  if (!database) throw new Error("Database not initialized");
 
   const cooldownQuery = ref(
     database,
