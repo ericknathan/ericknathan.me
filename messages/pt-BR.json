@@ -97,8 +97,8 @@
       "linkedinUrl": "https://www.linkedin.com/in/ericknathan",
       "cvUrl": "/documents/Erick Nathan - Desenvolvedor Frontend.pdf",
       "company": {
-        "name": "Pagtel",
-        "url": "https://pagtel.com.br"
+        "name": "Tixit",
+        "url": "https://tixit.com.br"
       },
       "languages": {
         "english": {
@@ -112,6 +112,7 @@
       }
     },
     "roles": {
+      "Tixit": "Desenvolvedor Front-end",
       "Pagtel": "Desenvolvedor Front-end",
       "Senai": "Estudante em Desenvolvimento de Sistemas",
       "FIAP": "Estudante em Análise e Desenvolvimento de Sistemas",

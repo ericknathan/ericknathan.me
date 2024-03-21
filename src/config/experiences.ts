@@ -9,10 +9,17 @@ export type ExperienceModel = {
 
 export const experiencesList: ExperienceModel[] = [
   {
+    company: "Tixit",
+    startDate: "2023-10-01",
+    image: "/images/experiences/tixit.png",
+    highlight: true,
+  },
+  {
     company: "Pagtel",
-    startDate: "2022-07-01",
+    startDate: "2022-06-01",
+    endDate: "2024-03-01",
     image: "/images/experiences/pagtel.png",
-    highlight: true
+    highlight: true,
   },
   {
     company: "Senai",
