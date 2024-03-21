@@ -55,10 +55,7 @@ export default async function TLDRSection() {
         <li>
           <strong>Pronombres:</strong> {userData("pronouns")}
         </li>
-        <li>
-          <strong>Mis canciones favoritas en este momento:</strong>{" "}
-          <SongsGrid />
-        </li>
+        <SongsGrid />
       </ul>
     </section>
   );
