@@ -11,7 +11,7 @@ import {
 
 import firebaseApp from "./app";
 
-const auth = getAuth(firebaseApp);
+const auth = !firebaseApp ? null : getAuth(firebaseApp);
 
 export async function signInWithGithub() {
   try {

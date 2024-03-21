@@ -16,6 +16,8 @@ export function listenMessages(
   onSuccess: (messages: GuestbookMessageModel[]) => void,
   onFailure: (error: Error) => void
 ) {
+  if (!database) return { state: "error" };
+
   const query = ref(database, "guestbook/messages");
   return onValue(
     query,
@@ -54,6 +56,8 @@ export async function sendMessage(
   state: "cooldown" | "error" | "success";
   params?: any;
 }> {
+  if (!database) return { state: "error" };
+
   const cooldownQuery = ref(
     database,
     `guestbook/cooldown/${user.uid}/lastMessageSentAt`
@@ -91,9 +95,9 @@ export async function sendMessage(
     };
   }
 
-  const githubData = await fetch(`https://api.github.com/user/${user.providerData[0].uid}`).then(
-    (res) => res.json()
-  );
+  const githubData = await fetch(
+    `https://api.github.com/user/${user.providerData[0].uid}`
+  ).then((res) => res.json());
 
   await set(query, {
     id,
@@ -102,7 +106,7 @@ export async function sendMessage(
     user: {
       name: user.displayName,
       avatar: user.photoURL,
-      profileUrl: githubData.html_url
+      profileUrl: githubData.html_url,
     },
   });
 
@@ -116,6 +120,8 @@ export async function sendMessage(
 }
 
 export async function deleteMessage(messageId: string, user: User) {
+  if (!database) return { state: "error" };
+
   const query = ref(database, `guestbook/messages/${user.uid}/${messageId}`);
 
   await remove(query);

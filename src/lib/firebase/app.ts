@@ -10,6 +10,8 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+const firebaseApp = !process.env.NEXT_PUBLIC_FIREBASE_API_KEY
+  ? null
+  : initializeApp(firebaseConfig);
 
 export default firebaseApp;
