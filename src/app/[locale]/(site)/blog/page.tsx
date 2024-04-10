@@ -1,7 +1,7 @@
 import { Locale } from "@/navigation";
 import { Metadata } from "next";
 import { unstable_setRequestLocale } from "next-intl/server";
-import { UnderConstructionPage } from "../under-construction";
+import { UnderConstructionPage } from "../../under-construction";
 
 export const metadata: Metadata = {
   title: "Blog",
