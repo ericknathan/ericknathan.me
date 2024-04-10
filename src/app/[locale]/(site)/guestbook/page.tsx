@@ -46,7 +46,7 @@ export default async function GestbookPage({
 export async function generateMetadata({
   params: { locale },
 }: GuestbookPageProps) {
-  const messages = (await import(`../../../../messages/${locale}.json`))
+  const messages = (await import(`/messages/${locale}.json`))
     .default;
   const t = createTranslator({ locale, messages });
 

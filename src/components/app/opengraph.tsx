@@ -104,7 +104,7 @@ export async function getOpenGraphData({
   locale: string;
   path?: string;
 }) {
-  const messages = (await import(`../../../messages/${locale}.json`)).default;
+  const messages = (await import(`/messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 
   const avatarUrl = await fetch(

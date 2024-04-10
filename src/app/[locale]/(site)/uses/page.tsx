@@ -105,7 +105,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }) {
-  const messages = (await import(`../../../../messages/${locale}.json`))
+  const messages = (await import(`/messages/${locale}.json`))
     .default;
   const t = createTranslator({ locale, messages });
 

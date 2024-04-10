@@ -4,15 +4,10 @@ import Link from "next/link";
 import { experiencesList, projectsList } from "@/config";
 
 import { FadeIn } from "@/components/animation";
-import { Avatar } from "@/components/app";
+import { PresentationHead } from "@/components/app";
 import { Button, Icon } from "@/components/ui";
 import { Locale } from "@/navigation";
-import {
-  ProjectCard,
-  SectionTitle,
-  TechStackBadges,
-  WorkExperienceCard,
-} from "./components";
+import { ProjectCard, SectionTitle, WorkExperienceCard } from "./components";
 import { PostsList } from "./sections/post-list";
 
 interface HomePageProps {
@@ -23,7 +18,7 @@ interface HomePageProps {
 
 export default async function HomePage({ params: { locale } }: HomePageProps) {
   unstable_setRequestLocale(locale);
-  
+
   const [userData, t] = await Promise.all([
     getTranslations("config.userData"),
     getTranslations("pages.home"),
@@ -31,48 +26,7 @@ export default async function HomePage({ params: { locale } }: HomePageProps) {
 
   return (
     <div className="container max-w-4xl py-14 flex flex-col h-full justify-center gap-6">
-      <div>
-        <div className="flex gap-6 items-center">
-          <FadeIn className="h-24 w-24 aspect-square rounded-lg overflow-hidden">
-            <Avatar className="w-full h-full object-cover" size={100} />
-          </FadeIn>
-          <div className="flex-1">
-            <FadeIn
-              as="h1"
-              className="font-bold text-2xl sm:text-3xl"
-              delay={0.1}
-              duration={0.5}
-            >
-              {userData("name")}
-            </FadeIn>
-            <FadeIn
-              as="span"
-              className="text-muted-foreground block"
-              delay={0.2}
-              duration={0.5}
-            >
-              {userData("role")}{" "}
-              {userData("company.name") ? (
-                <>
-                  @{" "}
-                  <Link
-                    href={userData("company.url")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary"
-                  >
-                    <span className="underline">
-                      {userData("company.name")}
-                    </span>
-                  </Link>
-                </>
-              ) : null}
-            </FadeIn>
-            <TechStackBadges />
-          </div>
-        </div>
-        <TechStackBadges className="flex xs:hidden justify-center" />
-      </div>
+      <PresentationHead />
       <FadeIn className="grid w-full gap-2 card" duration={0.5}>
         <SectionTitle
           title={t("about.title")}

@@ -45,10 +45,7 @@ export default function RootLayout({
       >
         <InternalizationProvider locale={locale}>
           <ThemeProvider>
-            <Sidebar />
-            <main className="relative w-full mt-10 md:mt-0 md:ml-72">
-              {children}
-            </main>
+            {children}
             <ScrollToTop />
             <ToasterProvider />
           </ThemeProvider>
@@ -68,7 +65,7 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params: { locale },
 }: RootLayoutProps): Promise<Metadata> {
-  const messages = (await import(`../../../messages/${locale}.json`)).default;
+  const messages = (await import(`/messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 
   let languages: Record<string, URL> = {};

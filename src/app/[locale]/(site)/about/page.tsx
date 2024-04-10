@@ -34,7 +34,7 @@ export default async function AboutPage({
 }
 
 export async function generateMetadata({ params: { locale } }: AboutPageProps) {
-  const messages = (await import(`../../../../messages/${locale}.json`))
+  const messages = (await import(`/messages/${locale}.json`))
     .default;
   const t = createTranslator({ locale, messages });
 
