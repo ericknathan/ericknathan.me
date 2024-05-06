@@ -3,8 +3,8 @@ import Link from "next/link";
 
 interface SectionTitleProps {
   title: string;
-  link: string;
-  href: string;
+  link?: string;
+  href?: string;
 }
 
 export function SectionTitle({ title, link, href }: SectionTitleProps) {
@@ -13,14 +13,19 @@ export function SectionTitle({ title, link, href }: SectionTitleProps) {
       <h2 className="font-semibold leading-none tracking-tight text-xl">
         {title}
       </h2>
-      <Button size="sm" variant="link" className="-mr-3 w-fit text-center" asChild>
-        <Link href={href}>
-          <span className="hidden xss:flex">
-            {link}
-          </span>
-          <Icon.chevronRight size={14} />
-        </Link>
-      </Button>
+      {link && href ? (
+        <Button
+          size="sm"
+          variant="link"
+          className="-mr-3 w-fit text-center"
+          asChild
+        >
+          <Link href={href}>
+            <span className="hidden xss:flex">{link}</span>
+            <Icon.chevronRight size={14} />
+          </Link>
+        </Button>
+      ) : null}
     </header>
   );
 }

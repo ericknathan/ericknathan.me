@@ -11,6 +11,9 @@
         "link": "Hire me",
         "downloadCv": "Download CV"
       },
+      "education": {
+        "title": "🎓 Education"
+      },
       "latestPosts": {
         "title": "📰 Latest posts",
         "link": "See all",
@@ -97,8 +100,8 @@
       "linkedinUrl": "https://www.linkedin.com/in/ericknathan/?locale=en_US",
       "cvUrl": "/documents/Erick Nathan - Frontend Developer.pdf",
       "company": {
-        "name": "Tixit",
-        "url": "https://tixit.com.br"
+        "name": "Febrafar",
+        "url": "https://febrafar.com.br"
       },
       "languages": {
         "english": {
@@ -112,6 +115,7 @@
       }
     },
     "roles": {
+      "Febrafar": "Front-end developer",
       "Tixit": "Front-end developer",
       "Pagtel": "Front-end developer",
       "Senai": "Systems development student",

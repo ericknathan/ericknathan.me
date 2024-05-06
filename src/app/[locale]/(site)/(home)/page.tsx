@@ -7,8 +7,7 @@ import { FadeIn } from "@/components/animation";
 import { PresentationHead } from "@/components/app";
 import { Button, Icon } from "@/components/ui";
 import { Locale } from "@/navigation";
-import { ProjectCard, SectionTitle, WorkExperienceCard } from "./components";
-import { PostsList } from "./sections/post-list";
+import { ExperiencesGrid, ProjectCard, SectionTitle } from "./components";
 
 interface HomePageProps {
   params: {
@@ -45,22 +44,11 @@ export default async function HomePage({ params: { locale } }: HomePageProps) {
             href={userData("linkedinUrl")}
           />
 
-          <ol className="flex flex-col h-full gap-6">
-            {experiencesList
-              .sort((a, b) => (a.startDate > b.startDate ? -1 : 1))
-              .sort((a, b) => (a.highlight && !b.highlight ? -1 : 1))
-              .map((experienceData, index) => (
-                <FadeIn
-                  key={`company-${experienceData.company}-${index}`}
-                  delay={0.2 + 0.1 * index}
-                  duration={0.4}
-                  startOnScrollIntersect
-                  as="li"
-                >
-                  <WorkExperienceCard data={experienceData} />
-                </FadeIn>
-              ))}
-          </ol>
+          <ExperiencesGrid
+            experiencesList={experiencesList.filter(
+              ({ type }) => type === "work"
+            )}
+          />
           <FadeIn
             to="top"
             startOnScrollIntersect
@@ -80,18 +68,14 @@ export default async function HomePage({ params: { locale } }: HomePageProps) {
             </Button>
           </FadeIn>
         </FadeIn>
-        <FadeIn
-          to="left"
-          duration={0.5}
-          delay={0.1}
-          className="card flex flex-col gap-2 min-h-[18rem]"
-        >
-          <SectionTitle
-            title={t("latestPosts.title")}
-            link={t("latestPosts.link")}
-            href="/blog"
+        <FadeIn duration={0.5} delay={0.1} className="card flex flex-col gap-6">
+          <SectionTitle title={t("education.title")} />
+
+          <ExperiencesGrid
+            experiencesList={experiencesList.filter(
+              ({ type }) => type === "educational"
+            )}
           />
-          <PostsList emptyMessage={t("latestPosts.emptyMessage")} />
         </FadeIn>
       </div>
       <FadeIn>

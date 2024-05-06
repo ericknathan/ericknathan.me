@@ -40,8 +40,9 @@ export async function WorkExperienceCard({ data }: WorkExperienceCardProps) {
         <dd className="text-xs text-muted-foreground/80 flex">
           <time className="mt-auto">
             {startDate.getFullYear()} –{" "}
-            {!endDate ? t("present") : endDate.getFullYear()}
-            {` • ${t("duration", duration)}`}
+            {!endDate
+              ? t("present")
+              : `${endDate.getFullYear()} • ${t("duration", duration)}`}
           </time>
         </dd>
       </dl>

@@ -57,6 +57,7 @@ export function KonamiCodeEasterEgg() {
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
+      setShowConfetti(false);
     };
   }, [keysPressed, t]);
 
