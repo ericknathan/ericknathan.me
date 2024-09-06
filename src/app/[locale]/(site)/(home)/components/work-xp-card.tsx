@@ -22,7 +22,7 @@ export async function WorkExperienceCard({ data }: WorkExperienceCardProps) {
 
   return (
     <div className="flex gap-4">
-      <div className="rounded-full h-10 w-10 aspect-square flex justify-center items-center ring-1 bg-muted/50 ring-muted-foreground/40 p-1">
+      <div className="rounded-full h-11 aspect-square flex justify-center items-center ring-1 bg-muted/50 ring-muted-foreground/40 p-1">
         <Image
           src={image}
           width={40}
