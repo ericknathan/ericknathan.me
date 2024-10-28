@@ -106,7 +106,7 @@ export default function AcademicBackgroundSection() {
         En el segundo año de la licenciatura, desarrollamos GeniusXP, una
         plataforma innovadora centrada en revolucionar eventos mediante el uso
         de Inteligencia Artificial y Deep Analytics. Creada para el desafío de
-        <Link href="https://plusoft.com/">Plusoft</Link>, GeniusXP fue diseñada
+        <Link href="https://plusoft.com/">Plusoft</Link>, GeniusXP fue diseñado
         para optimizar cada etapa de un evento, desde la preparación hasta el
         post-evento. Este recorrido nos llevó al podio en el FIAP NEXT 2024,
         coronando un año de gran aprendizaje, dedicación y crecimiento en la

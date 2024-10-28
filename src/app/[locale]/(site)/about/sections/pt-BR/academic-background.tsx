@@ -118,7 +118,7 @@ export default function AcademicBackgroundSection() {
         inovadora focada em revolucionar eventos com o uso de Inteligência
         Artificial e Deep Analytics. Criada para o desafio da{" "}
         <Link href="https://plusoft.com/">Plusoft</Link>, o GeniusXP foi
-        projetada para otimizar cada etapa de um evento, desde a preparação até
+        projetado para otimizar cada etapa de um evento, desde a preparação até
         o pós-evento. Essa jornada nos rendeu o pódio no FIAP NEXT 2024,
         coroando um ano de muito aprendizado, dedicação e evolução na prática de
         tecnologia aplicada a experiências reais.
