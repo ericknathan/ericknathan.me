@@ -13,9 +13,9 @@ export type NavbarSectionModel = {
 };
 
 export const websiteSourceCode =
-  "https://github.com/ericknathan/ericknathan.me";
+  "https://github.com/ericknathan/ericknathan.dev";
 
-export const websiteUrl = "https://ericknathan.me";
+export const websiteUrl = "https://ericknathan.dev";
 
 export const openGraphDefaultCover = `${websiteUrl}/images/about/code-in-the-dark.jpg`;
 
