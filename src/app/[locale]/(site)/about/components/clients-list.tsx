@@ -8,43 +8,43 @@ export function ClientsList({ andJoiner }: ClientsListProps) {
   return (
     <>
       <Link
-        href="https://www.uber.com/"
+        href="https://www.drogariasultrapopular.com.br/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Uber
+        Farmácia Ultra Popular
       </Link>
       {", "}
       <Link
-        href="https://www.correioscelular.com.br/"
+        href="http://entrefarma.com.br/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Correios
+        Entrefarma
       </Link>
       {", "}
       <Link
-        href="https://www.bancobmg.com.br/"
+        href="https://www.farmaciasbigfort.com.br/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        BMG Bank
+        Bigfort
       </Link>
       {", "}
       <Link
-        href="https://loja.algartelecom.com.br/"
+        href="https://www.grupoasfar.com.br/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Algar
+        Grupo Asfar
       </Link>
       {` ${andJoiner} `}
       <Link
-        href="https://www.carrefour.com.br/"
+        href="https://www.drogariaspoupaqui.com.br/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Carrefour
+        Poupaqui
       </Link>
     </>
   );
