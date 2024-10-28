@@ -1,7 +1,7 @@
 export const projectsCategories = {
-  "frontend": "Front-end",
-  "backend": "Back-end",
-}
+  frontend: "Front-end",
+  backend: "Back-end",
+};
 
 export type ProjectModel = {
   id: string;
@@ -14,6 +14,15 @@ export type ProjectModel = {
 };
 
 export const projectsList: ProjectModel[] = [
+  {
+    id: "geniusxp",
+    name: "GeniusXP",
+    projectUrl: "https://geniusxp.tech",
+    sourceUrl: "https://github.com/geniusxp/web",
+    imagePreviewUrl: "/images/projects/geniusxp.png",
+    category: "frontend",
+    highlight: true,
+  },
   {
     id: "easy-aluga",
     name: "Easy Aluga",

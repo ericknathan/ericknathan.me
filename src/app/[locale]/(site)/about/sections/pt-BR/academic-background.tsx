@@ -112,6 +112,58 @@ export default function AcademicBackgroundSection() {
           },
         ]}
       />
+
+      <p>
+        No segundo ano da graduação, desenvolvemos o GeniusXP, uma plataforma
+        inovadora focada em revolucionar eventos com o uso de Inteligência
+        Artificial e Deep Analytics. Criada para o desafio da{" "}
+        <Link href="https://plusoft.com/">Plusoft</Link>, o GeniusXP foi
+        projetada para otimizar cada etapa de um evento, desde a preparação até
+        o pós-evento. Essa jornada nos rendeu o pódio no FIAP NEXT 2024,
+        coroando um ano de muito aprendizado, dedicação e evolução na prática de
+        tecnologia aplicada a experiências reais.
+      </p>
+
+      <PicturesGrid
+        pictures={[
+          {
+            src: "/images/about/geniusxp-team.jpeg",
+            alt: '4 estudantes vestindo camisetas pretas com o logotipo "GeniusXP" no canto superior direito e calças pretas',
+            legend: (
+              <>
+                Equipe do GeniusXP:{" "}
+                <Link href="https://www.linkedin.com/in/ericknathan">
+                  Erick Nathan
+                </Link>
+                {", "}
+                <Link href="https://www.linkedin.com/in/guilherme-dias-gomes/">
+                  Guilherme Dias
+                </Link>
+                {", "}
+                <Link href="https://www.linkedin.com/in/lucasaraujosilva/">
+                  Lucas Araujo
+                </Link>
+                {" e "}
+                <Link href="https://www.linkedin.com/in/michael-bernardi-silva/">
+                  Michael Bernardi
+                </Link>
+                . (out. 2024)
+              </>
+            ),
+          },
+          {
+            src: "/images/projects/geniusxp.png",
+            alt: "Visualização do projeto GeniusXP",
+            legend: (
+              <>
+                Captura de tela do GeniusXP, uma plataforma que visa
+                revolucionar eventos criada para o desafio da{" "}
+                <Link href="https://plusoft.com/">Plusoft</Link>. (out. 2024)
+              </>
+            ),
+          },
+        ]}
+      />
     </section>
   );
 }

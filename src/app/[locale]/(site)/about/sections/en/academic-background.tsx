@@ -113,6 +113,59 @@ export default function AcademicBackgroundSection() {
           },
         ]}
       />
+
+      <p>
+        In the second year of my degree, we developed GeniusXP, an innovative
+        platform focused on revolutionizing events through the use of Artificial
+        Intelligence and Deep Analytics. Created for the{" "}
+        <Link href="https://plusoft.com/">Plusoft</Link> challenge, GeniusXP was
+        designed to optimize every stage of an event, from preparation to
+        post-event. This journey earned us a podium finish at FIAP NEXT 2024,
+        crowning a year of significant learning, dedication, and growth in the
+        practical application of technology to real-world experiences.
+      </p>
+
+      <PicturesGrid
+        pictures={[
+          {
+            src: "/images/about/geniusxp-team.jpeg",
+            alt: '4 students wearing black shirts with "GeniusXP" small logo on right top side and black pants',
+            legend: (
+              <>
+                GeniusXP&apos;s team:{" "}
+                <Link href="https://www.linkedin.com/in/ericknathan">
+                  Erick Nathan
+                </Link>
+                {", "}
+                <Link href="https://www.linkedin.com/in/guilherme-dias-gomes/">
+                  Guilherme Dias
+                </Link>
+                {", "}
+                <Link href="https://www.linkedin.com/in/lucasaraujosilva/">
+                  Lucas Araujo
+                </Link>
+                {" and "}
+                <Link href="https://www.linkedin.com/in/michael-bernardi-silva/">
+                  Michael Bernardi
+                </Link>
+                . (oct. 2024)
+              </>
+            ),
+          },
+          {
+            src: "/images/projects/geniusxp.png",
+            alt: "Preview of GeniusXP project",
+            legend: (
+              <>
+                Screenshot of GeniusXP, a platform aimed at revolutionizing
+                events, created for the{" "}
+                <Link href="https://plusoft.com/">Plusoft</Link> challenge.
+                (oct. 2024)
+              </>
+            ),
+          },
+        ]}
+      />
     </section>
   );
 }

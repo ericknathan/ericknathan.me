@@ -101,6 +101,58 @@ export default function AcademicBackgroundSection() {
           },
         ]}
       />
+
+      <p>
+        En el segundo año de la licenciatura, desarrollamos GeniusXP, una
+        plataforma innovadora centrada en revolucionar eventos mediante el uso
+        de Inteligencia Artificial y Deep Analytics. Creada para el desafío de
+        <Link href="https://plusoft.com/">Plusoft</Link>, GeniusXP fue diseñada
+        para optimizar cada etapa de un evento, desde la preparación hasta el
+        post-evento. Este recorrido nos llevó al podio en el FIAP NEXT 2024,
+        coronando un año de gran aprendizaje, dedicación y crecimiento en la
+        aplicación práctica de la tecnología a experiencias del mundo real.
+      </p>
+
+      <PicturesGrid
+        pictures={[
+          {
+            src: "/images/about/geniusxp-team.jpeg",
+            alt: '4 estudiantes vistiendo camisetas negras con el pequeño logotipo "GeniusXP" en la esquina superior derecha y pantalones negros',
+            legend: (
+              <>
+                Equipo de GeniusXP:{" "}
+                <Link href="https://www.linkedin.com/in/ericknathan">
+                  Erick Nathan
+                </Link>
+                {", "}
+                <Link href="https://www.linkedin.com/in/guilherme-dias-gomes/">
+                  Guilherme Dias
+                </Link>
+                {", "}
+                <Link href="https://www.linkedin.com/in/lucasaraujosilva/">
+                  Lucas Araujo
+                </Link>
+                {" y "}
+                <Link href="https://www.linkedin.com/in/michael-bernardi-silva/">
+                  Michael Bernardi
+                </Link>
+                . (oct. 2024)
+              </>
+            ),
+          },
+          {
+            src: "/images/projects/geniusxp.png",
+            alt: "Visualización del proyecto GeniusXP",
+            legend: (
+              <>
+                Captura de pantalla de GeniusXP, una plataforma destinada a
+                revolucionar eventos, creada para el desafío de{" "}
+                <Link href="https://plusoft.com/">Plusoft</Link>. (oct. 2024)
+              </>
+            ),
+          },
+        ]}
+      />
     </section>
   );
 }

@@ -123,6 +123,9 @@
       "Rocketseat": "Estudiante en Desarrollo Full-stack"
     },
     "projects": {
+      "geniusxp": {
+        "shortDescription": "Una plataforma diseñada para transformar la experiencia en eventos, ofreciendo una solución completa que abarca todas las etapas con el poder de la inteligencia artificial."
+      },
       "easy-aluga": {
         "shortDescription": "Una aplicación white-label para alquilar cualquier vehículo, desarrollada durante el Desafío BRQ Easy Carros en la FIAP."
       },
