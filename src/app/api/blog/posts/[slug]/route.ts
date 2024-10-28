@@ -3,15 +3,17 @@ import { NextRequest, NextResponse } from "next/server";
 import path from "node:path";
 
 interface GetPostProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function GET(_: NextRequest, context: GetPostProps) {
   try {
-    const { slug } = context.params;
-    const compiled = matter.read(path.join(process.cwd(), `src/app/blog/posts/${slug}.mdx`));
+    const { slug } = await context.params;
+    const compiled = matter.read(
+      path.join(process.cwd(), `src/app/blog/posts/${slug}.mdx`)
+    );
 
     return NextResponse.json({
       message: "Post successfully fetched",

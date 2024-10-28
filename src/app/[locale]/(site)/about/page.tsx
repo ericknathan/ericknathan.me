@@ -1,5 +1,5 @@
 import { createTranslator } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { FadeIn } from "@/components/animation";
@@ -7,15 +7,15 @@ import { Locale, locales } from "@/navigation";
 import { Sections } from "./sections";
 
 interface AboutPageProps {
-  params: {
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 }
 
-export default async function AboutPage({
-  params: { locale },
-}: AboutPageProps) {
-  unstable_setRequestLocale(locale);
+export default async function AboutPage(props: AboutPageProps) {
+  const { locale } = await props.params;
+
+  setRequestLocale(locale);
 
   if (!locales.includes(locale)) {
     return notFound();
@@ -33,9 +33,10 @@ export default async function AboutPage({
   );
 }
 
-export async function generateMetadata({ params: { locale } }: AboutPageProps) {
-  const messages = (await import(`/messages/${locale}.json`))
-    .default;
+export async function generateMetadata(props: AboutPageProps) {
+  const { locale } = await props.params;
+
+  const messages = (await import(`/messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 
   return {

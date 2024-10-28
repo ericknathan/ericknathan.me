@@ -3,18 +3,20 @@ import { uses } from "@/config";
 import { cn } from "@/lib/utils";
 import { Locale } from "@/navigation";
 import { createTranslator } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
 interface UsesPageProps {
-  params: {
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 }
 
-export default async function UsesPage({ params: { locale } }: UsesPageProps) {
-  unstable_setRequestLocale(locale);
+export default async function UsesPage(props: UsesPageProps) {
+  const { locale } = await props.params;
+
+  setRequestLocale(locale);
 
   const t = await getTranslations("pages.uses");
 
@@ -100,13 +102,12 @@ export default async function UsesPage({ params: { locale } }: UsesPageProps) {
   );
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
 }) {
-  const messages = (await import(`/messages/${locale}.json`))
-    .default;
+  const { locale } = await props.params;
+
+  const messages = (await import(`/messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 
   return {

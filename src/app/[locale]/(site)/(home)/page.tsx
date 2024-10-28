@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 
 import { experiencesList, projectsList } from "@/config";
@@ -10,13 +10,15 @@ import { Locale } from "@/navigation";
 import { ExperiencesGrid, ProjectCard, SectionTitle } from "./components";
 
 interface HomePageProps {
-  params: {
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 }
 
-export default async function HomePage({ params: { locale } }: HomePageProps) {
-  unstable_setRequestLocale(locale);
+export default async function HomePage(props: HomePageProps) {
+  const { locale } = await props.params;
+
+  setRequestLocale(locale);
 
   const [userData, t] = await Promise.all([
     getTranslations("config.userData"),

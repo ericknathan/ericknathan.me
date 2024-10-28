@@ -1,5 +1,5 @@
 import { createTranslator } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { AuthContextProvider } from "@/contexts";
 import { Locale } from "@/navigation";
@@ -9,15 +9,15 @@ import { GuestbookForm } from "./components/guestbook-form";
 import { MessagesList } from "./components/messages-list";
 
 interface GuestbookPageProps {
-  params: {
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 }
 
-export default async function GestbookPage({
-  params: { locale },
-}: GuestbookPageProps) {
-  unstable_setRequestLocale(locale);
+export default async function GestbookPage(props: GuestbookPageProps) {
+  const { locale } = await props.params;
+
+  setRequestLocale(locale);
 
   const t = await getTranslations("pages.guestbook");
 
@@ -43,11 +43,10 @@ export default async function GestbookPage({
   );
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: GuestbookPageProps) {
-  const messages = (await import(`/messages/${locale}.json`))
-    .default;
+export async function generateMetadata(props: GuestbookPageProps) {
+  const { locale } = await props.params;
+
+  const messages = (await import(`/messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 
   return {

@@ -3,13 +3,13 @@ import { PresentationHead } from "@/components/app";
 import { Button, Icon } from "@/components/ui";
 import { socials } from "@/config";
 import { Locale } from "@/navigation";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 
 interface LinksPageProps {
-  params: {
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 }
 
 const links = [
@@ -17,8 +17,10 @@ const links = [
   ...socials,
 ] as const;
 
-export default function LinksPage({ params: { locale } }: LinksPageProps) {
-  unstable_setRequestLocale(locale);
+export default async function LinksPage(props: LinksPageProps) {
+  const { locale } = await props.params;
+
+  setRequestLocale(locale);
 
   return (
     <div className="container w-fit mx-auto py-10 flex flex-col justify-center h-screen gap-8">

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { createTranslator } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/themes.css";
 
-import { EasterEggs, ScrollToTop, Sidebar } from "@/components/app";
+import { EasterEggs, ScrollToTop } from "@/components/app";
 import {
   InternalizationProvider,
   ThemeProvider,
@@ -23,17 +23,17 @@ const locales = appLocales.map((locale) => locale.name);
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: RootLayoutProps) {
+export default async function RootLayout(props: RootLayoutProps) {
+  const { locale } = await props.params;
+  const { children } = props;
+
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -62,9 +62,11 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: RootLayoutProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: RootLayoutProps
+): Promise<Metadata> {
+  const { locale } = await props.params;
+
   const messages = (await import(`/messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 

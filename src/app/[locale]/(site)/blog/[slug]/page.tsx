@@ -4,12 +4,14 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 
 interface BlogPostProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default async function BlogPost({ params: { slug } }: BlogPostProps) {
+export default async function BlogPost(props: BlogPostProps) {
+  const { slug } = await props.params;
+
   const file = readFileSync(
     path.join(process.cwd(), `src/app/blog/posts/${slug}.mdx`)
   );
@@ -18,8 +20,8 @@ export default async function BlogPost({ params: { slug } }: BlogPostProps) {
     source: file,
     options: {
       parseFrontmatter: true,
-    }
-  })
+    },
+  });
 
   return (
     <article className="prose dark:prose-invert container max-w-4xl py-14 mx-auto prose-a:text-primary">
@@ -38,10 +40,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: BlogPostProps) {
-  const { payload: post } = await postsRequests.getPost({ slug: params.slug }).catch(() => ({
-    payload: null,
-  }));
+export async function generateMetadata(props: BlogPostProps) {
+  const { slug } = await props.params;
+  
+  const { payload: post } = await postsRequests
+    .getPost({ slug: slug })
+    .catch(() => ({
+      payload: null,
+    }));
 
   return {
     title: post?.title,

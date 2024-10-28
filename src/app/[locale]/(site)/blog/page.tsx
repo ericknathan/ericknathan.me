@@ -1,6 +1,6 @@
 import { Locale } from "@/navigation";
 import { Metadata } from "next";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { UnderConstructionPage } from "../../under-construction";
 
 export const metadata: Metadata = {
@@ -8,13 +8,15 @@ export const metadata: Metadata = {
 };
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 }
 
-export default function BlogPage({ params: { locale } }: BlogPageProps) {
-  unstable_setRequestLocale(locale);
+export default async function BlogPage(props: BlogPageProps) {
+  const { locale } = await props.params;
+
+  setRequestLocale(locale);
 
   return <UnderConstructionPage />;
 }

@@ -6,19 +6,19 @@ import { projectsCategories, projectsList } from "@/config";
 import { FadeIn } from "@/components/animation";
 import { Icon } from "@/components/ui";
 import { Locale } from "@/navigation";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ProjectCard } from "./components";
 
 interface ProjectsPageProps {
-  params: {
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 }
 
-export default async function ProjectsPage({
-  params: { locale },
-}: ProjectsPageProps) {
-  unstable_setRequestLocale(locale);
+export default async function ProjectsPage(props: ProjectsPageProps) {
+  const { locale } = await props.params;
+
+  setRequestLocale(locale);
 
   const [userData, t] = await Promise.all([
     getTranslations("config.userData"),
@@ -80,13 +80,12 @@ export default async function ProjectsPage({
   );
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
 }) {
-  const messages = (await import(`/messages/${locale}.json`))
-    .default;
+  const { locale } = await props.params;
+
+  const messages = (await import(`/messages/${locale}.json`)).default;
   const t = createTranslator({ locale, messages });
 
   return {
