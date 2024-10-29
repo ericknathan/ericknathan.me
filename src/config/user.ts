@@ -18,9 +18,9 @@ export const socials: UserSocialModel[] = [
     href: "https://www.linkedin.com/in/ericknathan",
   },
   {
-    icon: "bluesky",
-    name: "Bluesky",
-    href: "https://bsky.app/profile/ericknathan.bsky.social",
+    icon: "twitter",
+    name: "X/Twitter",
+    href: "https://twitter.com/onathannsz",
   },
   {
     icon: "twitch",
