@@ -91,11 +91,10 @@
     "userData": {
       "name": "Erick Nathan",
       "role": "Desenvolvedor Front-end",
-      "location": "São Paulo, Brasil",
+      "location": "São Paulo - SP, Brasil",
       "interests": "Ouvir música, Viajar, Jogar videogames e Assistir Live Coding",
-      "pronouns": "ele/dele",
       "avatarUrl": "/images/avatar.png",
-      "avatarAltDescription": "Um menino com cabelos cacheados sorrindo, vestindo roupa formal com uma gravata borboleta.",
+      "avatarAltDescription": "Um menino com cabelos cacheados sorrindo.",
       "githubUrl": "https://github.com/ericknathan",
       "linkedinUrl": "https://www.linkedin.com/in/ericknathan",
       "cvUrl": "/documents/Erick Nathan - Desenvolvedor Frontend.pdf",

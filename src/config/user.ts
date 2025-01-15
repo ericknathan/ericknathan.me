@@ -41,10 +41,6 @@ export const userData = {
     id: "1367639862325706758",
     username: "@onathannsz",
   },
-  company: {
-    name: "Pagtel",
-    url: "https://pagtel.com.br",
-  },
   birthDate: new Date("2005-08-14"),
   languages: ["english", "portuguese"],
 };
@@ -56,7 +52,4 @@ export const stack = [
   "Sveltekit",
   "NodeJS",
   "TypeScript",
-  "JavaScript",
-  "HTML",
-  "CSS",
 ];

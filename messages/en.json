@@ -91,11 +91,10 @@
     "userData": {
       "name": "Erick Nathan",
       "role": "Front-end developer",
-      "location": "São Paulo, Brazil",
+      "location": "São Paulo - SP, Brazil",
       "interests": "Listen Music, Travel, Play Games and Watch Live Coding",
-      "pronouns": "he/him",
       "avatarUrl": "/images/avatar.png",
-      "avatarAltDescription": "A boy with curly hair smiling, wearing business clothes with a {colorScheme} bow tie.",
+      "avatarAltDescription": "A boy with curly hair smiling.",
       "githubUrl": "https://github.com/ericknathan",
       "linkedinUrl": "https://www.linkedin.com/in/ericknathan/?locale=en_US",
       "cvUrl": "/documents/Erick Nathan - Frontend Developer.pdf",

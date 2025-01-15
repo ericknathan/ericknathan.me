@@ -18,7 +18,7 @@ export default async function TLDRSection() {
           <strong>Ubicación:</strong> {userData("location")}
         </li>
         <li>
-          <strong>Edad:</strong> {calcAge(birthDate)}
+          <strong>Edad:</strong> {calcAge(birthDate)} años
         </li>
         <li>
           <strong>Cargo:</strong> {userData("role")} @{" "}
@@ -37,23 +37,16 @@ export default async function TLDRSection() {
           <strong>Idiomas:</strong>{" "}
           {languages.map((language, index) => {
             const name = userData(`languages.${language}.name` as any);
-            const proficiency = userData(
-              `languages.${language}.proficiency` as any
-            );
 
             return (
               <span key={name}>
-                {name} <small className="opacity-80">({proficiency})</small>{" "}
-                {index !== languages.length - 1 && "· "}
+                {`${name} ${index !== languages.length - 1 ? "· " : ""}`}
               </span>
             );
           })}
         </li>
         <li>
           <strong>Intereses:</strong> {userData("interests")}
-        </li>
-        <li>
-          <strong>Pronombres:</strong> {userData("pronouns")}
         </li>
         <SongsGrid />
       </ul>
