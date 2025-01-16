@@ -40,6 +40,7 @@ export const experiencesList: ExperienceModel[] = [
   {
     company: "FIAP",
     startDate: "2023-01-01",
+    endDate: "2024-12-12",
     image: "/images/experiences/fiap.png",
     type: "educational",
   },
