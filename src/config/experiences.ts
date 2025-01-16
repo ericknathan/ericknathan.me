@@ -40,14 +40,13 @@ export const experiencesList: ExperienceModel[] = [
   {
     company: "FIAP",
     startDate: "2023-01-01",
-    endDate: "2024-12-12",
+    endDate: "2024-12-31",
     image: "/images/experiences/fiap.png",
     type: "educational",
   },
   {
     company: "Rocketseat",
     startDate: "2021-11-01",
-    endDate: "2022-11-01",
     image: "/images/experiences/rocketseat.png",
     type: "educational",
   },
